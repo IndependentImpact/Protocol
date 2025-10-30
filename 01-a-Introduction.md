@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 Independent Impact is a platform for transparently reporting  and quantifying all conceivable anthropogenic impact on natural and social environments. The platform is intended to be a non-prescriptive, decentralised, Web3 alternative to the traditional, institutionalised registries and standards bodies that have been overseeing similar activities (especially carbon offset activities in the voluntary carbon market) over the past few decades. It also intends to usher in a new class of standards, activities and tokenised assets for which there is currently no non-web3  alternative. 
 

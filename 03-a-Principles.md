@@ -1,9 +1,9 @@
 
-# Principles
+## Principles
 
 The Independent Impact Protocol is informed by four sets of principles – general principles, impact principles, accounting principles and reporting principles. Each set of principles is discussed below.
 
-## General principles
+### General principles
 
 1. **Openness.** Everyone should be able to / be empowered to contribute to common goals for good. Engaging in climate action or biodiversity conservation should not be something reserved for large companies with large “ESG” budgets and/or compliance regulations to meet. Smaller companies, organisations and individual citizens, with good intention, knowledge and skills, should be empowered  to contribute in their respective capacities to humankind’s work towards a better world for all.  
 
@@ -13,7 +13,7 @@ The Independent Impact Protocol is informed by four sets of principles – gener
 
 The platform is designed to give effect to these principles. For example, anyone can engage with the platform, but a comprehensive reputation system ensures that more opportunities are available to agents who maintain good conduct and who improve their knowledge and skills. Furthermore, an agent can start to report on their activities at any point in time – they do not need to complete a process of validation and registration of their activities first; an extensive scoring system, however, ensures that activities conducted according to high standards are clearly distinguishable from activities that do not uphold similar standards. 
 
-## Impact principles
+### Impact principles
 
 Agents should ideally see to it that their activities adhere to the following principles,  to ensure that they maximise beneficial impact and minimise harm:  
 
@@ -35,7 +35,7 @@ The platform encourages adherence to these principles by providing a rich set of
 
 Scoring systems are also in place for the effectiveness and efficiency of intervention instruments. Intervention instruments can furthermore have scores for durability, ease of use, etc. These scoring systems are to help activity owners determine which intervention instruments are more appropriate or less appropriate for their activities and their contexts. They also help reviewers to evaluate the intervention measures of activities.
 
-## Accounting principles
+### Accounting principles
 
 When accounting for the impact of their activities, agents should ideally adhere to the following principles  to ensure that the impacts of their activities are determined accurately, consistently, and transparently:  
 
@@ -59,7 +59,7 @@ The platform provides a rich set of questions to agents (see Appendix XXX) to gu
 
 Furthermore, the platform is intentionally designed to maximise transparency, traceability and verifiability. Every action performed on the platform is transparently recorded on the Hedera network. All information provided about activities, and any changes made thereto, along with the authors of the information and the changes, are captured in a publicly accessible, time-travelable  Fluree ledger.
 
-## Reporting principles
+### Reporting principles
 
 When providing information about activities and their impacts agents should ideally adhere to the following principles  to ensure that such information is of high quality, credible, and usable:  
 

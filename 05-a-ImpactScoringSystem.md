@@ -1,6 +1,6 @@
-# Impact Scoring System
+## Impact Scoring System
 
-## Overview
+### Overview
 
 The Impact Scoring System (ImSco for short) is designed to measure how sure we can be about the extent and cause of some claimed impact. To do so, the system currently measures an impact and the activity that purportedly effected it against Independent Impact’s sets of impact, accounting and reporting principles declared earlier; future upgrades to the platform will, however, accommodate other standards as well.
 
@@ -38,7 +38,7 @@ A few final notes are in order to conclude the overview:
 
 (b)	The owner of an activity can choose whether they want to allow other agents to provide information about their activity and its impacts. This may help them to gather the desired information quicker, or may provide them with a richer corpus of information. Information contributed by someone other than the activity owner will not, however, automatically be granted ImSco points – any information must be reviewed by someone other than the owner and contributor (if those were separate agents) of the information if ImSco points are to be gained from it.
 
-## Reviewable aspects of impacts
+### Reviewable aspects of impacts
 
 The Independent Impact platform acknowledges a set list of impact and activity aspects by default. Activity owners are encouraged to provide information for their activities and impacts for as many of these aspects as possible. The platform provides an extensive list of guiding questions to aid activity owners in doing so. 
 

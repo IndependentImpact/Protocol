@@ -1,5 +1,5 @@
 
-# Overview of concepts and terminology
+## Overview of concepts and terminology
 
 The platform’s vocabulary and worldview are thoroughly informed by the Anthropogenic Impact Accounting (AIA) suite of ontologies . The suite consists of four ontologies, namely:
 

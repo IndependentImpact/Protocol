@@ -1,8 +1,8 @@
-# Agent Reputation System
+## Agent Reputation System
 
 The actions and behaviour of agents on the platform are governed by an elaborate reputation system. There are two primary domains in which an agent can have reputation, namely Knowledge & Skills and Conduct. All reputation is primarily gained and lost through actions and consequent events.  
 
-## Knowledge & Skills reputation
+### Knowledge & Skills reputation
 
 The Knowledge & Skills reputation (KSR) domain is divided into subdomains representing different areas of expertise, such as “Marine Conservation”, “Air Quality Offsets”, “Carbon Offsets” and “Early Childhood Development” (the full list of subdomains are given in Appendix XXX). 
 
@@ -10,7 +10,7 @@ KSR can be gained  in several ways, such as through the verification of educatio
 
 Agents primarily use their KSR to earn income. For example, a review request will typically specify a minimum amount of reputation that an agent must have in a particular KSR domain to respond as a paid reviewer to the request. 
 
-## Conduct reputation
+### Conduct reputation
 
 An agent’s Conduct reputation (CR) score represents how active, helpful and respectful they have been on the platform to date. Unlike KS reputation, the Conduct reputation (CR) domain is not divided into subdomains, but is designed to incentivise thoroughness, reliability and respectful behaviour, while penalising bias, misinformation and disrespectful behaviour.
 
@@ -28,7 +28,7 @@ For the list of CR thresholds and the actions that they suspend or open up, see 
 
 Possible alternative names for CR: TRIB, WINK, NOD, PAT, PEAS, (coffee/green) BEANS, COCO (coconuts), grapes, oranges, miles, claps, caps, DUC(K)(S)/DUX.
 
-## Time-based decay
+### Time-based decay
 
 All reputation – KSR and CR – decays. KSR decays  at a rate of X points every Y months, while CR (both positive and negative CR) decays at a rate of D points every M months. Decay stops the moment that a reputation balance reaches zero, i.e., it cannot drop below zero due to decay. 
 

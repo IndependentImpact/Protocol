@@ -1,4 +1,4 @@
-# Technical implementation
+## Technical implementation
 
 This section is still a W.I.P.
 

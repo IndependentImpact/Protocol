@@ -1,6 +1,6 @@
-# Voting
+## Voting
 
-## Reputation-based voting
+### Reputation-based voting
 
 When an indicator, instrument, method or methodology is published on the platform, it automatically sends out a vote request across the platform, inviting agents to vote on its reliability, durability, etc. (whichever is relevant). Such voting is based on reputation and is governed by the following rules:
 
