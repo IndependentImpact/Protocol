@@ -15,11 +15,12 @@ The premise of AIAO is:
 “An agent engages in an activity that impacts a state.” 
 
 “Agent” is defined in AIAO as “[a] thing that bears some form of accountability for the occurrence of another thing.”  In other words, an agent is any entity that can be held legally accountable for the impact that they have on others and on their environment. The concept of an agent is not restricted to natural individuals – an agent can, for example, also be a legal entity, such as a company, or a group of individuals working as a team. 
+
 “Activity” is defined as “[a]n event that is orchestrated by an agent,”  whereas “event” is defined in the Impact Ontology as “[a] change in the state of a [thing].”  “Thing” here can be literally anything, but the kinds of things that Independent Impact is particularly interested in are those “things” that can be considered “environments” – natural and social environments alike, e.g., the Nile Delta or the community of Pembroke. Examples of activities include vehicle manufacturing, the transportation of goods or restoring a wetland.
 
 Finally, “state” is defined as “[t]he condition of a thing at a specific point in time, expressed in terms of one or more indicator-value pairs.”  Firstly, the things we are interested in in the context of Independent Impact are, as explained earlier, those things that can be considered “environments”. Secondly, “indicator” here means conventions or standards such as “the mass of a body, measured in kilogramme,” or “the height of a tree, measured in metre.” In the context of Independent Impact we are typically interested in conventions that are used to describe how healthy or unhealthy an environment is. 
 
-Differences in the state of an environment are how we measure and express “impact”. Elaborate.
+Differences in the state of an environment are how we measure and express “impact”. A beneficial impact is an impact that contributes toward a desired state, while an adverse impact is one that detracts from a desired state.
 
 These concepts and terms form the basis of the Independent Impact paradigm. The rest of this document shall use the terms as they are described above. Readers are encouraged to peruse the AIA suite of ontologies to enhance their understanding of these and related concepts.
 Other concepts and terms that deserve introduction already here are:
