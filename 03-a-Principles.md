@@ -23,7 +23,7 @@ Agents should ideally see to it that their activities adhere to the following pr
 
 3. **Do no harm.** An activity should avoid, mitigate, or compensate for any foreseeable negative impacts that it may have, particularly on vulnerable populations or ecosystems. In the face of scientific uncertainty and potential for serious harm, the burden of proof should fall on demonstrating safety before action.  
 
-4. **Effectiveness.** The chosen intervention  should be demonstrably capable of achieving its intended outcomes under realistic conditions.  
+4. **Effectiveness.** The chosen intervention should be demonstrably capable of achieving its intended outcomes under realistic conditions.  
 
 5. **Efficiency.** The desired impact should be achieved with the least necessary resource use and collateral burden.  
 
