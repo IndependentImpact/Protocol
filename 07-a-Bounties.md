@@ -183,9 +183,12 @@ Flow:
 Agent submits review for a field via UI.
 (UI prevents submission of input that does not satisfy the SHACL constraints for the field in question.)
 UI sends the review input as JSON-LD to the bounty service.
-Bounty service submits it as a user-signed Hedera transaction for an HCS message publication or HFS upload. IPFS?
+Bounty services passes the input to the standard's input validator.
+Standard's input validator hashes and signs the input if it matches the standard's formal criteria for a review. 
+Standard's input validator returns the input+hash+signature to the bounty service.
+Bounty service submits the result returned by the standard's input validator as a user-signed Hedera transaction for an HCS message publication or HFS upload. IPFS?
 Bounty service receives resulting ID of HCS message or HFS file.
-Bounty submits received Hedera ID, along with the seat and task that the review is related to, to the bounty smart contract's submitDeliverable endpoint - signed by BOTH the user and the bounty service. The bounty service signs to attest that the content of the HCS/HFS file was a valid review.
-Bounty smart contract checks the transaction's signatures against the public keys of the seat holder and the bounty service. If check passes, the transaction is considered as notification of valid deliverable submission by the rightful/correct agent.
+Bounty submits received Hedera ID, along with the seat and task that the review is related to, to the bounty smart contract's submitDeliverable endpoint - as a user-signed transaction.
+Bounty smart contract checks the transaction's signature against the public key of the seat holder, and checks the hash+signature from the standard's input validator against the public key of the standard's input validator. If checks pass, the transaction is considered as notification of valid deliverable submission by the rightful/correct agent.
 
 
