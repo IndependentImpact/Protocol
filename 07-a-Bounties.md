@@ -191,5 +191,6 @@ Bounty service receives resulting ID of HCS message or HFS file.
 Bounty submits received Hedera ID, along with the seat and task that the review is related to, to the bounty smart contract's submitDeliverable endpoint - as a user-signed transaction.
 Bounty smart contract checks the transaction's signature against the public key of the seat holder, and checks the hash+signature from the standard's input validator against the public key of the standard's input validator. If checks pass, the transaction is considered as notification of valid deliverable submission by the rightful/correct agent.
 
-If it will be too much of a technical hurdle to the standards bodies to maintain input validators, we'll just let the bounty service itself do the input validation and signing.
+If it will be too much of a technical hurdle to the standards bodies to maintain input validators, we'll just let the bounty service itself do the input validation and signing. 
+An input validator (whether from the standard or just our own II Bounty Service) should maintain a validation key pair per bounty, so that if a key pair gets compromised, it is only one bounty that got compromised, not all bounties on the platform. That key pair should be created during the smart contract creation process, and the public key of the pair should be stored as a constant inside the smart contract.
 
