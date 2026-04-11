@@ -132,7 +132,7 @@ Bounty smart contract has functions for:
 
 If the dispute endpoint is called, the SC should emit a smart contract event to notify the II platform managers. The latter will then appoint an adjudicator. The appointAdjudicator function should then be called for the adjudicator to register them as the adjudicator for the task. They then submit their review(s) of the disputed field(s) via the SC's submitWork endpoint, and that automatically sets the status of the field back to disputed:false. 
 Every field to be reviewed in a document is a task in itself. Tasks can have sequences - some tasks can be done in any order, but other tasks can only be completed once some others have been completed.
-A task has six fields:
+A task inside a smart contract has these fields:
 - executor
 - adjudicator (will hopefully be empty most of the time)
 - control (e.g., according to which standard should this document field be reviewed)
@@ -143,5 +143,49 @@ A task has six fields:
 - adjudicationAmount
 
 When the bounty owner calls the dispute endpoint, they should send along the money to be paid to the adjudicator. That amount gets recorded in the adjudicationAmount field of the relevant task. When the adjudicator then calls the submitWork endpoint for the task in question, they get paid adjudicationAmount. If their finding supports the finding of the executor, nothing else needs to change. If their finding supported the argument from the bounty owner, the bounty owner gets paid the bountyAmount and the bountyAmount gets set to 0. The adjudicationAmount should always be equal to the value of the bountyAmount.
+
+
+
+
+What the task description inside the smart contract will look like:
+```
+	Submit a gs1:ValidationReview for property gs1:someprop of entity hederamainnet:0.0.3566640@1775754551.696235891 with current value {"@id": "asdfyUGVSNcsdYkVD"}.
+```
+
+What the submission by the validator will look like:
+```
+{
+	"@context": { ... },
+	"@id": "gjhgyuGBJFGJHVGF765Fh5F"
+	"@type": "gs1:ValidationReview",
+	"rdf:subject": {
+		"@type": "rdf:Statement",
+		"rdf:subject": { "@id": "hederamainnet:0.0.3566640@1775754551.696235891" },
+		"rdf:predicate": { "@id": "gs1:someprop" },
+		"rdf:object": { "@id": "asdfyUGVSNcsdYkVD" }	
+	}
+	"gs1:reviewOutcome": "ACCEPTED",
+	"gs1:reviewOutcomeMotivation": "Lorem ipsum dolor sit amet..."
+}
+```
+where 
+- gs1:ValidationReview will be a class defined by Gold Standard as an rdfs:subClassOf ii:Review; 
+- gs1:reviewOutcome is an rdfs:subPropertyOf ii:reviewOutcome; and
+- gs1:reviewOutcomeMotivation replaces the rdfs:comment property on ii:Review.
+
+
+
+
+
+Remember: You cannot pass JSON to a smart contract or parse it in Solidity. 
+
+Flow:
+Agent submits review for a field via UI.
+(UI prevents submission of input that does not satisfy the SHACL constraints for the field in question.)
+UI sends the review input as JSON-LD to the bounty service.
+Bounty service submits it as a user-signed Hedera transaction for an HCS message publication or HFS upload. IPFS?
+Bounty service receives resulting ID of HCS message or HFS file.
+Bounty submits received Hedera ID, along with the seat and task that the review is related to, to the bounty smart contract's submitDeliverable endpoint - signed by BOTH the user and the bounty service. The bounty service signs to attest that the content of the HCS/HFS file was a valid review.
+Bounty smart contract checks the transaction's signatures against the public keys of the seat holder and the bounty service. If check passes, the transaction is considered as notification of valid deliverable submission by the rightful/correct agent.
 
 
