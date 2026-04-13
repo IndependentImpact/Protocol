@@ -126,12 +126,16 @@ An agent can publish a request for the review of some claim or information. A re
 
 A bounty smart contract has functions for:
 - reserveSeat
+- cancelSeatReservation
 - claimSeat
-- appointAdjudicator
+- cancelSeatClaim
+- transferSeat
 - submitDeliverable
 - requestClarification <!-- Used by a seat holder to request clarification from the bounty owner. -->
 - submitClarification <!-- Used by the bounty owner to respond to a clarification request by a seat holder. -->
 - dispute
+- appointAdjudicator
+- getBountyInformation
 
 A review bounty's smart contract will additionally have functions for:
 - requestCorrection <!-- Used by a reviewer to request the bounty owner to correct some information node, signalling that they will likely submit an accepting review once the correction has been applied. -->
