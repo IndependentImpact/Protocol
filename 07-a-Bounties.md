@@ -146,13 +146,95 @@ When the bounty owner calls the dispute endpoint, they should send along the mon
 
 
 
+Example: Submit a gs1:ValidationReview for property gs1:someprop of entity hederamainnet:0.0.3566640@1775754551.696235891 with current value {"@id": "asdfyUGVSNcsdYkVD"}.
 
-What the task description inside the smart contract will look like:
-```
-	Submit a gs1:ValidationReview for property gs1:someprop of entity hederamainnet:0.0.3566640@1775754551.696235891 with current value {"@id": "asdfyUGVSNcsdYkVD"}.
+What the task description inside the smart contract (Solidity) will look like:
+```	
+{
+	"taskId: "adf765SDS786cv786xXC",
+	"ii:requiredDeliverableType": { "@id": "gs1:ValidationReview" },
+	"ii:requiredDeliverableSubject": {
+		"@type": "rdf:Statement",
+		"rdf:subject": { "@id": "hederamainnet:0.0.3566640@1775754551.696235891" },
+		"rdf:predicate": { "@id": "gs1:someprop" },
+		"rdf:object": { "@id": "asdfyUGVSNcsdYkVD" }	
+	}
+}
+
+
+
+
+pragma solidity ^0.8.20;
+
+interface IndependentImpact {
+
+    struct ReputationRequirement {
+        string domain;
+        int64 minimumScore;
+    }
+
+	struct RdfStatement { 	   // "@type": "rdf:Statement"
+		string subjectId;      // "rdf:subject": { "@id": ... }
+		string predicateId;    // "rdf:predicate": { "@id": ... }
+		string objectId;       // "rdf:object": { "@id": ... }
+	}
+
+	struct BountyTask {
+		string taskId;                         
+		int32 seatNumber;
+		string requiredDeliverableTypeId;          
+		RdfStatement requiredDeliverableSubject; 
+		ReputationRequirement[] reputationRequirements;
+		address executor; // Hedera account ID of the holder of the seat.
+		address adjudicator; // Hedera account ID of the adjudicator (if relevant).
+		uint256 bountyAmountInHbar;
+		uint256 adjudicationAmountInHbar;
+		string[] afterTaskIds; // IDs of tasks that must be completed before this task can be completed.
+		string[] beforeTaskIds; // IDs of tasks before which this task must be completed.
+		bool inDispute;
+	}
+	
+}
+
+contract ReviewBounty {
+
+	IndependentImpact.ReputationRequirement[] memory task1RepReqs = new IndependentImpact.ReputationRequirement[](2);
+	task1RepReqs[0] = IndependentImpact.ReputationRequirement({
+		domain: "agroforestry",
+		minimumScore: 12
+	});
+	task1RepReqs[1] = IndependentImpact.ReputationRequirement({
+		domain: "project-design-validation",
+		minimumScore: 10
+	});		
+
+	IndependentImpact.BountyTask task1 = IndependentImpact.BountyTask({
+		taskId: "adf765SDS786cv786xXC",
+		seatNumber: 1,
+		requiredDeliverableTypeId: "gs1:ValidationReview",
+		requiredDeliverableSubject: rdfStatement({
+			subjectId: "hederamainnet:0.0.3566640@1775754551.696235891",
+			predicateId: "gs1:someprop",
+			objectId: "asdfyUGVSNcsdYkVD"
+		}),
+		reputationRequirements: task1RepReqs,
+		bountyAmountInHbar: 2000,
+		inDispute: false
+		// afterTaskIds; // Not relevant in this example.
+		// beforeTaskIds; // Not relevant in this example.
+		// executor; // Will be set via a function call.
+		// adjudicator; // Will be set via a function call.
+		// adjudicationAmountInHbar; // Will be set via a function call, if necessary.
+	});
+
+}
+
+
+
+
 ```
 
-What the submission by the validator will look like:
+What the submission by the validator will look like in the Hedera transaction:
 ```
 {
 	"@context": { ... },
@@ -172,6 +254,14 @@ where
 - gs1:ValidationReview will be a class defined by Gold Standard as an rdfs:subClassOf ii:Review; 
 - gs1:reviewOutcome is an rdfs:subPropertyOf ii:reviewOutcome; and
 - gs1:reviewOutcomeMotivation replaces the rdfs:comment property on ii:Review.
+
+What the submission by the validator will look like when passed into the smart contract by the Bounty Service:
+```
+//TODO.
+```
+
+
+
 
 
 
