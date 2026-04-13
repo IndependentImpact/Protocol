@@ -30,7 +30,7 @@ The dates that mark the start and end of each of the phases must be clearly spec
 
 6.	The number of places (also referred to as "seats" or "spots") available on a bounty’s mission team will be determined by the number of tasks of the bounty. 
 
-7.	The creator of a bounty may, but is not required to, specify some minimum KS or CR reputation requirements that an agent must fulfil to be eligible to claim a seat on the bounty panel.  
+7.	The creator of a bounty may, but is not required to, specify some minimum KS or CR reputation requirements that an agent must fulfil to be eligible to claim a seat on the bounty panel. 
 
 8.	An agent who wishes to participate in the pursuit of a bounty signals their intent by claiming
 , a seat on the mission team. As soon as a place is claimed, the place will not be available to other agents for a specific period of time.  
@@ -116,39 +116,45 @@ An agent can publish a request for the review of some claim or information. A re
 
 12.	During the Q&A period the reviewer must respond to any final questions that the review requester may have regarding the review that they had submitted. A reviewer who fails to respond to such questions will lose one CR point.  
 
-13.	How can a review outcome be contested? During the dispute resolution phase (which all bounties, and therefore all RRs, have by default). What are the rules? Can a review be retracted by a reviewer?  
+13.	How can a review outcome be contested? During the dispute resolution phase (which all bounties, and therefore all RRs, have by default). What are the rules? Can a review be retracted by a reviewer? No, a review cannot be retracted by a reviewer; it can only be superseded by a new review.
 
 **Note** It is advisable to restrict the scope of a review request as much as possible. A review with a broad scope will necessarily span several knowledge domains (i.e., reputation domains), which may lead to a large number of reviewers having to collaborate on the review. The more reviewers per request, the more complicated the coordination among them.  
 
 **Note** The trainee seat of the review system is a feature that cannot be “turned off” or prevented by the creator of the review request. It is an essential component of the Independent Impact platform and is tied to our strong belief that knowledge and skills should be shared with those who are willing to learn.
 
-TODO: A seat is defined first by the tasks for which it will be responsible; then the reputation requirements for the seat are derived from those tasks/responsibilities.
-Bounty smart contract has functions for:
+**Note** A seat is defined first by the tasks for which it will be responsible; then the reputation requirements for the seat are derived from those tasks/responsibilities.
+
+A bounty smart contract has functions for:
 - reserveSeat
 - claimSeat
 - appointAdjudicator
 - submitDeliverable
-- requestClarification // Used by a seat holder to request clarification from the bounty owner.
-- submitClarification // Used by the bounty owner to respond to a clarification request by a seat holder.
+- requestClarification <!-- Used by a seat holder to request clarification from the bounty owner. -->
+- submitClarification <!-- Used by the bounty owner to respond to a clarification request by a seat holder. -->
 - dispute
 
 A review bounty's smart contract will additionally have functions for:
-- requestCorrection // Used by a reviewer to request the bounty owner to correct some information node, signalling that they will likely submit an accepting review once the correction has been applied.
-- submitCorrection // Used by the bounty owner to inform a reviewer that they have applied the requested correction, thereby requesting a new review from the reviewer.
+- requestCorrection <!-- Used by a reviewer to request the bounty owner to correct some information node, signalling that they will likely submit an accepting review once the correction has been applied. -->
+- submitCorrection <!-- Used by the bounty owner to inform a reviewer that they have applied the requested correction, thereby requesting a new review from the reviewer. -->
 
-If the dispute endpoint is called, the SC should emit a smart contract event to notify the II platform managers. The latter will then appoint an adjudicator. The appointAdjudicator function should then be called for the adjudicator to register them as the adjudicator for the task. They then submit their review(s) of the disputed field(s) via the SC's submitDeliverable endpoint, and that automatically sets the status of the field back to disputed:false. 
 Every field to be reviewed in a document is a task in itself. Tasks can have sequences - some tasks can be done in any order, but other tasks can only be completed once some others have been completed.
-A task inside a smart contract has these fields:
-- executor
-- adjudicator (will hopefully be empty most of the time)
-- control (e.g., according to which standard should this document field be reviewed)
-- sequence
-- status (e.g., disputed or not)
-- reputationRequirements
-- bountyAmount
-- adjudicationAmount
 
-When the bounty owner calls the dispute endpoint, they should send along the money to be paid to the adjudicator. That amount gets recorded in the adjudicationAmount field of the relevant task. When the adjudicator then calls the submitDeliverable endpoint for the task in question, they get paid adjudicationAmount. If their finding supports the finding of the executor, nothing else needs to change. If their finding supported the argument from the bounty owner, the bounty owner gets paid the bountyAmount and the bountyAmount gets set to 0. The adjudicationAmount should always be equal to the value of the bountyAmount.
+A task inside a bounty smart contract has these fields:
+- taskId
+- seatNumber
+- description
+- reputationRequirements
+- executor
+- adjudicator
+- bountyAmountInHbar
+- adjudicationAmountInHbar
+- afterTaskIds <!-- IDs of tasks that must be completed before this task can be completed. -->
+- beforeTaskIds <!-- IDs of tasks before which this task must be completed. -->
+- deliverableIds
+- openClarificationRequestIds
+- openCorrectionRequestIds <!-- Only for review bounties. -->
+- inDispute 
+
 
 
 
@@ -177,7 +183,8 @@ interface IndependentImpact {
 		string[] afterTaskIds; // IDs of tasks that must be completed before this task can be completed.
 		string[] beforeTaskIds; // IDs of tasks before which this task must be completed.
 		string[] deliverableIds;
-		string[] openCommentIds;
+		string[] openClarificationRequestIds;
+		string[] openCorrectionRequestIds;
 		bool inDispute;
 		
 	}
@@ -333,17 +340,27 @@ Same as Flow 1, then:
 Bounty Service informs bounty owner of new deliverable submitted.
 Bounty owner notices that it is a rejecting review, with a corrective action request.
 Bounty owner applies corrections to information node, as requested.
+TODO: ...
+
+
+Flow 4: (Dispute)
+TODO: ...
+If the dispute endpoint is called, the SC should emit a smart contract event to notify the II platform managers. The latter will then appoint an adjudicator. The appointAdjudicator function should then be called for the adjudicator to register them as the adjudicator for the task. They then submit their review(s) of the disputed field(s) via the SC's submitDeliverable endpoint, and that automatically sets the status of the field back to disputed:false. 
+When the bounty owner calls the dispute endpoint, they should send along the money to be paid to the adjudicator. That amount gets recorded in the adjudicationAmount field of the relevant task. When the adjudicator then calls the submitDeliverable endpoint for the task in question, they get paid adjudicationAmount. If their finding supports the finding of the executor, nothing else needs to change. If their finding supports the argument from the bounty owner, the bounty owner gets paid the bountyAmount and the bountyAmount gets set to 0. The adjudicationAmount should always be equal to the value of the bountyAmount.
+
+
+Flow 5: (Trainee review)
+TODO: ...
 
 
 
 
 
-
-
-
-
-
-
+Answer
+Accept
+Accept with FAR
+Request clarification
+Request correction
 
 
 
