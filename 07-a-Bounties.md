@@ -127,10 +127,16 @@ Bounty smart contract has functions for:
 - reserveSeat
 - claimSeat
 - appointAdjudicator
-- submitWork
+- submitDeliverable
+- requestClarification // Used by a seat holder to request clarification from the bounty owner.
+- submitClarification // Used by the bounty owner to respond to a clarification request by a seat holder.
 - dispute
 
-If the dispute endpoint is called, the SC should emit a smart contract event to notify the II platform managers. The latter will then appoint an adjudicator. The appointAdjudicator function should then be called for the adjudicator to register them as the adjudicator for the task. They then submit their review(s) of the disputed field(s) via the SC's submitWork endpoint, and that automatically sets the status of the field back to disputed:false. 
+A review bounty's smart contract will additionally have functions for:
+- requestCorrection // Used by a reviewer to request the bounty owner to correct some information node, signalling that they will likely submit an accepting review once the correction has been applied.
+- submitCorrection // Used by the bounty owner to inform a reviewer that they have applied the requested correction, thereby requesting a new review from the reviewer.
+
+If the dispute endpoint is called, the SC should emit a smart contract event to notify the II platform managers. The latter will then appoint an adjudicator. The appointAdjudicator function should then be called for the adjudicator to register them as the adjudicator for the task. They then submit their review(s) of the disputed field(s) via the SC's submitDeliverable endpoint, and that automatically sets the status of the field back to disputed:false. 
 Every field to be reviewed in a document is a task in itself. Tasks can have sequences - some tasks can be done in any order, but other tasks can only be completed once some others have been completed.
 A task inside a smart contract has these fields:
 - executor
@@ -142,7 +148,7 @@ A task inside a smart contract has these fields:
 - bountyAmount
 - adjudicationAmount
 
-When the bounty owner calls the dispute endpoint, they should send along the money to be paid to the adjudicator. That amount gets recorded in the adjudicationAmount field of the relevant task. When the adjudicator then calls the submitWork endpoint for the task in question, they get paid adjudicationAmount. If their finding supports the finding of the executor, nothing else needs to change. If their finding supported the argument from the bounty owner, the bounty owner gets paid the bountyAmount and the bountyAmount gets set to 0. The adjudicationAmount should always be equal to the value of the bountyAmount.
+When the bounty owner calls the dispute endpoint, they should send along the money to be paid to the adjudicator. That amount gets recorded in the adjudicationAmount field of the relevant task. When the adjudicator then calls the submitDeliverable endpoint for the task in question, they get paid adjudicationAmount. If their finding supports the finding of the executor, nothing else needs to change. If their finding supported the argument from the bounty owner, the bounty owner gets paid the bountyAmount and the bountyAmount gets set to 0. The adjudicationAmount should always be equal to the value of the bountyAmount.
 
 
 
@@ -171,6 +177,7 @@ interface IndependentImpact {
 		string[] afterTaskIds; // IDs of tasks that must be completed before this task can be completed.
 		string[] beforeTaskIds; // IDs of tasks before which this task must be completed.
 		string[] deliverableIds;
+		string[] openCommentIds;
 		bool inDispute;
 		
 	}
@@ -198,7 +205,7 @@ contract ReviewBounty {
 				"@type": "rdf:Statement",
 				"rdf:subject": { "@id": "hederamainnet:0.0.3566640@1775754551.696235891" },
 				"rdf:predicate": { "@id": "gs1:someprop" },
-				"rdf:object": { "@id": "asdfyUGVSNcsdYkVD" }	
+				"rdf:object": { "@id": "asdfyUGVSNcsdYkVD" } // TODO: The rdf:object can change during the course of the review bounty. How does one accommodate that?
 			}
 		}',
 		reputationRequirements: task1RepReqs,
@@ -228,15 +235,21 @@ What the submission by the validator will look like as a JSON-LD blob, prior to 
 		"@type": "rdf:Statement",
 		"rdf:subject": { "@id": "hederamainnet:0.0.3566640@1775754551.696235891" },
 		"rdf:predicate": { "@id": "gs1:someprop" },
-		"rdf:object": { "@id": "asdfyUGVSNcsdYkVD" }	
+		"rdf:object": { "@id": "asdfyUGVSNcsdYkVD" } 	
 	}
 	"gs1:reviewOutcome": "ACCEPTED",
-	"gs1:reviewOutcomeMotivation": "Lorem ipsum dolor sit amet..."
+	"gs1:reviewOutcomeMotivation": "Lorem ipsum dolor sit amet...",
+	"gs1:forwardActionRequest": {
+		"rdf:subject": { "@id": "gs1:someprop" },
+		"schema:description" "Ut enim ad minim veniam, quis..."
+	}
 }
 ```
 where 
 - gs1:reviewOutcome is an rdfs:subPropertyOf ii:reviewOutcome; and
 - gs1:reviewOutcomeMotivation replaces the rdfs:comment property on ii:Review.
+
+Note: ii:reviewOutcome can only ever be 'ACCEPTED' or 'REJECTED'. A clarification request is a rejection. A corrective action request is a rejection. A forward action request is acceptance. 
 
 
 What the submission by the validator will look like when passed into the smart contract by the Bounty Service:
@@ -261,7 +274,11 @@ where
 		"rdf:object": { "@id": "asdfyUGVSNcsdYkVD" }	
 	}
 	"gs1:reviewOutcome": "ACCEPTED",
-	"gs1:reviewOutcomeMotivation": "Lorem ipsum dolor sit amet..."
+	"gs1:reviewOutcomeMotivation": "Lorem ipsum dolor sit amet...",
+	"gs1:forwardActionRequest": {
+		"rdf:subject": { "@id": "gs1:someprop" },
+		"schema:description" "Ut enim ad minim veniam, quis..."
+	}
 }'```; and
 - constraintSatisfactionSignature is the signature generated when the Bounty Service signed the "deliverable" blob to attest that it satisfied the relevant SHACL constraints.
 
@@ -270,10 +287,10 @@ where
 
 
 Remember: 
-1. You cannot pass JSON to a smart contract or parse it in Solidity. 
+1. You cannot pass raw JSON to a smart contract or parse it in Solidity. 
 2. Smart contracts cannot submit HCS messages by themselves.
 
-Flow:
+Flow 1: (Validator submits an approving review)
 Agent submits review for a field via UI. (UI prevents submission of input that does not satisfy the SHACL constraints for the field in question.)
 UI sends the review input as JSON-LD to the bounty service.
 Bounty Service compiles the Hedera transaction for submitting the input to the smart contract's submitDeliverable function. Arguments passed to the SC function:
@@ -299,6 +316,42 @@ Bounty Service submits request to Semantic Graph Storage Service for adding the 
 Semantic Graph Storage Service confirms successful write.
 Bounty Service informs UI of successful review submission.
 UI informs agent of successful review submission.
+TODO: How and where will the forward action request, if any, be recorded? And how will the project owner be reminded thereof in future?
+
+Flow 2: (Validator requests clarification)
+Validator submits clarification request to UI.
+UI passes clarification request to Bounty Service, providing the bountyId and the taskId as reference.
+Bounty Service posts clarification request as a simple HCS message to the bounty's topic, i.e., without calling any smart contract function.
+Bounty Service informs bounty owner of clarification request.
+Bounty owner submits reply via UI.
+UI passes bounty owner's reply to Bounty Service, providing the bountyId, taskId and clarificationRequestId as reference.
+Bounty Service posts the reply as a simple HCS message to the bounty's topic, i.e., without calling any smart contract function.
+Bounty Service informs validator of reply by bounty owner.
+
+Flow 3: (Bounty owner responds to a rejecting review)
+Same as Flow 1, then:
+Bounty Service informs bounty owner of new deliverable submitted.
+Bounty owner notices that it is a rejecting review, with a corrective action request.
+Bounty owner applies corrections to information node, as requested.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Our Bounty Service should maintain a signing key pair per bounty, so that if a key pair gets compromised, it is only one bounty that got compromised, not all bounties on the platform. That key pair should be created during the smart contract creation process, and the public key of the pair should be stored as a constant inside the smart contract.
 
