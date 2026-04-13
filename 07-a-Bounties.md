@@ -150,20 +150,6 @@ Example: Submit a gs1:ValidationReview for property gs1:someprop of entity heder
 
 What the task description inside the smart contract (Solidity) will look like:
 ```	
-{
-	"taskId: "adf765SDS786cv786xXC",
-	"ii:requiredDeliverableType": { "@id": "gs1:ValidationReview" },
-	"ii:requiredDeliverableSubject": {
-		"@type": "rdf:Statement",
-		"rdf:subject": { "@id": "hederamainnet:0.0.3566640@1775754551.696235891" },
-		"rdf:predicate": { "@id": "gs1:someprop" },
-		"rdf:object": { "@id": "asdfyUGVSNcsdYkVD" }	
-	}
-}
-
-
-
-
 pragma solidity ^0.8.20;
 
 interface IndependentImpact {
@@ -173,17 +159,10 @@ interface IndependentImpact {
         int64 minimumScore;
     }
 
-	struct RdfStatement { 	   // "@type": "rdf:Statement"
-		string subjectId;      // "rdf:subject": { "@id": ... }
-		string predicateId;    // "rdf:predicate": { "@id": ... }
-		string objectId;       // "rdf:object": { "@id": ... }
-	}
-
 	struct BountyTask {
 		string taskId;                         
 		int32 seatNumber;
-		string requiredDeliverableTypeId;          
-		RdfStatement requiredDeliverableSubject; 
+		string description;
 		ReputationRequirement[] reputationRequirements;
 		address executor; // Hedera account ID of the holder of the seat.
 		address adjudicator; // Hedera account ID of the adjudicator (if relevant).
@@ -191,7 +170,9 @@ interface IndependentImpact {
 		uint256 adjudicationAmountInHbar;
 		string[] afterTaskIds; // IDs of tasks that must be completed before this task can be completed.
 		string[] beforeTaskIds; // IDs of tasks before which this task must be completed.
+		string[] deliverableIds;
 		bool inDispute;
+		
 	}
 	
 }
@@ -211,12 +192,15 @@ contract ReviewBounty {
 	IndependentImpact.BountyTask task1 = IndependentImpact.BountyTask({
 		taskId: "adf765SDS786cv786xXC",
 		seatNumber: 1,
-		requiredDeliverableTypeId: "gs1:ValidationReview",
-		requiredDeliverableSubject: rdfStatement({
-			subjectId: "hederamainnet:0.0.3566640@1775754551.696235891",
-			predicateId: "gs1:someprop",
-			objectId: "asdfyUGVSNcsdYkVD"
-		}),
+		description: '{
+			"ii:requiredDeliverableType": { "@id": "gs1:ValidationReview" },
+			"ii:requiredDeliverableSubject": {
+				"@type": "rdf:Statement",
+				"rdf:subject": { "@id": "hederamainnet:0.0.3566640@1775754551.696235891" },
+				"rdf:predicate": { "@id": "gs1:someprop" },
+				"rdf:object": { "@id": "asdfyUGVSNcsdYkVD" }	
+			}
+		}',
 		reputationRequirements: task1RepReqs,
 		bountyAmountInHbar: 2000,
 		inDispute: false
@@ -228,17 +212,13 @@ contract ReviewBounty {
 	});
 
 }
-
-
-
-
 ```
 
 What the submission by the validator will look like in the Hedera transaction:
 ```
 {
 	"@context": { ... },
-	"@id": "gjhgyuGBJFGJHVGF765Fh5F"
+	//"@id": "gjhgyuGBJFGJHVGF765Fh5F" // No, the ID will be the HCS message ID that publishes this JSON blob.
 	"@type": "gs1:ValidationReview",
 	"rdf:subject": {
 		"@type": "rdf:Statement",
@@ -262,25 +242,38 @@ What the submission by the validator will look like when passed into the smart c
 
 
 
-
-
-
-
-
-Remember: You cannot pass JSON to a smart contract or parse it in Solidity. 
+Remember: 
+1. You cannot pass JSON to a smart contract or parse it in Solidity. 
+2. Smart contracts cannot submit HCS messages by themselves.
 
 Flow:
-Agent submits review for a field via UI.
-(UI prevents submission of input that does not satisfy the SHACL constraints for the field in question.)
+Agent submits review for a field via UI. (UI prevents submission of input that does not satisfy the SHACL constraints for the field in question.)
 UI sends the review input as JSON-LD to the bounty service.
-Bounty services passes the input to the standard's input validator.
-Standard's input validator hashes and signs the input if it matches the standard's formal criteria for a review. 
-Standard's input validator returns the input+hash+signature to the bounty service.
-Bounty service submits the result returned by the standard's input validator as a user-signed Hedera transaction for an HCS message publication or HFS upload. IPFS?
-Bounty service receives resulting ID of HCS message or HFS file.
-Bounty submits received Hedera ID, along with the seat and task that the review is related to, to the bounty smart contract's submitDeliverable endpoint - as a user-signed transaction.
-Bounty smart contract checks the transaction's signature against the public key of the seat holder, and checks the hash+signature from the standard's input validator against the public key of the standard's input validator. If checks pass, the transaction is considered as notification of valid deliverable submission by the rightful/correct agent.
+Bounty Service compiles the Hedera transaction for submitting the input to the smart contract's submitDeliverable function. Arguments passed to the SC function:
+	- seatId
+	- taskId
+	- the user's input (a JSON-LD blob) as a text string
+Bounty Service signs the ABI-encoded arguments to attest that they satisfied the SHACL constraints for the type.
+Bounty Service adds its signature as one last ABI-encoded argument to the transaction payload.
+Bounty Service lets the user sign the Hedera transaction and subsequently submits it to the network.
+Smart contract function receives the ABI-encoded arguments.
+Smart contract checks that the Hedera transaction (msg.sender) was submitted by the holder of the seat.
+Smart contract checks that the sender (the holder of the seat) still has enough of all required reputation.
+Smart contract function checks the signature appended by the Bounty Service against the public key that it has in storage for the Bounty Service.
+Smart contract function checks the beforeTaskIds and afterTaskIds constraints.
+Smart contract function generates a deliverableId for the received input.
+Smart contract function adds the deliverableId to the deliverableIds string array for the task in question.
+Smart contract emits an event, including both the received text string (which is really the JSON-LD blob containing the user's review) and the generated deliverableId, to confirm successful receipt of deliverable.
+Smart contract returns deliverableId to Bounty Service.
+Bounty Service adds the deliverableId to the user's original JSON-LD.
+Bounty Service publishes the JSON-LD to HCS.
+Bounty Service adds the HCS message ID to the JSON-LD blob as the ID thereof.
+Bounty Service submits request to Semantic Graph Storage Service for adding the review (JSON-LD blob), identified by its HCS message ID, to the appropriate ledger.
+Semantic Graph Storage Service confirms successful write.
+Bounty Service informs UI of successful review submission.
+UI informs agent of successful review submission.
 
-If it will be too much of a technical hurdle to the standards bodies to maintain input validators, we'll just let the bounty service itself do the input validation and signing. 
-An input validator (whether from the standard or just our own II Bounty Service) should maintain a validation key pair per bounty, so that if a key pair gets compromised, it is only one bounty that got compromised, not all bounties on the platform. That key pair should be created during the smart contract creation process, and the public key of the pair should be stored as a constant inside the smart contract.
+Our Bounty Service should maintain a signing key pair per bounty, so that if a key pair gets compromised, it is only one bounty that got compromised, not all bounties on the platform. That key pair should be created during the smart contract creation process, and the public key of the pair should be stored as a constant inside the smart contract.
 
+TODO: What if the content of the review is too much to fit into a single HCS message?
+TODO: NB: What happens if an agent holds a seat on a bounty, but then their reputation scores drop below the seat's rep reqs while they are still holding it?
