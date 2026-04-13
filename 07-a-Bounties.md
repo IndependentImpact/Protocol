@@ -213,12 +213,16 @@ contract ReviewBounty {
 
 }
 ```
+where 
+- gs1:ValidationReview will be a class defined by Gold Standard as an rdfs:subClassOf ii:Review; and
+- "adf765SDS786cv786xXC", the taskId, will be created by the publisher of the smart contract as a hash of the blob passed to the description field ('{ii:requiredDelivera...}').
 
-What the submission by the validator will look like in the Hedera transaction:
+
+What the submission by the validator will look like as a JSON-LD blob, prior to publication:
 ```
 {
 	"@context": { ... },
-	//"@id": "gjhgyuGBJFGJHVGF765Fh5F" // No, the ID will be the HCS message ID that publishes this JSON blob.
+	//Note: No @id value yet, because the ID will be the HCS message ID that publishes this JSON blob.
 	"@type": "gs1:ValidationReview",
 	"rdf:subject": {
 		"@type": "rdf:Statement",
@@ -231,14 +235,37 @@ What the submission by the validator will look like in the Hedera transaction:
 }
 ```
 where 
-- gs1:ValidationReview will be a class defined by Gold Standard as an rdfs:subClassOf ii:Review; 
 - gs1:reviewOutcome is an rdfs:subPropertyOf ii:reviewOutcome; and
 - gs1:reviewOutcomeMotivation replaces the rdfs:comment property on ii:Review.
 
+
 What the submission by the validator will look like when passed into the smart contract by the Bounty Service:
 ```
-//TODO.
+params := hiero.NewContractFunctionParameters().
+		AddString(taskId).
+		AddUint32(seatNumber).
+		AddString(deliverable).
+		AddString(constraintSatisfactionSignature)
 ```
+where
+- taskId = "adf765SDS786cv786xXC";
+- seatId = 1; 
+- deliverable = ```'{
+	"@context": { ... },
+	//Note: No @id value yet, because the ID will be the HCS message ID that publishes this JSON blob.
+	"@type": "gs1:ValidationReview",
+	"rdf:subject": {
+		"@type": "rdf:Statement",
+		"rdf:subject": { "@id": "hederamainnet:0.0.3566640@1775754551.696235891" },
+		"rdf:predicate": { "@id": "gs1:someprop" },
+		"rdf:object": { "@id": "asdfyUGVSNcsdYkVD" }	
+	}
+	"gs1:reviewOutcome": "ACCEPTED",
+	"gs1:reviewOutcomeMotivation": "Lorem ipsum dolor sit amet..."
+}'```; and
+- constraintSatisfactionSignature is the signature generated when the Bounty Service signed the "deliverable" blob to attest that it satisfied the relevant SHACL constraints.
+
+
 
 
 
