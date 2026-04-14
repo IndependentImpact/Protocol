@@ -76,7 +76,7 @@ a.	Republish the bounty with new dates for the different phases, and possibly al
 b.	Continue with the bounty, allowing the existing mission team to move into the mission phase of the bounty period. Bounty portions for unfilled seats will be returned  to the creator of the bounty at the end of the bounty period.
 c.	Cancel the bounty. In this case, neither the creator of the bounty nor any of the mission team members will lose any CR, and the full bounty will be returned to the account of the creator.  
 
-22.	Describe what happens during the dispute resolution phase. The creator of the bounty can request minor changes or corrections to work submitted by the mission team, and the mission team will be obliged to respond to those requests before the end of the dispute resolution phase. If the creator of the bounty has serious concerns about or objections to the work of the mission team, they can open a formal dispute that will be adjudicated by … The dispute resolution phase is also the period during which team members can lodge complaints with the bounty creator about each other (e.g., if the team feels that member X did not contribute their fair share, then they can lodge a complaint against member X with the bounty creator who will then…).  
+22.	Describe what happens during the dispute resolution phase. The creator of the bounty can request minor changes or corrections to work submitted by the mission team, and the mission team will be obliged to respond to those requests before the end of the dispute resolution phase. If the creator of the bounty has serious concerns about or objections to the work of the mission team, they can open a formal dispute that will be adjudicated by <TODO>. The dispute resolution phase is also the period during which team members can lodge complaints with the bounty creator about each other (e.g., if the team feels that member X did not contribute their fair share, then they can lodge a complaint against member X with the bounty creator who will then…).  
 
 23.	The bounty will be paid out to the mission team at the end of the dispute resolution phase of the bounty period.  
 
@@ -155,8 +155,7 @@ A task inside a bounty smart contract has these fields:
 - afterTaskIds <!-- IDs of tasks that must be completed before this task can be completed. -->
 - beforeTaskIds <!-- IDs of tasks before which this task must be completed. -->
 - deliverableIds
-- openClarificationRequestIds
-- openCorrectionRequestIds <!-- Only for review bounties. -->
+- actions <!-- A map of request-response IDs for clarification requests and corrective action requests. -->
 - inDispute 
 
 
@@ -169,6 +168,17 @@ What the task description inside the smart contract (Solidity) will look like:
 pragma solidity ^0.8.20;
 
 interface IndependentImpact {
+
+	enum ActionRequester {
+		SEAT_HOLDER
+		BOUNTY_OWNER
+	}
+	
+	struct Action { // To be used for representing a clarification request or a corrective action request.
+		ActionRequester requestedBy; 
+		int32 requestId;
+		int32 responseId;
+	}
 
     struct ReputationRequirement {
         string domain;
@@ -186,9 +196,8 @@ interface IndependentImpact {
 		uint256 adjudicationAmountInHbar;
 		string[] afterTaskIds; // IDs of tasks that must be completed before this task can be completed.
 		string[] beforeTaskIds; // IDs of tasks before which this task must be completed.
-		string[] deliverableIds;
-		string[] openClarificationRequestIds;
-		string[] openCorrectionRequestIds;
+		string[] receivedDeliverableIds;
+		Action[] actions;
 		bool inDispute;
 		
 	}
@@ -199,7 +208,7 @@ contract ReviewBounty {
 
 	IndependentImpact.ReputationRequirement[] memory task1RepReqs = new IndependentImpact.ReputationRequirement[](2);
 	task1RepReqs[0] = IndependentImpact.ReputationRequirement({
-		domain: "agroforestry",
+		domain: "agroforestry", // TODO: The domain should actually really be a tokenId, because reputation is (fungible, non-transferrable) tokens.
 		minimumScore: 12
 	});
 	task1RepReqs[1] = IndependentImpact.ReputationRequirement({
@@ -313,11 +322,11 @@ Bounty Service adds its signature as one last ABI-encoded argument to the transa
 Bounty Service lets the user sign the Hedera transaction and subsequently submits it to the network.
 Smart contract function receives the ABI-encoded arguments.
 Smart contract checks that the Hedera transaction (msg.sender) was submitted by the holder of the seat.
-Smart contract checks that the sender (the holder of the seat) still has enough of all required reputation.
+Smart contract checks that the sender (the holder of the seat) still has enough of all required reputation (reputation are account balances).
 Smart contract function checks the signature appended by the Bounty Service against the public key that it has in storage for the Bounty Service.
 Smart contract function checks the beforeTaskIds and afterTaskIds constraints.
 Smart contract function generates a deliverableId for the received input.
-Smart contract function adds the deliverableId to the deliverableIds string array for the task in question.
+Smart contract function adds the deliverableId to the receivedDeliverableIds string array for the task in question.
 Smart contract emits an event, including both the received text string (which is really the JSON-LD blob containing the user's review) and the generated deliverableId, to confirm successful receipt of deliverable.
 Smart contract returns deliverableId to Bounty Service.
 Bounty Service adds the deliverableId to the user's original JSON-LD.
@@ -328,16 +337,6 @@ Semantic Graph Storage Service confirms successful write.
 Bounty Service informs UI of successful review submission.
 UI informs agent of successful review submission.
 TODO: How and where will the forward action request, if any, be recorded? And how will the project owner be reminded thereof in future?
-
-Flow 2: (Validator requests clarification)
-Validator submits clarification request to UI.
-UI passes clarification request to Bounty Service, providing the bountyId and the taskId as reference.
-Bounty Service posts clarification request as a simple HCS message to the bounty's topic, i.e., without calling any smart contract function.
-Bounty Service informs bounty owner of clarification request.
-Bounty owner submits reply via UI.
-UI passes bounty owner's reply to Bounty Service, providing the bountyId, taskId and clarificationRequestId as reference.
-Bounty Service posts the reply as a simple HCS message to the bounty's topic, i.e., without calling any smart contract function.
-Bounty Service informs validator of reply by bounty owner.
 
 Flow 3: (Bounty owner responds to a rejecting review)
 Same as Flow 1, then:
@@ -378,3 +377,5 @@ Our Bounty Service should maintain a signing key pair per bounty, so that if a k
 
 TODO: What if the content of the review is too much to fit into a single HCS message?
 TODO: NB: What happens if an agent holds a seat on a bounty, but then their reputation scores drop below the seat's rep reqs while they are still holding it?
+
+Review reviews/clarificationRequests/correctiveActionRequests for rep. So if you submit an unnecessary amount of CLRs or CARs, you will eventually be reviewed and caught out.
