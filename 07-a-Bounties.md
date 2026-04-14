@@ -131,15 +131,11 @@ A bounty smart contract has functions for:
 - cancelSeatClaim
 - transferSeat
 - submitDeliverable
-- requestClarification <!-- Used by a seat holder to request clarification from the bounty owner. -->
-- submitClarification <!-- Used by the bounty owner to respond to a clarification request by a seat holder. -->
+- requestAction <!-- Used by a seat holder to request a clarification or a correction from the bounty owner. -->
+- respondToActionRequest <!-- Used by the bounty owner to respond to a clarification or corrective action request by a seat holder. -->
 - dispute
 - appointAdjudicator
 - getBountyInformation
-
-A review bounty's smart contract will additionally have functions for:
-- requestCorrection <!-- Used by a reviewer to request the bounty owner to correct some information node, signalling that they will likely submit an accepting review once the correction has been applied. -->
-- submitCorrection <!-- Used by the bounty owner to inform a reviewer that they have applied the requested correction, thereby requesting a new review from the reviewer. -->
 
 Every field to be reviewed in a document is a task in itself. Tasks can have sequences - some tasks can be done in any order, but other tasks can only be completed once some others have been completed.
 
@@ -168,14 +164,8 @@ What the task description inside the smart contract (Solidity) will look like:
 pragma solidity ^0.8.20;
 
 interface IndependentImpact {
-
-	enum ActionRequester {
-		SEAT_HOLDER
-		BOUNTY_OWNER
-	}
 	
 	struct Action { // To be used for representing a clarification request or a corrective action request.
-		ActionRequester requestedBy; 
 		int32 requestId;
 		int32 responseId;
 	}
