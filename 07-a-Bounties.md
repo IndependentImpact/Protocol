@@ -141,18 +141,17 @@ Every field to be reviewed in a document is a task in itself. Tasks can have seq
 
 A task inside a bounty smart contract has these fields:
 - taskId
-- seatNumber
 - description
 - reputationRequirements
-- executor
-- adjudicator
 - bountyAmountInHbar
-- adjudicationAmountInHbar
 - afterTaskIds <!-- IDs of tasks that must be completed before this task can be completed. -->
 - beforeTaskIds <!-- IDs of tasks before which this task must be completed. -->
 - deliverableIds
 - actions <!-- A map of request-response IDs for clarification requests and corrective action requests. -->
-- inDispute 
+- disputes 
+
+
+Note: A bounty task can only ever require one deliverable, but different versions of that deliverable may be submitted by the seat holder during the course of the bounty, and therefore we have a deliverableIds array to keep record of all the different versions that have been submitted.
 
 
 
@@ -170,6 +169,21 @@ interface IndependentImpact {
 		int32 responseId;
 	}
 
+	struct Dispute {
+		int32 disputeId;
+		address adjudicator; // Hedera account ID of the adjudicator (which will be a smart contract itself).
+	}
+
+	struct SeatReservation {
+		address reservedFor;
+		uint256 reservedUntil; // in seconds since Unix epoch
+	}
+
+	struct SeatExclusion {
+		address excludedFor;
+		uint256 excludedUntil;
+	}
+
     struct ReputationRequirement {
         string domain;
         int64 minimumScore;
@@ -177,21 +191,22 @@ interface IndependentImpact {
 
 	struct BountyTask {
 		string taskId;                         
-		int32 seatNumber;
 		string description;
 		ReputationRequirement[] reputationRequirements;
-		address executor; // Hedera account ID of the holder of the seat.
-		address adjudicator; // Hedera account ID of the adjudicator (if relevant).
 		uint256 bountyAmountInHbar;
-		uint256 adjudicationAmountInHbar;
 		string[] afterTaskIds; // IDs of tasks that must be completed before this task can be completed.
 		string[] beforeTaskIds; // IDs of tasks before which this task must be completed.
 		string[] receivedDeliverableIds;
 		Action[] actions;
-		bool inDispute;
-		
+		Dispute[] disputes;
 	}
 	
+	struct Seat {
+		int32 seatNumber;
+		string[] taskIds;
+		SeatReservation[] reservations;
+		address holder;
+	}
 }
 
 contract ReviewBounty {
@@ -208,7 +223,6 @@ contract ReviewBounty {
 
 	IndependentImpact.BountyTask task1 = IndependentImpact.BountyTask({
 		taskId: "adf765SDS786cv786xXC",
-		seatNumber: 1,
 		description: '{
 			"ii:requiredDeliverableType": { "@id": "gs1:ValidationReview" },
 			"ii:requiredDeliverableSubject": {
@@ -220,12 +234,18 @@ contract ReviewBounty {
 		}',
 		reputationRequirements: task1RepReqs,
 		bountyAmountInHbar: 2000,
-		inDispute: false
-		// afterTaskIds; // Not relevant in this example.
-		// beforeTaskIds; // Not relevant in this example.
-		// executor; // Will be set via a function call.
-		// adjudicator; // Will be set via a function call.
-		// adjudicationAmountInHbar; // Will be set via a function call, if necessary.
+		// afterTaskIds, // Not relevant in this example.
+		// beforeTaskIds, // Not relevant in this example.
+		// actions, // Will be populated via function calls, as necessary.
+		// disputes // Will be populated via function calls, as necessary.
+	});
+	
+	string[] memory seat1tasks = new string[](1);
+	seat1tasks[0] = task1.taskId;
+	
+	Seat[] memory seats = new Seat[](1);
+	seats[0] = Seat({
+		taskIds = seat1tasks
 	});
 
 }
@@ -300,52 +320,7 @@ Remember:
 1. You cannot pass raw JSON to a smart contract or parse it in Solidity. 
 2. Smart contracts cannot submit HCS messages by themselves.
 
-Flow 1: (Validator submits an approving review)
-Agent submits review for a field via UI. (UI prevents submission of input that does not satisfy the SHACL constraints for the field in question.)
-UI sends the review input as JSON-LD to the bounty service.
-Bounty Service compiles the Hedera transaction for submitting the input to the smart contract's submitDeliverable function. Arguments passed to the SC function:
-	- seatId
-	- taskId
-	- the user's input (a JSON-LD blob) as a text string
-Bounty Service signs the ABI-encoded arguments to attest that they satisfied the SHACL constraints for the type.
-Bounty Service adds its signature as one last ABI-encoded argument to the transaction payload.
-Bounty Service lets the user sign the Hedera transaction and subsequently submits it to the network.
-Smart contract function receives the ABI-encoded arguments.
-Smart contract checks that the Hedera transaction (msg.sender) was submitted by the holder of the seat.
-Smart contract checks that the sender (the holder of the seat) still has enough of all required reputation (reputation are account balances).
-Smart contract function checks the signature appended by the Bounty Service against the public key that it has in storage for the Bounty Service.
-Smart contract function checks the beforeTaskIds and afterTaskIds constraints.
-Smart contract function generates a deliverableId for the received input.
-Smart contract function adds the deliverableId to the receivedDeliverableIds string array for the task in question.
-Smart contract emits an event, including both the received text string (which is really the JSON-LD blob containing the user's review) and the generated deliverableId, to confirm successful receipt of deliverable.
-Smart contract returns deliverableId to Bounty Service.
-Bounty Service adds the deliverableId to the user's original JSON-LD.
-Bounty Service publishes the JSON-LD to HCS.
-Bounty Service adds the HCS message ID to the JSON-LD blob as the ID thereof.
-Bounty Service submits request to Semantic Graph Storage Service for adding the review (JSON-LD blob), identified by its HCS message ID, to the appropriate ledger.
-Semantic Graph Storage Service confirms successful write.
-Bounty Service informs UI of successful review submission.
-UI informs agent of successful review submission.
 TODO: How and where will the forward action request, if any, be recorded? And how will the project owner be reminded thereof in future?
-
-Flow 3: (Bounty owner responds to a rejecting review)
-Same as Flow 1, then:
-Bounty Service informs bounty owner of new deliverable submitted.
-Bounty owner notices that it is a rejecting review, with a corrective action request.
-Bounty owner applies corrections to information node, as requested.
-TODO: ...
-
-
-Flow 4: (Dispute)
-TODO: ...
-If the dispute endpoint is called, the SC should emit a smart contract event to notify the II platform managers. The latter will then appoint an adjudicator. The appointAdjudicator function should then be called for the adjudicator to register them as the adjudicator for the task. They then submit their review(s) of the disputed field(s) via the SC's submitDeliverable endpoint, and that automatically sets the status of the field back to disputed:false. 
-When the bounty owner calls the dispute endpoint, they should send along the money to be paid to the adjudicator. That amount gets recorded in the adjudicationAmount field of the relevant task. When the adjudicator then calls the submitDeliverable endpoint for the task in question, they get paid adjudicationAmount. If their finding supports the finding of the executor, nothing else needs to change. If their finding supports the argument from the bounty owner, the bounty owner gets paid the bountyAmount and the bountyAmount gets set to 0. The adjudicationAmount should always be equal to the value of the bountyAmount.
-
-
-Flow 5: (Trainee review)
-TODO: ...
-
-
 
 
 
@@ -356,16 +331,9 @@ Request clarification
 Request correction
 
 
-
-
-
-
-
-
-
-Our Bounty Service should maintain a signing key pair per bounty, so that if a key pair gets compromised, it is only one bounty that got compromised, not all bounties on the platform. That key pair should be created during the smart contract creation process, and the public key of the pair should be stored as a constant inside the smart contract.
-
 TODO: What if the content of the review is too much to fit into a single HCS message?
 TODO: NB: What happens if an agent holds a seat on a bounty, but then their reputation scores drop below the seat's rep reqs while they are still holding it?
 
 Review reviews/clarificationRequests/correctiveActionRequests for rep. So if you submit an unnecessary amount of CLRs or CARs, you will eventually be reviewed and caught out.
+
+TODO: We cannot use HCS message IDs or Hedera topic IDs to identify things other than HCS messages or Hedera topics themselves. BUT: We can use the hashes of those IDs as the IDs for the artefacts published or represented by those HCS messages and Hedera topics.
