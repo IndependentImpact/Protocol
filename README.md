@@ -70,3 +70,19 @@ pandoc --defaults pandoc-defaults.yaml -o protocol.docx
 
 > **Note:** Output files (`.html`, `.pdf`, `.docx`) are excluded from version control via `.gitignore`.
 
+### 4. Compile a Publication-Ready PDF
+
+For a formal whitepaper suitable for publication, use the dedicated `pandoc-pdf-defaults.yaml` defaults file. This produces a PDF with a title page, a table of contents, and numbered sections.
+
+**Additional requirement:** a LaTeX distribution must be installed (e.g. [TeX Live](https://www.tug.org/texlive/) on Linux/macOS or [MiKTeX](https://miktex.org/) on Windows).
+
+```bash
+pandoc --defaults pandoc-pdf-defaults.yaml -o protocol.pdf
+```
+
+The resulting `protocol.pdf` includes:
+
+- **Title page** — document title, subtitle, author, and date drawn from the file's metadata.
+- **Table of contents** — auto-generated from headings, up to three levels deep.
+- **Numbered sections** — all headings are numbered automatically (e.g. 1, 1.1, 1.1.1).
+
