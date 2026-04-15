@@ -8,7 +8,7 @@ The specification is split across numbered Markdown files, each covering a disti
 
 | File | Section |
 |------|---------|
-| `00-Protocol.md` | Master document (assembles all sections via `!INCLUDE` directives) |
+| `00-Protocol.md` | Master document title (compiled together with all sections by pandoc) |
 | `01-a-Introduction.md` | Introduction & platform overview |
 | `02-a-OverviewOfConceptsAndTerminology.md` | Core concepts and terminology |
 | `02-b-Bibliography.md` | Inline bibliography references |
@@ -25,35 +25,48 @@ The specification is split across numbered Markdown files, each covering a disti
 
 ## Compiling the Master Document
 
-`00-Protocol.md` uses `!INCLUDE` directives to pull in every section. To compile these into a single Markdown file you need [MarkdownPP](https://github.com/jreese/markdown-pp) (Markdown Pre-Processor).
+The repository includes a `pandoc-defaults.yaml` file that lists every section in order.
+Compilation requires [Pandoc](https://pandoc.org/) — no other tools are needed.
 
-### 1. Install MarkdownPP
+### 1. Install Pandoc
+
+Follow the [official installation guide](https://pandoc.org/installing.html) for your operating system, or use a package manager:
 
 ```bash
-pip install MarkdownPP
+# macOS
+brew install pandoc
+
+# Debian / Ubuntu
+sudo apt install pandoc
+
+# Windows (winget)
+winget install --id JohnMacFarlane.Pandoc
 ```
 
-### 2. Compile
+### 2. Compile to Markdown
 
 Run the following command from the root of the repository:
 
 ```bash
-markdown-pp 00-Protocol.md -o compiled-protocol.md
+pandoc --defaults pandoc-defaults.yaml -o compiled-protocol.md
 ```
 
 This produces `compiled-protocol.md` — a single Markdown file containing the full protocol.
 
-### 3. (Optional) Convert to PDF or HTML
+### 3. Compile to Other Formats
 
-Once you have `compiled-protocol.md` you can convert it to other formats with [Pandoc](https://pandoc.org/):
+Pandoc can produce the final document directly in other formats without an intermediate Markdown step:
 
 ```bash
 # HTML
-pandoc compiled-protocol.md -o protocol.html
+pandoc --defaults pandoc-defaults.yaml -o protocol.html
 
 # PDF (requires a LaTeX distribution such as TeX Live or MiKTeX)
-pandoc compiled-protocol.md -o protocol.pdf
+pandoc --defaults pandoc-defaults.yaml -o protocol.pdf
+
+# DOCX
+pandoc --defaults pandoc-defaults.yaml -o protocol.docx
 ```
 
-> **Note:** PDF and HTML output files are excluded from version control via `.gitignore`.
+> **Note:** Output files (`.html`, `.pdf`, `.docx`) are excluded from version control via `.gitignore`.
 
