@@ -190,6 +190,12 @@ interface IndependentImpact {
 		uint256	amount; 
 		uint256 scaler; // Must be = 1 if tokenId refers to a reputation token. (Solidity cannot receive floats, so you need to provide an integer value (amount) and an integer scaler by which to divide it in order to get to the floating point value you wanted.)
 	}
+	
+	struct DeliverableSubmission {
+		string submissionId;
+		address submittedBy;
+		string status; // ACCEPTED/DISPUTED/REJECTED.
+	}
 
 	struct BountyTask {
 		string taskId;                         
@@ -358,3 +364,24 @@ TODO: NB: What happens if an agent holds a seat on a bounty, but then their repu
 TODO: Review reviews/clarificationRequests/correctiveActionRequests for rep. So if you submit an unnecessary amount of CLRs or CARs, you will eventually be reviewed and caught out.
 
 TODO: We cannot use HCS message IDs or Hedera topic IDs to identify things other than HCS messages or Hedera topics themselves. BUT: We can use the hashes of those IDs as the IDs for the artefacts published or represented by those HCS messages and Hedera topics.
+
+
+
+Reviewer submits review. Reviews are final, so the reviewer can never submit a new review for the specific task, unless their original review gets rejected during a dispute.
+Bounty owner opens a dispute for the reviewer's review.
+Adjudicator submits an adjudication (NOT just another review; an adjudication is an entirely different type of deliverable).
+Adjudication supports bounty owner's argument.
+Original reviewer's review is rejected.
+Is the original reviewer now required to submit a new review in line with the adjudication? They are given the opportunity to do so, but are not required to do so, seeing that they will in any case not be paid for the new review. If they don't submit a new one, however, they will lose some Conduct Reputation points (in addition to the K&S Reputation points that they lost when the adjudicator rejected their review).
+
+Reviewer submits review. Reviews are final, so the reviewer can never submit a new review for the specific task, unless their original review gets rejected during a dispute.
+Bounty owner opens a dispute for the reviewer's review.
+Adjudicator submits an adjudication (NOT just another review; an adjudication is an entirely different type of deliverable).
+Adjudication supports reviewer's argument.
+Original reviewer's review is accepted.
+
+Notes:
+1. An adjudicator never submits a review. An adjudicator submits an adjudication decision.
+2. Also, a deliverable (e.g., a review) is final. A seat holder can only submit one deliverable per task - they cannot submit multiple ones during the course of the bounty. Only if their deliverable is disputed and subsequently rejected should they be given the opportunity to submit a new deliverable for the task, but they won't be paid then for that deliverable.
+3. An adjudicator must have at least the same amount of K&S rep than the defendent in the relevant domains, plus they must have some adjudication rep.
+4. TODO: Rewrite the texts where we said the submitDeliverable function of a dispute smart contract relays its input unchanged to the original contract. It should not relay its input; it should just communicate its decision to the original contract.
