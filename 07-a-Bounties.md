@@ -143,18 +143,14 @@ A task inside a bounty smart contract has these fields:
 - taskId
 - description
 - reputationRequirements
-- bountyAmountInHbar
+- rewards
 - afterTaskIds <!-- IDs of tasks that must be completed before this task can be completed. -->
 - beforeTaskIds <!-- IDs of tasks before which this task must be completed. -->
 - deliverableIds
 - actions <!-- A map of request-response IDs for clarification requests and corrective action requests. -->
 - disputes 
 
-
-Note: A bounty task can only ever require one deliverable, but different versions of that deliverable may be submitted by the seat holder during the course of the bounty, and therefore we have a deliverableIds array to keep record of all the different versions that have been submitted.
-
-
-
+Note: A bounty task can only ever require one deliverable, but different versions of that deliverable may be submitted by the seat holder (and the adjudicator, if appointed) during the course of the bounty, and therefore we have a deliverableIds array to keep record of all the different versions that have been submitted.
 
 Example: Submit a gs1:ValidationReview for property gs1:someprop of entity hederamainnet:0.0.3566640@1775754551.696235891 with current value {"@id": "asdfyUGVSNcsdYkVD"}.
 
@@ -188,12 +184,18 @@ interface IndependentImpact {
         string domain;
         int64 minimumScore;
     }
+	
+	struct Reward {
+		string tokenId; // Can be "hbar" or the Hedera ID of a reputation token.
+		uint256	amount; 
+		uint256 scaler; // Must be = 1 if tokenId refers to a reputation token. (Solidity cannot receive floats, so you need to provide an integer value (amount) and an integer scaler by which to divide it in order to get to the floating point value you wanted.)
+	}
 
 	struct BountyTask {
 		string taskId;                         
 		string description;
 		ReputationRequirement[] reputationRequirements;
-		uint256 bountyAmountInHbar;
+		Reward[] rewards;
 		string[] afterTaskIds; // IDs of tasks that must be completed before this task can be completed.
 		string[] beforeTaskIds; // IDs of tasks before which this task must be completed.
 		string[] receivedDeliverableIds;
@@ -205,11 +207,29 @@ interface IndependentImpact {
 		int32 seatNumber;
 		string[] taskIds;
 		SeatReservation[] reservations;
+		SeatExclusion[] exclusions;
 		address holder;
 	}
 }
 
 contract ReviewBounty {
+
+	Reward[] task1Rewards = new IndependentImpact.Reward[](3);
+	task1Rewards[0] = new IndependentImpact.Reward({
+		tokenId: "hbar",
+		amount: 2000,
+		scaler: 1
+	});
+	task1Rewards[1] = new IndependentImpact.Reward({
+		tokenId: "0.0.1043429", // Or whatever the ID of the Conduct Reputation token is.
+		amount: 3,
+		scaler: 1
+	});
+	task1Rewards[2] = new IndependentImpact.Reward({
+		tokenId: "0.0.1023221", // Or whatever the ID of the Agroforestry K&S Reputation token is.
+		amount: 2,
+		scaler: 1
+	});
 
 	IndependentImpact.ReputationRequirement[] memory task1RepReqs = new IndependentImpact.ReputationRequirement[](2);
 	task1RepReqs[0] = IndependentImpact.ReputationRequirement({
@@ -233,7 +253,7 @@ contract ReviewBounty {
 			}
 		}',
 		reputationRequirements: task1RepReqs,
-		bountyAmountInHbar: 2000,
+		rewards: task1Rewards,
 		// afterTaskIds, // Not relevant in this example.
 		// beforeTaskIds, // Not relevant in this example.
 		// actions, // Will be populated via function calls, as necessary.
@@ -243,9 +263,10 @@ contract ReviewBounty {
 	string[] memory seat1tasks = new string[](1);
 	seat1tasks[0] = task1.taskId;
 	
-	Seat[] memory seats = new Seat[](1);
+	Seat[] memory seats = new IndependentImpact.Seat[](1);
 	seats[0] = Seat({
-		taskIds = seat1tasks
+		seatNumber: 1,
+		taskIds: seat1tasks
 	});
 
 }
@@ -334,6 +355,6 @@ Request correction
 TODO: What if the content of the review is too much to fit into a single HCS message?
 TODO: NB: What happens if an agent holds a seat on a bounty, but then their reputation scores drop below the seat's rep reqs while they are still holding it?
 
-Review reviews/clarificationRequests/correctiveActionRequests for rep. So if you submit an unnecessary amount of CLRs or CARs, you will eventually be reviewed and caught out.
+TODO: Review reviews/clarificationRequests/correctiveActionRequests for rep. So if you submit an unnecessary amount of CLRs or CARs, you will eventually be reviewed and caught out.
 
 TODO: We cannot use HCS message IDs or Hedera topic IDs to identify things other than HCS messages or Hedera topics themselves. BUT: We can use the hashes of those IDs as the IDs for the artefacts published or represented by those HCS messages and Hedera topics.
