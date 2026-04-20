@@ -126,3 +126,4 @@ An agent can publish a request for the review of some claim or information. A re
 
 **Note** A seat is defined first by the tasks for which it will be responsible; the reputation requirements for the seat are subsequently derived from those tasks/responsibilities.
 
+    // TODO: NB: What happens if an agent holds a seat on a bounty, but then their reputation scores drop below the seat's rep reqs while they are still holding it?
