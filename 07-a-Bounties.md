@@ -107,7 +107,6 @@ An agent can publish a request for the review of some claim or information. A re
 7.	An agent cannot review information contributed by or related to them or their activities.  
 
 8.	Each reviewer who holds a seat on a review request’s panel must submit a review before the review deadline specified by the creator of the review request. Where multiple reviewers are present on a panel, the reviewers are encouraged to communicate with each other during the review period, in the interest of complementing each other’s experience, knowledge and skills. Each reviewer will, however, still have to submit their own review to the review request before the review deadline.  
-
 9.	Due compensation will be paid for an eligible review regardless of the outcome of the review.  
 
 10.	Every review request provides the opportunity to one “ineligible” agent (i.e., an agent with not enough relevant reputation points yet to submit an eligible review) to submit a “training” review. The trainee’s review must, during the Q&A phase at the end of the review period, be reviewed and graded by every eligible reviewer on the review panel. The grade assigned by an eligible reviewer will determine the amount of reputation points (up to a maximum of one) that the trainee reviewer will gain in the reputation domain of each eligible reviewer who had held a seat on the panel of the review request in question.  
@@ -126,4 +125,4 @@ An agent can publish a request for the review of some claim or information. A re
 
 **Note** A seat is defined first by the tasks for which it will be responsible; the reputation requirements for the seat are subsequently derived from those tasks/responsibilities.
 
-    // TODO: NB: What happens if an agent holds a seat on a bounty, but then their reputation scores drop below the seat's rep reqs while they are still holding it?
+TODO: NB: What happens if an agent holds a seat on a bounty, but then their reputation scores drop below the seat's rep reqs while they are still holding it?
