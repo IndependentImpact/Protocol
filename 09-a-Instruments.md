@@ -132,3 +132,133 @@ What environmental factors affect it?
 How is it calibrated and validated?
 What level of precision/accuracy is actually needed? (often overlooked)
 What failure modes exist—and how detectable are they?
+
+---
+
+Assessing a questionnaire as a measurement instrument:
+
+Accuracy → Construct validity (are you measuring the right thing?)
+Do the items actually capture the underlying concept (e.g., “health”, “well-being”, “risk awareness”)?
+Evidence:
+Content validity (expert review, coverage of the construct)
+Convergent validity (correlates with other measures of the same construct)
+Discriminant validity (does not correlate with unrelated constructs)
+
+👉 Red flags: vague wording, items that tap multiple concepts (“double-barrelled”), or heavy dependence on respondents’ interpretation.
+
+Precision / Noise → Reliability (are responses consistent?)
+If the same person answered again under similar conditions, would you get similar results?
+
+Common checks:
+
+Internal consistency (e.g., Cronbach’s α / ω)
+Test–retest reliability (stability over time)
+Inter-rater reliability (if ratings involve observers)
+
+👉 Red flags: items that don’t “hang together”, large random swings, ambiguous wording.
+
+Resolution → Scale granularity
+Can the questionnaire distinguish meaningful differences between respondents?
+
+Design levers:
+
+Number of response options (e.g., 5–7 point Likert often works well)
+Clear anchors (what does “4” vs “5” mean?)
+
+👉 Red flags: too coarse (can’t detect change) or too fine (respondents can’t reliably differentiate).
+
+Sensitivity → Responsiveness to change
+Can it detect real changes when the underlying condition changes?
+
+How to test:
+
+Pre/post intervention studies
+Known-groups comparisons (e.g., healthy vs. ill populations)
+
+👉 Red flags: scores don’t move when reality clearly does.
+
+Range → Floor & ceiling effects
+Does the scale cover the full spectrum of the construct?
+
+Check:
+
+Are many respondents clustered at the top or bottom?
+
+👉 Red flags: everyone scores “high” → you can’t detect improvement.
+
+Selectivity → Bias & confounding control
+Are responses influenced by irrelevant factors?
+
+Common biases:
+
+Social desirability (“I answer what looks good”)
+Acquiescence (tendency to agree)
+Question order effects
+Cultural/linguistic interpretation
+
+Mitigations:
+
+Reverse-coded items
+Neutral wording
+Randomization of item order
+Stability / Drift → Temporal stability of the instrument
+Does the questionnaire behave the same over time?
+
+Concerns:
+
+Changing interpretations of items
+Cultural drift
+Learning effects (respondents “figure out” the test)
+
+👉 Especially relevant for long-term monitoring.
+
+Calibration → Anchoring to external standards
+Can you interpret scores meaningfully?
+
+Examples:
+
+Normed scores (population benchmarks)
+Cut-offs (e.g., clinical thresholds)
+
+👉 Without calibration, a score like “72” is meaningless.
+
+Signal-to-noise → Clarity vs respondent burden
+Are you capturing signal, or mostly noise?
+
+Drivers of noise:
+
+Long, fatiguing surveys
+Poorly worded items
+Irrelevant questions
+
+👉 Shorter, well-targeted instruments often outperform long ones.
+
+Response time → Practical usability
+How long does it take to complete?
+Does it fit into real workflows?
+
+👉 If it’s too long or intrusive, data quality drops.
+
+Robustness → Performance across contexts
+Does it work across:
+Languages
+Cultures
+Modes (online vs in-person)
+
+Check:
+
+Measurement invariance testing (if you want to be rigorous)
+Usability → Human factors
+Is it easy to understand and complete correctly?
+
+Check:
+
+Cognitive interviews (“what did you think this question meant?”)
+Pilot testing
+Traceability → Documentation & provenance
+Do you know:
+Who designed it?
+What assumptions it encodes?
+How it was validated?
+
+👉 Critical in ESG / audit contexts.
