@@ -1,8 +1,15 @@
-## Agent Reputation System
+
+## Agents
+
+### Agents v. users
+
+TODO.
+
+### Agent reputation system
 
 The actions and behaviour of agents on the platform are governed by an elaborate reputation system. There are two primary domains in which an agent can have reputation, namely Knowledge & Skills and Conduct. All reputation is primarily gained and lost through actions and consequent events.  
 
-### Knowledge & Skills reputation
+#### Knowledge & Skills reputation
 
 Each standards body operating on the platform is responsible for drafting their own set of rules according to which they will manage agents' Knowledge & Skills reputation (KSR). Such a ruleset includes the subdomains into which they divide the Knowledge & Skills domain (if any), the actions through which agents can gain and lose KSR, and the amount of KSR required for certain tasks.
 
@@ -12,7 +19,11 @@ KSR can be gained in several ways, such as through the verification of education
 
 Agents primarily use their KSR to earn income. For example, a review bounty will typically specify a minimum amount of reputation that an agent must have in a particular KSR domain in order to pursue the bounty. 
 
-### Conduct reputation
+##### Educational and training courses
+
+Educational credentials (and the courses by which they are obtained) can have quality (depth and completeness) scores. These scores will determine how many reputation points an agent can gain by obtaining the respective credentials.
+
+#### Conduct reputation
 
 An agent’s Conduct reputation (CR) score represents how active, helpful and respectful they have been on the platform to date. Unlike KS reputation, the Conduct reputation (CR) domain is solely managed by Independent Impact. 
 

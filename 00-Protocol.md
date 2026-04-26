@@ -12,22 +12,24 @@
 
 !INCLUDE "04-a-Standards.md"
 
-!INCLUDE "05-a-AgentReputationSystem.md"
+!INCLUDE "05-a-Agents.md"
 
-!INCLUDE "06-a-ActivityScoringSystem.md"
+!INCLUDE "06-a-Activities.md"
 
-!INCLUDE "07-a-OtherScoringSystems.md"
+!INCLUDE "07-a-Indicators.md"
 
-!INCLUDE "08-a-Bounties.md"
+!INCLUDE "08-a-Methodologies.md"
 
-!INCLUDE "09-a-Voting.md"
+!INCLUDE "09-a-Instruments.md"
 
-!INCLUDE "10-a-Commenting.md"
+!INCLUDE "10-a-Bounties.md"
 
 !INCLUDE "11-a-AntiGamingMechanisms.md"
 
-!INCLUDE "12-a-TechnicalImplementation.md"
+!INCLUDE "12-a-Miscellaneous.md"
 
-!INCLUDE "13-Glossary.md"
+!INCLUDE "13-a-TechnicalImplementation.md"
 
-!INCLUDE "14-Bibliography.md"
+!INCLUDE "14-Glossary.md"
+
+!INCLUDE "15-Bibliography.md"
