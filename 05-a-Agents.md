@@ -19,7 +19,7 @@ KSR can be gained in several ways, such as through the verification of education
 
 Agents primarily use their KSR to earn income. For example, a review bounty will typically specify a minimum amount of reputation that an agent must have in a particular KSR domain in order to pursue the bounty. 
 
-##### Educational and training courses
+##### Educational and training credentials
 
 Educational credentials (and the courses by which they are obtained) can have quality (depth and completeness) scores. These scores will determine how many reputation points an agent can gain by obtaining the respective credentials.
 

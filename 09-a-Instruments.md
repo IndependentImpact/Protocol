@@ -7,7 +7,7 @@ Impact instruments
 
 ### Instrument scores
 
-Measurement instruments can have scores for ... In the case of a physical piece of equipment, these scores can be easily and automatically derived from the product sheet. In the case of other instruments, however, such as questionnaires, it may be more difficult and may require voting. 
+Measurement instruments can have scores for ... In the case of a physical piece of equipment, these scores can be easily and automatically derived from the product sheet. In the case of other instruments, however, such as questionnaires, it may be more difficult and may require reviewing and voting. 
 
 Impact instruments can have scores for efficiency, efficacy, durability, ease of use, etc.
 
