@@ -7,7 +7,7 @@ Impact instruments
 
 ### Instrument scores
 
-Measurement instruments can have scores for ... In the case of a physical piece of equipment, these scores can be easily and automatically derived from the product sheet. In the case of other instruments, however, such as questionnaires, it may be more difficult and may require reviewing and voting. 
+Measurement instruments can have scores for ... In the case of a physical piece of equipment, these scores can be easily and automatically derived from the product sheet. In the case of other instruments, however, such as questionnaires, it may be more difficult and may require reviewing and voting, or multiple rounds of testing and re-testing. 
 
 Impact instruments can have scores for efficiency, efficacy, durability, ease of use, etc.
 
@@ -136,6 +136,8 @@ What failure modes exist—and how detectable are they?
 ---
 
 Assessing a questionnaire as a measurement instrument:
+
+(TODO: CJP says there's a whole discipline for this - something like "psychometric methods.")
 
 Accuracy → Construct validity (are you measuring the right thing?)
 Do the items actually capture the underlying concept (e.g., “health”, “well-being”, “risk awareness”)?
