@@ -26,4 +26,6 @@
 
 !INCLUDE "11-a-TechnicalImplementation.md"
 
-!INCLUDE "12-Bibliography.md"
+!INCLUDE "12-Glossary.md"
+
+!INCLUDE "13-Bibliography.md"
