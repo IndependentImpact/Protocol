@@ -7,6 +7,7 @@ Types of standards:
 - Conduct
 - Accounting
 - Quality
+- Measurement precision
 
 ### Impact accounting standards
 
