@@ -76,7 +76,7 @@ a.	Republish the bounty with new dates for the different phases, and possibly al
 b.	Continue with the bounty, allowing the existing mission team to move into the mission phase of the bounty period. Bounty portions for unfilled seats will be returned  to the creator of the bounty at the end of the bounty period.
 c.	Cancel the bounty. In this case, neither the creator of the bounty nor any of the mission team members will lose any CR, and the full bounty will be returned to the account of the creator.  
 
-22.	Describe what happens during the dispute resolution phase. The creator of the bounty can request minor changes or corrections to work submitted by the mission team, and the mission team will be obliged to respond to those requests before the end of the dispute resolution phase. If the creator of the bounty has serious concerns about or objections to the work of the mission team, they can open a formal dispute that will be adjudicated by <TODO>. The dispute resolution phase is also the period during which team members can lodge complaints with the bounty creator about each other (e.g., if the team feels that member X did not contribute their fair share, then they can lodge a complaint against member X with the bounty creator who will then…).  
+22.	TODO: Describe what happens during the dispute resolution phase. The creator of the bounty can request minor changes or corrections to work submitted by the mission team, and the mission team will be obliged to respond to those requests before the end of the dispute resolution phase. If the creator of the bounty has serious concerns about or objections to the work of the mission team, they can open a formal dispute that will be adjudicated by <TODO>. The dispute resolution phase is also the period during which team members can lodge complaints with the bounty creator about each other (e.g., if the team feels that member X did not contribute their fair share, then they can lodge a complaint against member X with the bounty creator who will then…).  
 
 23.	The bounty will be paid out to the mission team at the end of the dispute resolution phase of the bounty period.  
 
@@ -92,7 +92,7 @@ An agent can publish a request for the review of some claim or information. A re
 
 **Note** When a bounty is a review request, its dispute resolution phase doubles up as the “Q&A phase” of the review request.
 
-1.	If an agent who wishes to publish a review request is neither the owner   nor the contributor of the information that will be the subject of the review, they must obtain permission from the owner of the information to create the review request.    
+1.	If an agent who wishes to publish a review request is neither the owner nor the contributor of the information that will be the subject of the review, they must obtain permission from the owner of the information to create the review request.    
 
 2.	A review request must clearly specify the subject   of the review, e.g., “Review of statistical robustness of activity XYZ’s planned sampling strategy for impact monitoring,” or “Validation of the purpose of project ZBA.”   
 
