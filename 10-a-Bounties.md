@@ -28,7 +28,7 @@ The dates that mark the start and end of each of the phases must be clearly spec
 
 5.	Where multiple tasks are specified for a bounty, the creator of the bounty must clearly specify how the compensation will be divided among the tasks.  
 
-6.	The number of places (also referred to as "seats" or "spots") available on a bounty’s mission team will be determined by the number of tasks of the bounty. 
+6.	The number of places (also referred to as "seats" or "spots") available on a bounty's mission team will be determined by the number of tasks of the bounty. Each task will have at least one seat. A bounty owner may, however, choose to open multiple seats for a specific task if they want multiple, independent submissions of the task's deliverable (e.g., the author of a document may want their work to be reviewed by at least two different people).
 
 7.	The creator of a bounty may, but is not required to, specify some minimum KS or CR reputation requirements that an agent must fulfil to be eligible to claim a seat on the bounty panel. 
 
@@ -37,7 +37,7 @@ The dates that mark the start and end of each of the phases must be clearly spec
 
 9.	If reputation criteria were specified for a specific seat, an agent can only claim that seat if they meet those requirements.  
 
-10.	An agent can claim multiple seats on a mission team, provided that they meet the minimum reputation criteria for each of the seats claimed.  
+10.	An agent can claim multiple seats on a mission team, provided that they meet the minimum reputation criteria for each of the seats claimed. An agent cannot, however, claim more than one seat for the same task.
 
 11.	There is a limit to the number of bounties that an agent can pursue simultaneously across the Independent Impact platform. The number set as the limit will be determined during future tests.
   
