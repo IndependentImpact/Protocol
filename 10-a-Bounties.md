@@ -82,7 +82,7 @@ c.	Cancel the bounty. In this case, neither the creator of the bounty nor any of
 
 24.	The creator of a bounty will earn CR proportionate to the size of the bounty. Give the formula.  
 
-**Note** Every bounty will have its own discussion topic to facilitate communication between the creator of the bounty and the mission team, and also between the members of the mission team as they collaborate on the task at hand. Only the creator of the bounty and the mission team will be able to post to the discussion topic, but the topic will be made publicly visible once  the bounty period has ended.
+**Note** Every bounty will have its own discussion topic to facilitate communication between the creator of the bounty and the mission team, and also between the members of the mission team as they collaborate on the task at hand. Only the creator of the bounty and the mission team will be able to post to the discussion topic, but the topic will be publicly visible.
 
 ### Reputation-based reviewing
 
