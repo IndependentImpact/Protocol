@@ -12,7 +12,7 @@
 
 !INCLUDE "04-a-AgentReputationSystem.md"
 
-!INCLUDE "05-a-ImpactScoringSystem.md"
+!INCLUDE "05-a-ActivityScoringSystem.md"
 
 !INCLUDE "06-a-OtherScoringSystems.md"
 
