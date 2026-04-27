@@ -34,9 +34,9 @@ number-sections: true
 # Title-page metadata
 metadata:
   title: "Independent Impact Protocol"
-  subtitle: "A Decentralised Standard for Environmental and Social Impact Accounting"
-  author: "Independent Impact"
-  date: "2026"
+  subtitle: "The protocol governing the Independent Impact Platform"
+  #author: "Independent Impact"
+  date: "April 2026"
   lang: "en"
 
 # PDF / LaTeX variables
