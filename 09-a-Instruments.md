@@ -7,14 +7,13 @@ Impact/intervention instruments
 
 ### Instrument scores
 
-Measurement instruments can have scores for ... In the case of a physical piece of equipment, these scores can be easily and automatically derived from the product sheet. In the case of other instruments, however, such as questionnaires, it may be more difficult and may require reviewing and voting, or multiple rounds of testing and re-testing. 
+Measurement instruments can have scores for ... In the case of a physical piece of equipment, these scores can be easily and automatically derived from the product sheet. In the case of other instruments, however, such as questionnaires, it may be more difficult and may require reviewing and voting, or multiple rounds of testing and re-testing.
 
 Impact instruments can have scores for efficiency, efficacy, durability, ease of use, etc.
 
 These scores influence the overall score of the impact claims based on them.
 
-Scoring systems are also in place for, i.a., the effectiveness, efficiency and durability of intervention instruments. These scoring systems are to help activity owners determine which intervention instruments are most appropriate for their activities and their contexts. They also help reviewers to evaluate the intervention measures of activities.
----
+## Scoring systems are also in place for, i.a., the effectiveness, efficiency and durability of intervention instruments. These scoring systems are to help activity owners determine which intervention instruments are most appropriate for their activities and their contexts. They also help reviewers to evaluate the intervention measures of activities.
 
 #### Measurement instruments
 
@@ -22,81 +21,81 @@ Scoring systems are also in place for, i.a., the effectiveness, efficiency and d
 
 1. Core properties of a good measurement instrument
 1. Accuracy (closeness to the true value)
-Does the instrument measure the correct value?
-Requires calibration against a known standard.
+   Does the instrument measure the correct value?
+   Requires calibration against a known standard.
 
 👉 Example:
 A thermometer that consistently reads +2°C too high is inaccurate.
 
 2. Precision (repeatability)
-If you measure the same thing multiple times, do you get the same result?
+   If you measure the same thing multiple times, do you get the same result?
 
 👉 Example:
 A scale that always gives the same reading (even if slightly wrong) is precise but not necessarily accurate.
 
 3. Resolution (granularity)
-What is the smallest change the instrument can detect?
+   What is the smallest change the instrument can detect?
 
 👉 Example:
 A ruler with millimetre markings vs. one with centimetre markings.
 
 4. Sensitivity (responsiveness to change)
-How much does the output change for a given change in the measured quantity?
+   How much does the output change for a given change in the measured quantity?
 
 👉 Example:
 A high-quality air quality sensor detects small pollutant changes; a poor one only reacts to large spikes.
 
 5. Range (operating bounds)
-Over what interval can the instrument measure reliably?
+   Over what interval can the instrument measure reliably?
 
 👉 Example:
 A thermometer designed for 0–50°C is useless in industrial furnaces.
 
 6. Stability / Drift
-Does the instrument maintain its performance over time?
+   Does the instrument maintain its performance over time?
 
 👉 Example:
 Sensors that slowly drift out of calibration produce misleading long-term trends.
 
 7. Calibration requirements
-How often does it need calibration, and how easy is that?
+   How often does it need calibration, and how easy is that?
 
 👉 Instruments that require constant recalibration are harder to trust operationally.
 
 8. Selectivity (specificity at the instrument level)
-Does it measure only the intended variable, or is it influenced by others?
+   Does it measure only the intended variable, or is it influenced by others?
 
 👉 Example:
 A CO₂ sensor that is affected by humidity has low selectivity.
 
 9. Noise / Signal-to-noise ratio
-How much random variation is there in the measurement?
+   How much random variation is there in the measurement?
 
 👉 High noise → hard to distinguish real changes from randomness.
 
 10. Response time
-How quickly does the instrument react to changes?
+    How quickly does the instrument react to changes?
 
 👉 Example:
 A slow thermometer lags behind real temperature changes.
 
 11. Robustness / environmental tolerance
-Does it perform well under real-world conditions (temperature, humidity, vibration, etc.)?
+    Does it perform well under real-world conditions (temperature, humidity, vibration, etc.)?
 
 👉 Lab-grade instruments often fail in field conditions.
 
 12. Reliability (operational uptime)
-Does it consistently function without failure?
+    Does it consistently function without failure?
 
 👉 Frequent breakdowns undermine trust, regardless of accuracy.
 
 13. Usability / human factors
-Is it easy to use correctly?
+    Is it easy to use correctly?
 
 👉 Complex instruments introduce operator error.
 
 14. Traceability (to standards)
-Can measurements be linked back to recognized standards?
+    Can measurements be linked back to recognized standards?
 
 👉 Critical for:
 Scientific credibility
@@ -116,7 +115,7 @@ You can have fine resolution but low sensitivity (or vice versa).
 
 Note 2: The meta-insight (again, alignment across layers)
 
-An instrument can be “perfect” in engineering terms and still useless in practice:
+An instrument can be "perfect" in engineering terms and still useless in practice:
 
 Great instrument + bad indicator → measuring the wrong thing precisely
 Great instrument + bad methodology → systematic misinterpretation
@@ -143,13 +142,13 @@ Assessing a questionnaire as a measurement instrument:
 (TODO: CJP says there's a whole discipline for this - something like "psychometric methods.")
 
 Accuracy → Construct validity (are you measuring the right thing?)
-Do the items actually capture the underlying concept (e.g., “health”, “well-being”, “risk awareness”)?
+Do the items actually capture the underlying concept (e.g., "health", "well-being", "risk awareness")?
 Evidence:
 Content validity (expert review, coverage of the construct)
 Convergent validity (correlates with other measures of the same construct)
 Discriminant validity (does not correlate with unrelated constructs)
 
-👉 Red flags: vague wording, items that tap multiple concepts (“double-barrelled”), or heavy dependence on respondents’ interpretation.
+👉 Red flags: vague wording, items that tap multiple concepts ("double-barrelled"), or heavy dependence on respondents’ interpretation.
 
 Precision / Noise → Reliability (are responses consistent?)
 If the same person answered again under similar conditions, would you get similar results?
@@ -160,7 +159,7 @@ Internal consistency (e.g., Cronbach’s α / ω)
 Test–retest reliability (stability over time)
 Inter-rater reliability (if ratings involve observers)
 
-👉 Red flags: items that don’t “hang together”, large random swings, ambiguous wording.
+👉 Red flags: items that don’t "hang together", large random swings, ambiguous wording.
 
 Resolution → Scale granularity
 Can the questionnaire distinguish meaningful differences between respondents?
@@ -168,7 +167,7 @@ Can the questionnaire distinguish meaningful differences between respondents?
 Design levers:
 
 Number of response options (e.g., 5–7 point Likert often works well)
-Clear anchors (what does “4” vs “5” mean?)
+Clear anchors (what does "4" vs "5" mean?)
 
 👉 Red flags: too coarse (can’t detect change) or too fine (respondents can’t reliably differentiate).
 
@@ -189,14 +188,14 @@ Check:
 
 Are many respondents clustered at the top or bottom?
 
-👉 Red flags: everyone scores “high” → you can’t detect improvement.
+👉 Red flags: everyone scores "high" → you can’t detect improvement.
 
 Selectivity → Bias & confounding control
 Are responses influenced by irrelevant factors?
 
 Common biases:
 
-Social desirability (“I answer what looks good”)
+Social desirability ("I answer what looks good")
 Acquiescence (tendency to agree)
 Question order effects
 Cultural/linguistic interpretation
@@ -213,7 +212,7 @@ Concerns:
 
 Changing interpretations of items
 Cultural drift
-Learning effects (respondents “figure out” the test)
+Learning effects (respondents "figure out" the test)
 
 👉 Especially relevant for long-term monitoring.
 
@@ -225,7 +224,7 @@ Examples:
 Normed scores (population benchmarks)
 Cut-offs (e.g., clinical thresholds)
 
-👉 Without calibration, a score like “72” is meaningless.
+👉 Without calibration, a score like "72" is meaningless.
 
 Signal-to-noise → Clarity vs respondent burden
 Are you capturing signal, or mostly noise?
@@ -258,7 +257,7 @@ Is it easy to understand and complete correctly?
 
 Check:
 
-Cognitive interviews (“what did you think this question meant?”)
+Cognitive interviews ("what did you think this question meant?")
 Pilot testing
 Traceability → Documentation & provenance
 Do you know:
@@ -268,8 +267,7 @@ How it was validated?
 
 👉 Critical in ESG / audit contexts.
 
-
-#### Intervention instruments 
+#### Intervention instruments
 
 Efficiency
 Effectiveness
