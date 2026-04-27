@@ -3,7 +3,7 @@
 ### Types of instruments
 
 Measurment instruments
-Impact instruments
+Impact/intervention instruments
 
 ### Instrument scores
 
@@ -15,7 +15,11 @@ These scores influence the overall score of the impact claims based on them.
 
 ---
 
-1. Core properties of a good instrument
+#### Measurement instruments
+
+##### General
+
+1. Core properties of a good measurement instrument
 1. Accuracy (closeness to the true value)
 Does the instrument measure the correct value?
 Requires calibration against a known standard.
@@ -94,23 +98,22 @@ Is it easy to use correctly?
 Can measurements be linked back to recognized standards?
 
 👉 Critical for:
-
 Scientific credibility
 Regulatory compliance
-2. Key distinctions that often get confused
-Accuracy vs Precision
+
+Note 1: Key distinctions that often get confused
+
+a. Accuracy vs Precision
 Accurate but not precise → scattered around the true value
 Precise but not accurate → tightly clustered, but wrong
-
 👉 You ideally want both.
 
-Sensitivity vs Resolution
+b. Sensitivity vs Resolution
 Resolution = smallest detectable step
 Sensitivity = how strongly output responds
+You can have fine resolution but low sensitivity (or vice versa).
 
-👉 You can have fine resolution but low sensitivity (or vice versa).
-
-3. The meta-insight (again, alignment across layers)
+Note 2: The meta-insight (again, alignment across layers)
 
 An instrument can be “perfect” in engineering terms and still useless in practice:
 
@@ -121,10 +124,9 @@ Example:
 
 A highly accurate satellite sensor measuring vegetation →
 still useless for carbon crediting if the methodology ignores permanence.
-4. Practical evaluation checklist
 
+Practical evaluation checklist
 When assessing an instrument, ask:
-
 What is the true quantity being measured?
 What are the known sources of error?
 How does it behave over time (drift)?
@@ -133,7 +135,7 @@ How is it calibrated and validated?
 What level of precision/accuracy is actually needed? (often overlooked)
 What failure modes exist—and how detectable are they?
 
----
+##### Questionnaires
 
 Assessing a questionnaire as a measurement instrument:
 
@@ -264,3 +266,11 @@ What assumptions it encodes?
 How it was validated?
 
 👉 Critical in ESG / audit contexts.
+
+
+#### Intervention instruments 
+
+Efficiency
+Effectiveness
+Durability
+Ease of use
