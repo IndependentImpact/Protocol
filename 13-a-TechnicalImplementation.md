@@ -8,7 +8,7 @@ Every action on the II platform is recorded as a transaction on the Hedera netwo
 
 Every action on the platform is recorded on the Hedera hashgraph and therefore incurs transaction fees. To create a new activity, for example, will cost something; to cast a vote, or to post a comment or a question to a topic, will also cost something. These costs will be generally very small as they will largely be determined by the Hedera network transaction fees  – which are famously very low.
 
-Every review request will have a discussion Hedera topic associated with it which will provide a space for the reviewers on the panel, including the trainee reviewer, to communicate with each other and the activity owner regarding the subject of the review. This topic will be made publicly visible when the review process concludes.
+Every review request will have a discussion Hedera topic associated with it which will provide a space for the reviewers on the panel, including the trainee reviewer, to communicate with each other and the activity owner regarding the subject of the review. This topic will be publicly visible.
 
 Bounties vs review requests: A review request is a type of bounty; it is just a lot more “specialised”. For example, a bounty could specify minimum reputation requirements, but is not required to do so; a review request, on the other hand, must specify such requirements. What are the rules for bounties? How many bounties is an agent allowed to pursue simultaneously?
 

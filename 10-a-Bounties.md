@@ -84,40 +84,39 @@ c.	Cancel the bounty. In this case, neither the creator of the bounty nor any of
 
 **Note** Every bounty will have its own discussion topic to facilitate communication between the creator of the bounty and the mission team, and also between the members of the mission team as they collaborate on the task at hand. Only the creator of the bounty and the mission team will be able to post to the discussion topic, but the topic will be publicly visible.
 
-### Reputation-based reviewing
+### Review bounties
 
-An agent can publish a request for the review of some claim or information. A review request is a type of bounty and is therefore governed by the rules provided in Section Bounty. However, several additional rules apply to review requests, as follows:
+An agent can publish a request (i.e., a bounty) for the review of some claim or information. A review request is a type of bounty and is therefore governed by the general bounty rules provided above. However, several additional rules apply to review requests, as follows:
 
 **Note** The mission team of a review request is referred to here as the “review panel”.
 
-**Note** When a bounty is a review request, its dispute resolution phase doubles up as the “Q&A phase” of the review request.
+**Note** When a bounty is a review request, its dispute resolution phase doubles up as the "Q&A phase" of the review request.
 
-1.	If an agent who wishes to publish a review request is neither the owner nor the contributor of the information that will be the subject of the review, they must obtain permission from the owner of the information to create the review request.    
+1.	A review request must clearly specify the subject of the review, e.g., "Review of statistical robustness of activity XYZ's planned sampling strategy for impact monitoring," or "Validation of the purpose of project ZBA."   
 
-2.	A review request must clearly specify the subject   of the review, e.g., “Review of statistical robustness of activity XYZ’s planned sampling strategy for impact monitoring,” or “Validation of the purpose of project ZBA.”   
+2.	A review request must clearly state the mandate of the review, i.e., whether the objective is to validate, to verify or both.  
 
-3.	A review request must clearly state the mandate of the review, i.e., whether the objective is to validate, to verify or both.  
+3.	A review request must specify the standard against which the review should be carried out.  
 
-4.	A review request must specify the standard  against which the review should be carried out.  
+4.	The creator of the review request must specify at least one minimum KS reputation requirement for at least one relevant KS domain that must be met by agents who wish to act as reviewers.  
 
-5.	The creator of the review request must specify at least one minimum KS reputation requirement for at least one relevant KS domain that must be met by agents who wish to act as reviewers.  
+5.	Every reviewer must sign a declaration of conflicts of interest.  
 
-6.	Every reviewer must sign a declaration of conflicts of interest.  
+6.	An agent cannot review information contributed by or related to them or their activities.  
 
-7.	An agent cannot review information contributed by or related to them or their activities.  
+7.	Each reviewer who holds a seat on a review request’s panel must submit a review before the review deadline specified by the creator of the review request. Where multiple reviewers are present on a panel, the reviewers are encouraged to communicate with each other during the review period, in the interest of complementing each other’s experience, knowledge and skills. Each reviewer will, however, still have to submit their own review to the review request before the review deadline.  
 
-8.	Each reviewer who holds a seat on a review request’s panel must submit a review before the review deadline specified by the creator of the review request. Where multiple reviewers are present on a panel, the reviewers are encouraged to communicate with each other during the review period, in the interest of complementing each other’s experience, knowledge and skills. Each reviewer will, however, still have to submit their own review to the review request before the review deadline.  
-9.	Due compensation will be paid for an eligible review regardless of the outcome of the review.  
+8.	Due compensation will be paid for an eligible review regardless of the outcome of the review.  
 
-10.	Every review request provides the opportunity to one “ineligible” agent (i.e., an agent with not enough relevant reputation points yet to submit an eligible review) to submit a “training” review. The trainee’s review must, during the Q&A phase at the end of the review period, be reviewed and graded by every eligible reviewer on the review panel. The grade assigned by an eligible reviewer will determine the amount of reputation points (up to a maximum of one) that the trainee reviewer will gain in the reputation domain of each eligible reviewer who had held a seat on the panel of the review request in question.  
+9.	Every review request provides the opportunity to one “ineligible” agent (i.e., an agent with not enough relevant reputation points yet to submit an eligible review) to submit a “training” review. The trainee’s review must, during the Q&A phase at the end of the review period, be reviewed and graded by every eligible reviewer on the review panel. The grade assigned by an eligible reviewer will determine the amount of reputation points (up to a maximum of one) that the trainee reviewer will gain in the reputation domain of each eligible reviewer who had held a seat on the panel of the review request in question.  
 
-11.	An “expert” reviewer who fails to grade the trainee reviewer’s review at the end of a review process will lose two CR points.  
+10.	An “expert” reviewer who fails to grade the trainee reviewer’s review at the end of a review process will lose two CR points.  
 
-12.	During the Q&A period the reviewer must respond to any final questions that the review requester may have regarding the review that they had submitted. A reviewer who fails to respond to such questions will lose one CR point.  
+11.	During the Q&A period the reviewer must respond to any final questions that the review requester may have regarding the review that they had submitted. A reviewer who fails to respond to such questions will lose one CR point.  
 
-13. Submission of a deliverable (e.g., a review) is final. A seat holder can only submit one deliverable per task - they cannot submit multiple ones during the course of the bounty. Only if their deliverable is disputed and subsequently rejected will they be given the opportunity to submit a new deliverable for the task; they will, however, not be paid for either their original submission or their post-dispute submission. If they choose not to submit a new deliverable post-dispute, they will lose Conduct Reputation in addition to the K&S Reputation that they had already lost by virtue of losing the dispute.
+12. Submission of a deliverable (e.g., a review) is final. A seat holder can only submit one deliverable per task - they cannot submit multiple ones during the course of the bounty. Only if their deliverable is disputed and subsequently rejected will they be given the opportunity to submit a new deliverable for the task; they will, however, not be paid for either their original submission or their post-dispute submission. If they choose not to submit a new deliverable post-dispute, they will lose Conduct Reputation in addition to the K&S Reputation that they had already lost by virtue of losing the dispute.
 
-14. An adjudicator must have at least the same amount of K&S rep than the defendent in the relevant domains, plus they must have some adjudication reputation.
+13. An adjudicator must have at least the same amount of K&S rep than the defendent in the relevant domains, plus they must have some adjudication reputation.
 
 **Note** It is advisable to restrict the scope of a review request as much as possible. A review with a broad scope will necessarily span several knowledge domains (i.e., reputation domains), which may lead to a large number of reviewers having to collaborate on the review. The more reviewers per request, the more complicated the coordination among them.  
 
@@ -127,8 +126,7 @@ An agent can publish a request for the review of some claim or information. A re
 
 TODO: NB: What happens if an agent holds a seat on a bounty, but then their reputation scores drop below the seat's rep reqs while they are still holding it?
 
-
-### Reputation-based voting
+### Voting bounties
 
 When an indicator, instrument, method or methodology is published on the platform, it automatically sends out a vote request across the platform, inviting agents to vote on its reliability, durability, etc. (whichever is relevant). Such voting is based on reputation and is governed by the following rules:
 
