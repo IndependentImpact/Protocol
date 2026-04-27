@@ -13,6 +13,7 @@ Impact instruments can have scores for efficiency, efficacy, durability, ease of
 
 These scores influence the overall score of the impact claims based on them.
 
+Scoring systems are also in place for, i.a., the effectiveness, efficiency and durability of intervention instruments. These scoring systems are to help activity owners determine which intervention instruments are most appropriate for their activities and their contexts. They also help reviewers to evaluate the intervention measures of activities.
 ---
 
 #### Measurement instruments

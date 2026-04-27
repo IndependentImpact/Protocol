@@ -15,3 +15,7 @@ Bounties vs review requests: A review request is a type of bounty; it is just a 
 All reputation stuff, including CR, must be tokens, because then we can let them interact with smart contracts etc. Yes, all of them are tokens – fungible and divisible, but not tradable.
 
 The owner of an activity must be able to allow or disallow free (unsolicited) public contribution of information about/to their activity. 
+
+Furthermore, the platform is intentionally designed to maximise transparency, traceability and verifiability. Every action performed on the platform is transparently recorded on the Hedera network. All information provided about activities, and any changes made thereto, along with the authors of the information and the changes, are captured in a publicly accessible, time-travelable Fluree ledger.
+
+In addition, the platform is designed to maximise the accessibility, accountability and comparability of information by capturing all information in a public, semantic ledger with a complete history of authorship. 
