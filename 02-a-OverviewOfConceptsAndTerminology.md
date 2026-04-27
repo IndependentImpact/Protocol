@@ -2,7 +2,7 @@
 
 The platform’s vocabulary and worldview are thoroughly informed by the Anthropogenic Impact Accounting (AIA) suite of ontologies. The suite consists of four ontologies, namely:
 
-(a) The Impact Ontology. This ontology defines the core concepts for understanding "impact" in general. It describes terms such as "event", "state" and "indicator" and explains how they relate to one another.
+(a) The Impact Ontology, which defines the core concepts for understanding "impact" in general. It describes terms such as "event", "state" and "indicator" and explains how they relate to one another.
 
 (b) The Claim Ontology, which lays the foundation for understanding and describing claims, i.e., statements about things, and their substantiation.
 
@@ -22,17 +22,6 @@ Finally, "state" is defined as "[t]he condition of a thing at a specific point i
 Differences in the state of an environment are how we measure and express "impact". A beneficial impact is an impact that contributes toward a desired state, while an adverse impact is one that detracts from a desired state.
 
 These concepts and terms form the basis of the Independent Impact paradigm. The rest of this document shall use the terms as they are described above. Readers are encouraged to peruse the AIA suite of ontologies to enhance their understanding of these and related concepts.
-Other concepts and terms that deserve introduction already here are:
-
-Bounties – TODO.
-
-Reputation – TODO.
-
-Validation – TODO.
-
-Verification – TODO.
-
-CR – TODO.
 
 Some final remarks on terminology:
 
