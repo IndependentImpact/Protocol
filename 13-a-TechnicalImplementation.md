@@ -12,9 +12,7 @@ Every review request will have a discussion Hedera topic associated with it whic
 
 Bounties vs review requests: A review request is a type of bounty; it is just a lot more "specialised". For example, a bounty could specify minimum reputation requirements, but is not required to do so; a review request, on the other hand, must specify such requirements. What are the rules for bounties? How many bounties is an agent allowed to pursue simultaneously?
 
-All reputation stuff, including CR, must be tokens, because then we can let them interact with smart contracts etc. Yes, all of them are tokens – fungible and divisible, but not tradable.
-
-The owner of an activity must be able to allow or disallow free (unsolicited) public contribution of information about/to their activity.
+All reputation (Knowledge & Skills and Conduct) will be tokens - fungible and divisible, but not tradable. This will allow them to interact with smart contracts etc. 
 
 Furthermore, the platform is intentionally designed to maximise transparency, traceability and verifiability. Every action performed on the platform is transparently recorded on the Hedera network. All information provided about activities, and any changes made thereto, along with the authors of the information and the changes, are captured in a publicly accessible, time-travelable Fluree ledger.
 

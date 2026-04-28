@@ -1,0 +1,20 @@
+# Pandoc defaults file for compiling the Independent Impact Protocol.
+# Run from the repository root:
+#   pandoc --defaults pandoc-defaults.yaml -o compiled-protocol.md
+
+input-files:
+  - 00-Protocol.md
+  - 01-a-Introduction.md
+  - 02-a-OverviewOfConceptsAndTerminology.md
+  - 03-a-Principles.md
+  - 04-a-AgentReputationSystem.md
+  - 05-a-ImpactScoringSystem.md
+  - 06-a-OtherScoringSystems.md
+  - 07-a-Bounties.md
+  - 08-a-Voting.md
+  - 09-a-Commenting.md
+  - 10-a-AntiGamingMechanisms.md
+  - 11-a-TechnicalImplementation.md
+  - 12-Bibliography.md
+
+standalone: true

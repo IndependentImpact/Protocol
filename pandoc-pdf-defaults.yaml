@@ -1,0 +1,50 @@
+# Pandoc defaults file for compiling a publication-ready PDF of the Independent Impact Protocol.
+# Produces a formal whitepaper with a title page, table of contents, and numbered sections.
+# Run from the repository root:
+#   pandoc --defaults pandoc-pdf-defaults.yaml -o protocol.pdf
+#
+# Requirements:
+#   - Pandoc  (https://pandoc.org/)
+#   - A LaTeX distribution such as TeX Live or MiKTeX  (https://www.latex-project.org/get/)
+
+input-files:
+  - 00-Protocol.md
+  - 01-a-Introduction.md
+  - 02-a-OverviewOfConceptsAndTerminology.md
+  - 03-a-Principles.md
+  - 04-a-AgentReputationSystem.md
+  - 05-a-ImpactScoringSystem.md
+  - 06-a-OtherScoringSystems.md
+  - 07-a-Bounties.md
+  - 08-a-Voting.md
+  - 09-a-Commenting.md
+  - 10-a-AntiGamingMechanisms.md
+  - 11-a-TechnicalImplementation.md
+  - 12-Bibliography.md
+
+standalone: true
+
+# Table of contents
+table-of-contents: true
+toc-depth: 3
+
+# Numbered sections
+number-sections: true
+
+# Title-page metadata
+metadata:
+  title: "Independent Impact Protocol"
+  subtitle: "The protocol governing the Independent Impact Platform"
+  #author: "Independent Impact"
+  date: "April 2026"
+  lang: "en"
+
+# PDF / LaTeX variables
+variables:
+  papersize: a4
+  fontsize: 11pt
+  geometry: "margin=2.5cm"
+  colorlinks: true
+  linkcolor: "NavyBlue"
+  urlcolor: "NavyBlue"
+  toccolor: "black"
