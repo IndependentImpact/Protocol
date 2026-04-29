@@ -2,7 +2,7 @@
 
 ### General
 
-In the context of Independent Impact, the term "agent" is used in accordance with its definition in AIAO: "A thing that bears some form of accountability for the occurrence of another thing."[^1](https://aiaont.github.io/aiao/aiao.html#cls--Agent)
+In the context of Independent Impact, the term "agent" is used in accordance with its definition in [AIAO](https://aiaont.github.io/aiao/aiao.html#cls--Agent): "A thing that bears some form of accountability for the occurrence of another thing."
 
 ### Agents v. users
 

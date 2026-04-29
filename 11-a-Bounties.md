@@ -144,4 +144,4 @@ When an indicator, instrument, method or methodology is published on the platfor
 
 7. Any agent who casts a vote, whether eligible or not, will receive one CR point for doing so.
 
-How can someone contest someone else's vote?
+TODO: How can someone contest someone else's vote?

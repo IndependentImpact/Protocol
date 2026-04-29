@@ -24,7 +24,7 @@ Any agent creating or proposing a new methodology must provide, at a minimum, th
 
 ### Evaluation of methodologies
 
-The evaluation of methodologies is governed by the standards to which such methodologies are relevant. Each standard shall define:
+The evaluation of methodologies is governed by the standards bodies to which such methodologies are relevant. Each standards body shall define:
 
 1. The dimensions by which methodologies are judged (e.g., conceptual soundness, reliability, and completeness).
 2. The methods and criteria by which those dimensions are assessed.

@@ -18,9 +18,9 @@ Any agent creating or proposing a new indicator must provide, at a minimum, the 
 
 ### Evaluation of indicators
 
-The evaluation of indicators is governed by the standards to which such indicators are relevant. Each standard shall define:
+The evaluation of indicators is governed by the standards bodies to which such indicators are relevant. Each standards body shall define:
 
-1. The assessable dimensions by which indicators are judged (e.g., validity, reliability, sensitivity, or other relevant properties).
+1. The dimensions by which indicators are judged (e.g., validity, reliability, and sensitivity).
 2. The methods and criteria by which those dimensions are assessed.
 
 Accordingly, the Protocol does not prescribe a universal evaluation framework for indicators, but instead delegates this responsibility to standards bodies and standard-specific governance mechanisms.

@@ -39,6 +39,9 @@ A standards body that wishes to operate an impact standard on the platform must 
 3. Measures (typically in the form of structured questions to be answered) to guide activity owners towards adherence to their principles.
 4. Measures (typically in the form of structured questions to be answered) to guide reviewers in their evaluation of an activity's adherence to the standard's principles.
 5. The levels of knowledge and skill required by agents who wish to design and/or implement activities, or who wish to formally evaluate activities' adherence to the impact standard. The required levels of knowledge and skill shall be defined with reference to a standard of expertise provided by the standards body, or provided by another standards body and already in operation on the platform.
+6. Measures for evaluating the acceptability of indicators, if relevant.
+7. Measures for evaluating the acceptability of methdologies, if relevant.
+8. Measure for evaluating the acceptability of instruments, if relevant.
 
 The Independent Impact Platform does not prescribe any specific impact accounting standard; it does, however, use the Libratum Standard as its default impact and impact accounting standard.
 
@@ -51,7 +54,7 @@ A standards body that wishes to operate an impact accounting standard on the pla
 1. A set of principles.
 2. A glossary or formally defined concept scheme.
 3. Measures (typically in the form of structured questions to be answered) to guide activity owners towards adherence to their principles.
-4. Measures (typically in the form of structured questions to be answered) to guide reviewers in their evaluation of an activity's adherence to the standard's principles.
+4. Measures (typically in the form of structured questions to be answered) to guide reviewers in their evaluation of an account's adherence to the standard's principles.
 5. The levels of knowledge and skill required by agents who wish to formally evaluate the adherence of impact accounts to the impact accounting standard. The required levels of knowledge and skill shall be defined with reference to a standard of expertise provided by the standards body, or provided by another standards body and already in operation on the platform.
 6. Measures for evaluating the acceptability of indicators, if relevant.
 7. Measures for evaluating the acceptability of methdologies, if relevant.
