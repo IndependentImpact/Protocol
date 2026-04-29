@@ -76,7 +76,7 @@ A bounty cannot be cancelled during the dispute resolution phase.
     b. Continue with the bounty, allowing the existing mission team to move into the mission phase of the bounty period. Bounty portions for unfilled seats will be returned to the creator of the bounty at the end of the bounty period.
     c. Cancel the bounty. In this case, neither the creator of the bounty nor any of the mission team members will lose any CR, and the full bounty will be returned to the account of the creator.
 
-22. TODO: Describe what happens during the dispute resolution phase. The creator of the bounty can request minor changes or corrections to work submitted by the mission team, and the mission team will be obliged to respond to those requests before the end of the dispute resolution phase. If the creator of the bounty has serious concerns about or objections to the work of the mission team, they can open a formal dispute that will be adjudicated by <TODO>. The dispute resolution phase is also the period during which team members can lodge complaints with the bounty creator about each other (e.g., if the team feels that member X did not contribute their fair share, then they can lodge a complaint against member X with the bounty creator who will then…).
+22. The creator of the bounty can request minor changes or corrections to work submitted by the mission team, and the mission team will be obliged to respond to those requests before the end of the dispute resolution phase. If the creator of the bounty has serious concerns about or objections to the work of the mission team, they can open a formal dispute that will be adjudicated by a qualified agent. The dispute resolution phase is also the period during which team members can lodge complaints with the bounty creator about each other (e.g., if the team feels that member X did not contribute their fair share, then they can lodge a complaint against member X with the bounty creator who will then…).
 
 23. The bounty will be paid out to the mission team at the end of the dispute resolution phase of the bounty period.
 
@@ -124,8 +124,6 @@ An agent can publish a request (i.e., a bounty) for the review of some claim or 
 
 **Note** A seat is defined first by the tasks for which it will be responsible; the reputation requirements for the seat are subsequently derived from those tasks/responsibilities.
 
-TODO: NB: What happens if an agent holds a seat on a bounty, but then their reputation scores drop below the seat's rep reqs while they are still holding it?
-
 ### Voting bounties
 
 When an indicator, instrument, method or methodology is published on the platform, it automatically sends out a vote request across the platform, inviting agents to vote on its reliability, durability, etc. (whichever is relevant). Such voting is based on reputation and is governed by the following rules:
@@ -140,8 +138,6 @@ When an indicator, instrument, method or methodology is published on the platfor
 
 5. The outcome of a vote is calculated as the rolling reputation-weighted average of the eligible votes. Where more than five eligible votes have been cast, the calculation will consider only the five most recent eligible votes.
 
-6. There is in principle no end to the voting period – any agent can at any point in time cast a vote on some indicator's reliability, if, for example, new information or new research findings have come to light and the agent feels that the current reliability score for the indicator is no longer justified. They can cast their vote without having to create a new voting request, but, should they wish to reattract the attention of other experts and ask them to (re-)vote on the indicator's reliability in the light of the new information or findings, they can send out a new voting request. To send out a new voting request, an agent must have sufficient reputation points in the relevant domain. TODO: How many?
+6. There is in principle no end to the voting period – any agent can at any point in time cast a vote on some indicator's reliability, if, for example, new information or new research findings have come to light and the agent feels that the current reliability score for the indicator is no longer justified. They can cast their vote without having to create a new voting request, but, should they wish to reattract the attention of other experts and ask them to (re-)vote on the indicator's reliability in the light of the new information or findings, they can send out a new voting request. To send out a new voting request, an agent must have sufficient reputation points in the relevant domain.
 
 7. Any agent who casts a vote, whether eligible or not, will receive one CR point for doing so.
-
-TODO: How can someone contest someone else's vote?
