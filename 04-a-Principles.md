@@ -2,11 +2,11 @@
 
 The Independent Impact Standard is anchored by the following principles:
 
-1. **Open, but meritocratic** Everyone should be able to / be empowered to contribute to common goals for good. Engaging in climate action or biodiversity conservation should not be something reserved for large companies with extensive "ESG" budgets and/or compliance regulations to meet. Smaller companies, organisations and individual citizens, with good intention, knowledge and skills, should be empowered to contribute in their respective capacities to humankind's work towards a better world for all. Activity on the platform is, however, governed through meritocracy ("give credit where credit is due").
+1. **Open, but meritocratic** Everyone should be allowed and empowered to contribute to common goals for good. Engaging in climate action or biodiversity conservation should not be something reserved for large companies with extensive "ESG" budgets or compliance regulations to meet. Smaller companies, organisations and individual citizens, with good intention, knowledge and skills, should be empowered to contribute in their respective capacities to humankind's work towards a better world for all. Activity on the platform is, however, governed through meritocracy ("give credit where credit is due").
 
 2. **Guidance, not prescription.** Incentivise and penalise transparently, but do not inhibit communally beneficial action through fixed, overly burdensome prescriptions or disproportionate administrative burdens.
 
-3. **Immutable, yet accesible.** Proven distributed technologies protect artefacts and transactions while making every action auditable. Users can interrogate projects, credentials, and impact claims in depth.
+3. **Immutable, yet accesible.** Use proven distributed technologies to protect artefacts and transactions, while making every action maximally auditable. Anyone, even those with limited technical skills, should be able interrogate activities, credentials, and impact claims in depth.
 
 The platform is designed to give effect to these principles. For example:
 a. Anyone can engage with the platform, but a comprehensive reputation system ensures that more opportunities are available to agents who maintain good conduct and who improve their knowledge and skills.  

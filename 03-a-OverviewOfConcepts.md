@@ -1,29 +1,27 @@
 ## Overview of concepts
 
-The platform's vocabulary and worldview are thoroughly informed by the Anthropogenic Impact Accounting (AIA) suite of ontologies. The suite consists of four ontologies, namely:
+Independent Impact shares the worldview of the Anthropogenic Impact Accounting Ontology Suite (AIA OS). In simple language this means that the world, from the perspective of the Impact Accounting Platform, consists primarily of agents, activities, instruments, environments, states, indicators, impacts, methodologies, standards, and claims:
 
-(a) The Impact Ontology, which defines the core concepts for understanding "impact" in general. It describes terms such as "event", "state" and "indicator" and explains how they relate to one another.
+a. Agents are people who do things.
+b. Activities are the things that those people do.
+c. Instruments are the tools that the people use for their activities.
+d. Environments are the spaces within which the people perform their activities.
+e. A state is a condition of an environment at a specific point in time.
+f. An indicator is a convention that people use to describe the state of an environment.
+g. Impacts are the effects that people's activities have on their environments.
+h. A methodology is a guide for how to perform a specific activity.
+i. A standard is a guide for deciding which things (e.g., indicators, methodologies, or activities) are acceptable.
+j. Claims are statements that people make about things.
 
-(b) The Claim Ontology, which lays the foundation for understanding and describing claims, i.e., statements about things, and their substantiation.
+The above statements serve as a mere introduction to the fundamental concepts and terms that readers will encounter throughout the rest of the document. There is a lot more to each concept than what is communicated by the statements above, and readers are encouraged to peruse the AIA suite of ontologies to enhance their understanding of these and related concepts. The suite consists of four ontologies, namely:
 
-(c) The Information Communication Ontology, which provides a rudimentary framework for understanding how information (such as a report about an event) is communicated.
+(a) The [Impact Ontology](http://w3id.org/impactont), which defines the core concepts for understanding impact in general. It defines terms such as "event," "state" and "indicator" and explains how they relate to one another.
 
-(d) The Anthropogenic Impact Accounting Ontology (AIAO), which is the highest-level ontology of the suite. AIAO draws upon and extends concepts from the Impact Ontology, the Claim Ontology and the Information Communication Ontology to provide the framework for describing and understanding how humankind's activities impact our world.
+(b) The [Claim Ontology](http://w3id.org/claimont), which lays the foundation for understanding and describing claims, i.e., statements about things, and the substantiation of those statements.
 
-The premise of AIAO is:
-"An agent engages in an activity that impacts a state."
+(c) The [Information Communication Ontology](http://w3id.org/infocomm), which provides a rudimentary framework for understanding how information (such as a report about an event) is communicated.
 
-"Agent" is defined in AIAO as "[a] thing that bears some form of accountability for the occurrence of another thing." In other words, an agent is any entity that can be held legally accountable for the impact that they have on others and on their environments. The concept of an agent is not restricted to natural individuals – an agent can, for example, also be a legal entity, such as a company, or a group of individuals working as a team.
-
-"Activity" is defined as "[a]n event that is orchestrated by an agent," whereas "event" is defined in the Impact Ontology as "[a] change in the state of a [thing]." "Thing" here can be literally anything, but the kinds of things that Independent Impact is particularly interested in are those "things" that can be considered "environments" – natural and social environments alike, e.g., the Nile Delta or the community of Pembroke. Examples of activities include vehicle manufacturing, the transportation of goods or restoring a wetland.
-
-Finally, "state" is defined as "[t]he condition of a thing at a specific point in time, expressed in terms of one or more indicator-value pairs." Firstly, the things we are interested in in the context of Independent Impact are, as explained earlier, those things that can be considered "environments". Secondly, "indicator" here means conventions or standards such as "the mass of a body, measured in kilogramme," or "the height of a tree, measured in metre." In the context of Independent Impact we are typically interested in conventions that are used to describe how healthy or unhealthy an environment is.
-
-Differences in the state of an environment are how we measure and express "impact". A beneficial impact is an impact that contributes toward a desired state, while an adverse impact is one that detracts from a desired state.
-
-TODO: Introduce standards, methodologies and instruments too.
-
-These concepts and terms form the basis of the Independent Impact paradigm. The rest of this document shall use the terms as they are described above. Readers are encouraged to peruse the AIA suite of ontologies to enhance their understanding of these and related concepts.
+(d) The [Anthropogenic Impact Accounting Ontology](http://w3id.org/aiao)(AIAO), which is the highest-level ontology of the suite. AIAO draws upon and extends concepts from the Impact Ontology, the Claim Ontology and the Information Communication Ontology to provide the essential framework for describing and understanding how humankind's activities impact our world.
 
 Some additional remarks on terminology:
 
