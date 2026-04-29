@@ -1,4 +1,4 @@
-## Overview of concepts and terminology
+## Overview of concepts
 
 The platform's vocabulary and worldview are thoroughly informed by the Anthropogenic Impact Accounting (AIA) suite of ontologies. The suite consists of four ontologies, namely:
 
@@ -20,6 +20,8 @@ The premise of AIAO is:
 Finally, "state" is defined as "[t]he condition of a thing at a specific point in time, expressed in terms of one or more indicator-value pairs." Firstly, the things we are interested in in the context of Independent Impact are, as explained earlier, those things that can be considered "environments". Secondly, "indicator" here means conventions or standards such as "the mass of a body, measured in kilogramme," or "the height of a tree, measured in metre." In the context of Independent Impact we are typically interested in conventions that are used to describe how healthy or unhealthy an environment is.
 
 Differences in the state of an environment are how we measure and express "impact". A beneficial impact is an impact that contributes toward a desired state, while an adverse impact is one that detracts from a desired state.
+
+TODO: Introduce standards, methodologies and instruments too.
 
 These concepts and terms form the basis of the Independent Impact paradigm. The rest of this document shall use the terms as they are described above. Readers are encouraged to peruse the AIA suite of ontologies to enhance their understanding of these and related concepts.
 
