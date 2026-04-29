@@ -10,17 +10,20 @@
 input-files:
   - 00-Protocol.md
   - 01-a-Introduction.md
-  - 02-a-OverviewOfConceptsAndTerminology.md
-  - 03-a-Principles.md
-  - 04-a-AgentReputationSystem.md
-  - 05-a-ImpactScoringSystem.md
-  - 06-a-OtherScoringSystems.md
-  - 07-a-Bounties.md
-  - 08-a-Voting.md
-  - 09-a-Commenting.md
-  - 10-a-AntiGamingMechanisms.md
-  - 11-a-TechnicalImplementation.md
-  - 12-Bibliography.md
+  - 02-a-Glossary.md
+  - 03-a-OverviewOfConcepts.md
+  - 04-a-Principles.md
+  - 05-a-Standards.md
+  - 06-a-Agents.md
+  - 07-a-Activities.md
+  - 08-a-Indicators.md
+  - 09-a-Methodologies.md
+  - 10-a-Instruments.md
+  - 11-a-Bounties.md
+  - 12-a-AntiGamingMechanisms.md
+  #- 13-a-Miscellaneous.md
+  #- 14-a-TechnicalImplementation.md
+  #- 15-Bibliography.md
 
 standalone: true
 
