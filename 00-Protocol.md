@@ -1,5 +1,4 @@
-
-# Independent Impact Protocol 
+# Independent Impact Protocol
 
 <!-- toc -->
 <!-- tocstop -->
@@ -28,9 +27,8 @@
 
 !INCLUDE "12-a-AntiGamingMechanisms.md"
 
-!INCLUDE "13-a-Miscellaneous.md"
+<!--!INCLUDE "13-a-Miscellaneous.md"-->
 
-!INCLUDE "14-a-TechnicalImplementation.md"
+<!--!INCLUDE "14-a-TechnicalImplementation.md"-->
 
-!INCLUDE "15-Bibliography.md"
-
+<!--!INCLUDE "15-Bibliography.md"-->
