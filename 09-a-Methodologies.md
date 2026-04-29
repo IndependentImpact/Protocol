@@ -1,134 +1,36 @@
 ## Methodologies
 
-### Methods v. methodologies
+### Definition
 
-Methods and methodologies can have scores for ... These scores influence the overall score of the impact claims based on them.
+In the context of Independent Impact, a methodology is a formally defined and systematically structured set of rules, procedures, and techniques that govern how specific tasks or processes are to be carried out in order to achieve consistent, reproducible, and verifiable outcomes. An impact accounting methodology in particular specifies how activities, states, or impacts are to be identified, measured, quantified, reported and verified, ensuring that results are comparable and aligned with the objectives and requirements of the relevant standard(s).
 
-### Assessable dimensions of a methodology
+### Eligibility to create, propose, or request methodologies
 
-Here are the main dimensions that matter:
+The Protocol permits broad participation in the development of methodologies. Any agent possessing a positive, non-zero Conduct Reputation (CR) score may create, propose, or request the creation of a new methodology. No minimum Knowledge and Skill Reputation (KSR) requirements apply to such actions. This approach is intended to encourage the continuous evolution of the methodology ecosystem.
 
-1. Conceptual soundness (theory / causal alignment)
-   Is the methodology grounded in a clear model of reality?
-   Does it explain why the indicators relate to the outcome?
+### Requirements for methodology definition
 
-Example:
-A carbon methodology that assumes "planting trees = carbon removal" without modelling permanence, leakage, or decay is conceptually weak.
+Any agent creating or proposing a new methodology must provide, at a minimum, the following:
 
-Failure mode: Looks plausible, but is fundamentally wrong.
+1. **Definition and scope.** A description of the methodology, including its purpose, intended use cases, and the activities, states, or impacts to which it applies.
+2. **Underlying principles and assumptions.** The conceptual basis of the methodology, including any scientific, technical, or normative assumptions on which it relies.
+3. **Defined methods and procedures.** A structured description of the methods to be applied, including step-by-step procedures where applicable, and how these methods are to be executed.
+4. **Data requirements and inputs.** Specification of the data required to apply the methodology, including data sources, formats, quality requirements, and any constraints or limitations.
+5. **Calculation and transformation rules.** Any formulas, models, or logical rules used to derive outputs from inputs, including how intermediate and final results are produced.
+6. **Outputs and units of measure.** A definition of the expected outputs of the methodology, including the indicators or metrics produced and their respective units of measure.
+7. **Validation and verification approach.** A description of how the correct application of the methodology and the reliability of its outputs can be assessed or verified.
+8. **Limitations and applicability boundaries.** Known limitations, uncertainties, and conditions under which the methodology may or may not be valid.
+9. **Rationale and justification.** An explanation of why the methodology is appropriate for its intended purpose, including any references to existing standards, scientific literature, or best practices.
 
-2. Internal validity (causal correctness)
-   Does the methodology correctly attribute cause and effect?
-   Does it isolate the effect of the intervention?
+### Evaluation of methodologies
 
-This is about avoiding:
+The evaluation of methodologies is governed by the standards to which such methodologies are relevant. Each standard shall define:
 
-- Confounding variables
-- Spurious correlations
+1. The dimensions by which methodologies are judged (e.g., conceptual soundness, reliability, and completeness).
+2. The methods and criteria by which those dimensions are assessed.
 
-Failure mode:
-Claims impact that would have happened anyway (classic ESG problem).
+Accordingly, the Protocol does not prescribe a universal evaluation framework for methodologies, but instead delegates this responsibility to standards bodies and standard-specific governance mechanisms.
 
-3. External validity (generalizability)
-   Do results hold across different contexts, populations, or conditions?
+### Reputation implications
 
-Example:
-A methodology validated in European forestry may fail in tropical ecosystems.
-
-Failure mode:
-Works in pilot → fails in real-world scaling.
-
-4. Reliability / reproducibility
-   If someone else applies the same methodology, do they get similar results?
-
-This includes:
-
-- Clear procedures
-- Low dependence on subjective judgment
-
-Failure mode:
-Two auditors → two completely different outcomes.
-
-5. Transparency / auditability
-   Can others inspect, understand, and verify the methodology?
-
-Includes:
-
-- Clear assumptions
-- Data provenance
-- Documented steps
-
-Failure mode:
-"Black box" methodologies that require blind trust.
-
-6. Robustness (resistance to noise and manipulation)
-   Does the methodology hold up under imperfect data?
-   Is it hard to game?
-
-Example:
-If small reporting tweaks can drastically improve outcomes → not robust.
-
-Failure mode:
-Optimizing the metric instead of the underlying reality (Goodhart's Law).
-
-7. Sensitivity & specificity at the system level
-
-(Not just for indicators, but for the methodology as a whole)
-
-Does the methodology detect real effects? (sensitivity)
-Does it avoid false positives? (specificity)
-
-Example:
-A methodology that always shows "positive impact" is suspicious.
-
-8. Completeness (system boundary definition)
-   Does it include all relevant factors?
-
-In ESG / impact:
-
-- Leakage
-- Rebound effects
-- Supply chain impacts
-
-Failure mode:
-Looks good because important negatives are excluded.
-
-9. Scalability & practicality
-   Can the methodology be applied at scale?
-   Is it cost-effective?
-
-A "perfect" methodology that costs €1M per project is not usable.
-Failure mode:
-Theoretical excellence, zero adoption.
-
-10. Timeliness / responsiveness
-    Does it produce insights quickly enough to be useful?
-
-Important for:
-
-- Monitoring
-- Adaptive decision-making
-
-Failure mode:
-Results arrive after decisions are already made.
-
-11. Normative alignment (fitness for purpose)
-    Does the methodology align with the goal it's meant to serve?
-
-Example:
-A compliance methodology vs. a decision-support methodology → different requirements
-
-Failure mode:
-Optimized for reporting, not for real-world improvement.
-
-#### A practical evaluation checklist
-
-When assessing a methodology, you can ask:
-
-1. What causal model is assumed? Is it explicit?
-2. How does it isolate the effect of interest?
-3. What assumptions are critical - and are they testable?
-4. What is excluded from the system boundary?
-5. Can independent parties reproduce the result?
-6. How easy is it to manipulate the outcome?
-7. What decisions does this methodology actually support?
+The effects of creating, proposing, or requesting methodologies on an agent’s Conduct Reputation (CR) and Knowledge and Skill Reputation (KSR) scores shall be specified in a future revision of the Protocol.
