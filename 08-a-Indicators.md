@@ -1,34 +1,30 @@
 ## Indicators
 
-### Indicator scores
+### Definition
 
-Indicators can have scores for validity, reliability, and sensitivity. These scores influence the overall score of the impact claims based on them.
+In the context of Independent Impact, the term "indicator" is used in accordance with its definition in the [Impact Ontology](https://aiaont.github.io/impactont/impactont.html#cls--Indicator): "A convention for indicating the state of a thing." Indicators provide a structured means by which states and state observations can be expressed, compared, and evaluated across contexts.
 
-Scores are assigned to an indicator through a rigorous evaluation process. TODO: Elaborate.
+### Eligibility to create, propose, or request indicators
 
-#### Assessable dimensions of indicators
+The Protocol permits broad participation in the development of indicators. Any agent possessing a positive, non-zero Conduct Reputation (CR) score may create, propose, or request the creation of a new indicator. No minimum Knowledge and Skill Reputation (KSR) requirements apply to such actions. This approach is intended to encourage the continuous evolution of the indicator ecosystem.
 
-1. Validity
-   Does it measure what you think it measures?
-   Does the indicator actually reflect the underlying concept?
-   Example: Resting heart rate is a reasonably valid indicator of cardiovascular fitness — but not of mental health.
-   Why it matters: If an indicator is only loosely related, it becomes misleading.
-   Note: One of the criteria for validity is specificity, i.e., is the indicator uniquely tied to the state of interest? Does it change only when the underlying factor changes — or for many unrelated reasons? Example: Fatigue could indicate illness, stress, poor sleep, or overtraining → low specificity.
+### Requirements for indicator definition
 
-2. Reliability
-   Is it consistent?
-   If you measure it repeatedly under similar conditions, do you get similar results?
-   Example: Body weight measured on a stable scale is reliable; mood ratings might fluctuate heavily day to day.
-   Why it matters: Unreliable indicators are noisy and hard to act on.
+Any agent creating or proposing a new indicator must provide, at a minimum, the following:
 
-3. Sensitivity
-   a. Does it change when the underlying reality changes?
-   Can it detect meaningful differences or changes?
-   Example: Blood glucose is very sensitive to metabolic changes; height is not useful for short-term health monitoring.
-   Why it matters: If it doesn't move when reality changes, it's useless for tracking.
-   Note: One of the criteria for sensitivity is timeliness, i.e., does the indicator update fast enough? Does it reflect changes in a useful timeframe? Example: Blood pressure responds relatively quickly; long-term disease risk scores do not.
-   Why it matters: Delayed indicators are poor for feedback loops.
+1. A clear and unambiguous definition of the indicator.
+2. A specified unit of measure, where applicable.
+3. A rationale describing the purpose of the indicator and its relevance to the activities, states, or impacts it is intended to represent.
 
-### Indicator library
+### Evaluation of indicators
 
-TODO.
+The evaluation of indicators is governed by the standards to which such indicators are relevant. Each standard shall define:
+
+1. The assessable dimensions by which indicators are judged (e.g., validity, reliability, sensitivity, or other relevant properties).
+2. The methods and criteria by which those dimensions are assessed.
+
+Accordingly, the Protocol does not prescribe a universal evaluation framework for indicators, but instead delegates this responsibility to standards bodies and standard-specific governance mechanisms.
+
+### Reputation implications
+
+The effects of creating, proposing, or requesting indicators on an agent’s Conduct Reputation (CR) and Knowledge and Skill Reputation (KSR) scores shall be specified in a future revision of the Protocol.
