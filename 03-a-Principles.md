@@ -2,7 +2,7 @@
 
 The Independent Impact Standard is anchored by the following principles:
 
-1. **Open, but meritocratic** Everyone should be able to / be empowered to contribute to common goals for good. Engaging in climate action or biodiversity conservation should not be something reserved for large companies with extensive "ESG" budgets and/or compliance regulations to meet. Smaller companies, organisations and individual citizens, with good intention, knowledge and skills, should be empowered to contribute in their respective capacities to humankind’s work towards a better world for all. Activity on the platform is, however, governed through meritocracy ("give credit where credit is due").
+1. **Open, but meritocratic** Everyone should be able to / be empowered to contribute to common goals for good. Engaging in climate action or biodiversity conservation should not be something reserved for large companies with extensive "ESG" budgets and/or compliance regulations to meet. Smaller companies, organisations and individual citizens, with good intention, knowledge and skills, should be empowered to contribute in their respective capacities to humankind's work towards a better world for all. Activity on the platform is, however, governed through meritocracy ("give credit where credit is due").
 
 2. **Guidance, not prescription.** Incentivise and penalise transparently, but do not inhibit communally beneficial action through fixed, overly burdensome prescriptions or disproportionate administrative burdens.
 

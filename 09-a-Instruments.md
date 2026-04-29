@@ -148,18 +148,18 @@ Content validity (expert review, coverage of the construct)
 Convergent validity (correlates with other measures of the same construct)
 Discriminant validity (does not correlate with unrelated constructs)
 
-👉 Red flags: vague wording, items that tap multiple concepts ("double-barrelled"), or heavy dependence on respondents’ interpretation.
+👉 Red flags: vague wording, items that tap multiple concepts ("double-barrelled"), or heavy dependence on respondents' interpretation.
 
 Precision / Noise → Reliability (are responses consistent?)
 If the same person answered again under similar conditions, would you get similar results?
 
 Common checks:
 
-Internal consistency (e.g., Cronbach’s α / ω)
+Internal consistency (e.g., Cronbach's α / ω)
 Test–retest reliability (stability over time)
 Inter-rater reliability (if ratings involve observers)
 
-👉 Red flags: items that don’t "hang together", large random swings, ambiguous wording.
+👉 Red flags: items that don't "hang together", large random swings, ambiguous wording.
 
 Resolution → Scale granularity
 Can the questionnaire distinguish meaningful differences between respondents?
@@ -169,7 +169,7 @@ Design levers:
 Number of response options (e.g., 5–7 point Likert often works well)
 Clear anchors (what does "4" vs "5" mean?)
 
-👉 Red flags: too coarse (can’t detect change) or too fine (respondents can’t reliably differentiate).
+👉 Red flags: too coarse (can't detect change) or too fine (respondents can't reliably differentiate).
 
 Sensitivity → Responsiveness to change
 Can it detect real changes when the underlying condition changes?
@@ -179,7 +179,7 @@ How to test:
 Pre/post intervention studies
 Known-groups comparisons (e.g., healthy vs. ill populations)
 
-👉 Red flags: scores don’t move when reality clearly does.
+👉 Red flags: scores don't move when reality clearly does.
 
 Range → Floor & ceiling effects
 Does the scale cover the full spectrum of the construct?
@@ -188,7 +188,7 @@ Check:
 
 Are many respondents clustered at the top or bottom?
 
-👉 Red flags: everyone scores "high" → you can’t detect improvement.
+👉 Red flags: everyone scores "high" → you can't detect improvement.
 
 Selectivity → Bias & confounding control
 Are responses influenced by irrelevant factors?
@@ -241,7 +241,7 @@ Response time → Practical usability
 How long does it take to complete?
 Does it fit into real workflows?
 
-👉 If it’s too long or intrusive, data quality drops.
+👉 If it's too long or intrusive, data quality drops.
 
 Robustness → Performance across contexts
 Does it work across:

@@ -69,7 +69,7 @@ Example:
 If small reporting tweaks can drastically improve outcomes → not robust.
 
 Failure mode:
-Optimizing the metric instead of the underlying reality (Goodhart’s Law).
+Optimizing the metric instead of the underlying reality (Goodhart's Law).
 
 7. Sensitivity & specificity at the system level
 
@@ -113,7 +113,7 @@ Failure mode:
 Results arrive after decisions are already made.
 
 11. Normative alignment (fitness for purpose)
-    Does the methodology align with the goal it’s meant to serve?
+    Does the methodology align with the goal it's meant to serve?
 
 Example:
 A compliance methodology vs. a decision-support methodology → different requirements

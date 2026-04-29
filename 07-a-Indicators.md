@@ -25,7 +25,7 @@ Scores are assigned to an indicator through a rigorous evaluation process. TODO:
    a. Does it change when the underlying reality changes?
    Can it detect meaningful differences or changes?
    Example: Blood glucose is very sensitive to metabolic changes; height is not useful for short-term health monitoring.
-   Why it matters: If it doesn’t move when reality changes, it's useless for tracking.
+   Why it matters: If it doesn't move when reality changes, it's useless for tracking.
    Note: One of the criteria for sensitivity is timeliness, i.e., does the indicator update fast enough? Does it reflect changes in a useful timeframe? Example: Blood pressure responds relatively quickly; long-term disease risk scores do not.
    Why it matters: Delayed indicators are poor for feedback loops.
 

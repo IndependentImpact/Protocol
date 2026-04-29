@@ -4,6 +4,8 @@
 
 In the context of Independent Impact, the term "agent" is used in accordance with its definition in AIAO, i.e., it is some entity that can be held accountable for the impact that they have on the world around them. All users of the Independent Impact platform who contribute information, artefacts or reviews to the platform are in this sense "agents". Not all agents in the world are, however, users of the Independent Impact Platform. Likewise, not all users of the platform are agents - if they never contribute anything to the platform (i.e., they only read and view information), and no information on the platform relates them to an impact activity registered on the platform, they are only referred to as users, not agents, as their impact on the platform and the world at large is unknown to the platform.
 
+(d) All users of the Independent Impact platform are considered agents, even if they never own real-world impact activities. Readers of this document can therefore consider the terms "user(s)" and "agent(s)" as interchangeable, except for where they are explicitly distinguished.
+
 ### Agent reputation system
 
 The actions and behaviour of agents on the platform are governed by an elaborate reputation system. There are two primary domains in which an agent can have reputation, namely Knowledge & Skills and Conduct. All reputation is primarily gained and lost through actions and consequent events.
@@ -24,7 +26,7 @@ Educational credentials (and the courses by which they are obtained) can have qu
 
 #### Conduct reputation
 
-An agent’s Conduct reputation (CR) score represents how active, helpful and respectful they have been on the platform to date. Unlike KS reputation, the Conduct reputation (CR) domain is solely managed by Independent Impact.
+An agent's Conduct reputation (CR) score represents how active, helpful and respectful they have been on the platform to date. Unlike KS reputation, the Conduct reputation (CR) domain is solely managed by Independent Impact.
 
 CR ruleset is designed to incentivise thoroughness, reliability, respectful behaviour, and sustained activity on the platform, while penalising bias, misinformation and disrespectful behaviour.
 
@@ -32,7 +34,7 @@ CR is gained through collaboration, positive contributions and good conduct. For
 
 CR is primarily lost through undesirable behaviour. If, for example, an agent posts a response to a question on the help forum, and at least three other agents "downvote" it as a rude, irrelevant or deliberately misleading response, they will lose a CR point. If an agent claimed a seat on a bounty panel, but later cancels their seat, they can lose several CR points. Similarly, if an agent publishes a review request and then cancels it later, they will lose CR points. As with KSR, CR can also be lost through time-based decay.
 
-An agent's CR balance can drop below zero if they engage in more undesirable behaviour than desirable behaviour. If an agent’s CR balance drops below zero, their account will automatically be suspended from performing certain actions until their CR balance has sufficiently recovered (either by decaying to zero, or through the agent performing some "good" actions again – among the actions that they are still allowed to perform). If an agent’s CR balance drops below a critical, negative threshold, the agent's account will be suspended completely from any and all activity until their CR balance has recovered sufficiently through time-based decay.
+An agent's CR balance can drop below zero if they engage in more undesirable behaviour than desirable behaviour. If an agent's CR balance drops below zero, their account will automatically be suspended from performing certain actions until their CR balance has sufficiently recovered (either by decaying to zero, or through the agent performing some "good" actions again – among the actions that they are still allowed to perform). If an agent's CR balance drops below a critical, negative threshold, the agent's account will be suspended completely from any and all activity until their CR balance has recovered sufficiently through time-based decay.
 
 CR functions similar to shares in that agents with positive CR will be eligible for "dividends" paid out quarterly on a portion of the platform's profit.
 
