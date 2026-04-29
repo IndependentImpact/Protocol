@@ -9,6 +9,3 @@ The platform empowers companies, project developers, and other stakeholders to l
 - outcomes-based governance
 
 This document details the Independent Impact Protocol that governs the platform.
-
-TODO: Update this:
-The first section of this document gives an overview of the concepts and terminology used on the platform. The second section of the document lays out the principles that underpin the protocol. The Agent Reputation System is described in the third section, the Impact Scoring System is detailed in the fourth section. More information on the other scoring systems in operation on the platform is provided in the fifth section. The sixth, seventh and eighth sections deal with bounties, voting and commenting respectively. The anti-gaming mechanisms employed on the platform are detailed in the ninth section. The final section describes the technical implementation of the protocol on the platform.

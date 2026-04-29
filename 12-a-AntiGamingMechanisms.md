@@ -1,18 +1,52 @@
 ## Anti-gaming mechanisms
 
-### Single account per user
+The Platform implements a set of technical and governance mechanisms designed to detect, deter, and mitigate attempts by agents to manipulate outcomes, misrepresent information, or otherwise undermine the integrity of the system.
 
-A user can only have one account on the platform and must pass an identity check upon account creation. This is to prevent users from reviewing their own activities under a different identity.
+### 1. Unique account requirement
 
-### Restrictions on simultaneous logins
+Each user shall be permitted to maintain only a single account on the Platform. Account creation shall be subject to an identity verification process sufficient to establish uniqueness of the user. The creation or use of multiple accounts by the same user for the purpose of influencing outcomes, including but not limited to self-review, collusive behaviour, or reputation manipulation, is prohibited.
 
-A user cannot be logged into the platform from more than two different devices at the same time, nor can they be logged in from more than one device of the same kind at once. For example, a user can be logged in from their laptop and their phone at the same time, but they cannot be logged in from two different laptops at once. 
+### 2. Access and session controls
 
-### Period-based action limits
+The Platform implements controls to prevent abnormal or suspicious concurrent access patterns, including excessive simultaneous sessions or device usage inconsistent with normal user behaviour. Specific thresholds and enforcement mechanisms may be defined and updated by the Platform without requiring amendment to this Protocol.
 
-Many actions on the platform are subject to rate limits. Please refer to Appendix UYU for the rate limits applicable to each action.
+### 3. Rate limiting of actions
 
-### Reputation limits
+User actions on the Platform may be subject to rate limits in order to prevent spam, automated manipulation, or other forms of abusive behaviour. Applicable limits, including thresholds, time windows, and enforcement rules, shall be defined in an appendix or supporting specification and may be updated over time.
 
-(Minima and maxima. TODO.)
+### 4. Reputation boundaries and constraints
 
+The Platform enforces minimum and maximum bounds on Conduct Reputation (CR) scores. Standards bodies responsible for Knowledge and Skill Reputation (KSR) systems are required to define corresponding bounds and constraints within their respective standards.
+
+Mechanisms are implemented on the Platform to prevent disproportionate or artificially accelerated changes in reputation scores.
+
+### 5. Conflict of interest restrictions
+
+Agents are not allowed to evaluate, verify, or otherwise act in a decision-making capacity over activities, claims, indicators, methodologies, or instruments in which they have a direct or indirect interest, unless such involvement is explicitly disclosed and permitted under an applicable standard.
+
+The Platform may require disclosure of relationships and may restrict actions where conflicts of interest are detected.
+
+### 6. Anti-collusion measures
+
+The Platform implements mechanisms to detect and mitigate coordinated behaviour among multiple agents intended to manipulate outcomes, including but not limited to reciprocal reviews, coordinated voting, or reputation inflation schemes. Such mechanisms may include pattern analysis, network analysis, and anomaly detection techniques.
+
+### 7. Provenance and auditability
+
+All material actions performed on the Platform are recorded with sufficient detail to enable auditability, including attribution to the responsible agent and relevant timestamps. This ensures that actions can be traced, reviewed, and, where necessary, challenged.
+
+### 8. Progressive trust and permissioning
+
+Access to certain high-impact actions may be restricted based on an agent’s Conduct Reputation (CR), Knowledge and Skill Reputation (KSR), or other trust signals. This reduces the ability of newly created or low-reputation accounts to exert disproportionate influence on the system.
+
+### 9. Monitoring, detection, and enforcement
+
+The Platform continuously monitors for indicators of gaming, manipulation, or abusive behaviour. Where such behaviour is detected, the Platform may take enforcement actions, including but not limited to:
+
+- temporary or permanent suspension of accounts
+- invalidation of actions or outcomes
+- adjustment of reputation scores
+- referral to governance or dispute resolution processes
+
+### 10. Evolution of anti-Gaming mechanisms
+
+Anti-gaming mechanisms shall be subject to ongoing review and improvement. The Platform and relevant governance bodies may introduce new mechanisms or refine existing ones in response to emerging threats, without undermining the core principles set out in this Protocol.
