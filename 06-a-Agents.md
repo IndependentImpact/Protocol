@@ -1,28 +1,28 @@
 ## Agents
 
+### General
+
+In the context of Independent Impact, the term "agent" is used in accordance with its definition in AIAO: "A thing that bears some form of accountability for the occurrence of another thing."[^1](https://aiaont.github.io/aiao/aiao.html#cls--Agent)
+
 ### Agents v. users
 
-In the context of Independent Impact, the term "agent" is used in accordance with its definition in AIAO, i.e., it is some entity that can be held accountable for the impact that they have on the world around them. All users of the Independent Impact platform who contribute information, artefacts or reviews to the platform are in this sense "agents". Not all agents in the world are, however, users of the Independent Impact Platform. Likewise, not all users of the platform are agents - if they never contribute anything to the platform (i.e., they only read and view information), and no information on the platform relates them to an impact activity registered on the platform, they are only referred to as users, not agents, as their impact on the platform and the world at large is unknown to the platform.
+Users of the Independent Impact platform are classified as "agents" when they contribute information, artefacts, or reviews, or when they are otherwise associated through recorded information with an impact activity on the platform.
 
-(d) All users of the Independent Impact platform are considered agents, even if they never own real-world impact activities. Readers of this document can therefore consider the terms "user(s)" and "agent(s)" as interchangeable, except for where they are explicitly distinguished.
+Users who only read or view information, and for whom no such association exists, are not classified as agents, as their impact is not known to the platform.
 
 ### Agent reputation system
 
 The actions and behaviour of agents on the platform are governed by an elaborate reputation system. There are two primary domains in which an agent can have reputation, namely Knowledge & Skills and Conduct. All reputation is primarily gained and lost through actions and consequent events.
 
-#### Knowledge & Skills reputation
+#### Knowledge & skills reputation
 
-Each standards body operating on the platform is responsible for drafting their own set of rules according to which they will manage agents' Knowledge & Skills reputation (KSR). Such a ruleset includes the subdomains into which they divide the Knowledge & Skills domain (if any), the actions through which agents can gain and lose KSR, and the amount of KSR required for certain tasks.
+Each standards body operating on the platform is responsible for drafting or identifying the standard of expertise according to which they will manage agents' Knowledge & Skills reputation (KSR). Such a ruleset includes the subdomains into which they divide the Knowledge & Skills domain (if any), the actions through which agents can gain and lose KSR, and the amount of KSR required for certain tasks.
 
 Subdomains of the Knowledge & Skills reputation domain, where they exist, represent different areas of expertise, such as "Marine Conservation," "Air Quality Offsets," "Project Design Validation" or "Statistical Sampling."
 
 KSR can be gained in several ways, such as through the verification of education or experience credentials, through receiving upvotes on a response posted to a help forum question, or through the contribution of a methodology. KSR can similarly be lost in several ways, such as by providing inaccurate information, receiving downvotes on a response to a help forum question, or losing a formal dispute. KSR can also be lost through time-based decay. KSR cannot drop below zero.
 
 Agents primarily use their KSR to earn income. For example, a review bounty will typically specify a minimum amount of reputation that an agent must have in a particular KSR domain in order to pursue the bounty.
-
-##### Educational and training credentials
-
-Educational credentials (and the courses by which they are obtained) can have quality (depth and completeness) scores. These scores will determine how many reputation points an agent can gain by obtaining the respective credentials.
 
 #### Conduct reputation
 
@@ -34,12 +34,8 @@ CR is gained through collaboration, positive contributions and good conduct. For
 
 CR is primarily lost through undesirable behaviour. If, for example, an agent posts a response to a question on the help forum, and at least three other agents "downvote" it as a rude, irrelevant or deliberately misleading response, they will lose a CR point. If an agent claimed a seat on a bounty panel, but later cancels their seat, they can lose several CR points. Similarly, if an agent publishes a review request and then cancels it later, they will lose CR points. As with KSR, CR can also be lost through time-based decay.
 
-An agent's CR balance can drop below zero if they engage in more undesirable behaviour than desirable behaviour. If an agent's CR balance drops below zero, their account will automatically be suspended from performing certain actions until their CR balance has sufficiently recovered (either by decaying to zero, or through the agent performing some "good" actions again – among the actions that they are still allowed to perform). If an agent's CR balance drops below a critical, negative threshold, the agent's account will be suspended completely from any and all activity until their CR balance has recovered sufficiently through time-based decay.
+An agent's CR balance can drop below zero if they engage in more undesirable behaviour than desirable behaviour. If an agent's CR balance drops below zero, their account will automatically be suspended from performing certain actions until their CR balance has sufficiently recovered (either through time-based decay toward zero, or through the agent performing some "good" actions again – among the actions that they are still allowed to perform). If an agent's CR balance drops below a critical, negative threshold, the agent's account will be fully suspended completely from all platform activity until their CR balance has recovered sufficiently through time-based decay.
 
 CR functions similar to shares in that agents with positive CR will be eligible for "dividends" paid out quarterly on a portion of the platform's profit.
 
-For the full list of actions and the amount of CR gained or lost through each please refer to Appendix Y – Agent actions and events.
-
-For the list of CR thresholds and the actions that they suspend or open up, see ???.
-
-Possible alternative names for CR: TRIB, WINK, NOD, PAT, PEAS, (coffee/green) BEANS, COCO (coconuts), grapes, oranges, miles, claps, caps, DUC(K)(S)/DUX.
+The full list of actions and the amount of CR gained or lost through each will be specified in a future appendix to this protocol. The list of CR thresholds and the actions that they suspend or open up will similarly be provided as an appendix to a subsequent version of this protocol.
