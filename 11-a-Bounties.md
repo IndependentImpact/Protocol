@@ -6,8 +6,8 @@ A bounty on the II platform is very similar to its real-world counterpart: it is
 
 Where bounties on the II platform differ from their traditional counterparts is the limitation that they place on the number of agents who can pursue a bounty at once. A bounty for a small task will typically allow only one agent to pursue it at any given point in time; a bounty for a group of tasks may allow multiple agents at once, but the agents will typically be required to collaborate, instead of compete. The purpose of this limitation is two-fold:
 
-(a) Incentivise thoroughness over speed.
-(b) Prevent wastage of human resources.
+1. Incentivise thoroughness over speed.
+2. Prevent wastage of human resources.
 
 **Note** The agents who pursue a bounty are referred to as the "mission team" or "panel" of the bounty. These two terms are interchangeable, and will be used as such throughout the remainder of this document.
 
