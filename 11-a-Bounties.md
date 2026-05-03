@@ -1,6 +1,6 @@
-## Bounties
+# Bounties
 
-### General
+## General
 
 A bounty on the II platform is very similar to its real-world counterpart: it is a sum of money locked up in a smart contract along with a description of one or more tasks that must be executed by an agent who wishes to receive the money. Bounties can be published for many things, such as gathering data, reviewing information, or creating an indicator. Bounties are typically open, which means that any agent who meets the requirements stated by the creator of the bounty can participate in its pursuit.
 
@@ -88,7 +88,7 @@ The dates that mark the start and end of each of the phases must be clearly spec
 
 **Note** Every bounty will have its own discussion topic to facilitate communication between the creator of the bounty and the mission team, and also between the members of the mission team as they collaborate on the task at hand. Only the creator of the bounty and the mission team will be able to post to the discussion topic, but the topic will be publicly visible.
 
-### Review bounties
+## Review bounties
 
 An agent can publish a bounty for the review of some claim, information or artefact. Such bounties, referred to as review bounties, will be subject to the rules provided above as well as the following additional rules:
 

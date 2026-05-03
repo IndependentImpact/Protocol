@@ -8,7 +8,7 @@
 #   - A LaTeX distribution such as TeX Live or MiKTeX  (https://www.latex-project.org/get/)
 
 input-files:
-  - 00-Protocol.md
+  #- 00-Protocol.md
   - 01-a-Introduction.md
   - 02-a-Glossary.md
   - 03-a-OverviewOfConcepts.md
@@ -33,6 +33,10 @@ toc-depth: 3
 
 # Numbered sections
 number-sections: true
+
+# Let each chapter start on a new page
+include-in-header:
+  - latex-header.tex
 
 # Title-page metadata
 metadata:

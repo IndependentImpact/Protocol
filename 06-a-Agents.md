@@ -1,20 +1,20 @@
-## Agents
+# Agents
 
-### General
+## General
 
 In the context of Independent Impact, the term "agent" is used in accordance with its definition in [AIAO](https://aiaont.github.io/aiao/aiao.html#cls--Agent): "A thing that bears some form of accountability for the occurrence of another thing."
 
-### Agents v. users
+## Agents v. users
 
 Users of the Independent Impact platform are classified as "agents" when they contribute information, artefacts, or reviews, or when they are otherwise associated through recorded information with an impact activity on the platform.
 
 Users who only read or view information, and for whom no such association exists, are not classified as agents, as their impact is not known to the platform.
 
-### Agent reputation system
+## Agent reputation system
 
 The actions and behaviour of agents on the platform are governed by an elaborate reputation system. There are two primary domains in which an agent can have reputation, namely Knowledge & Skills and Conduct. All reputation is primarily gained and lost through actions and consequent events.
 
-#### Knowledge & skills reputation
+### Knowledge & skills reputation
 
 Each standards body operating on the platform is responsible for drafting or identifying the standard of expertise according to which they will manage agents' Knowledge & Skills reputation (KSR). Such a ruleset includes the subdomains into which they divide the Knowledge & Skills domain (if any), the actions through which agents can gain and lose KSR, and the amount of KSR required for certain tasks.
 
@@ -24,7 +24,7 @@ KSR can be gained in several ways, such as through the verification of education
 
 Agents primarily use their KSR to earn income. For example, a review bounty will typically specify a minimum amount of reputation that an agent must have in a particular KSR domain in order to pursue the bounty.
 
-#### Conduct reputation
+### Conduct reputation
 
 An agent's Conduct reputation (CR) score represents how active, helpful and respectful they have been on the platform to date. Unlike KS reputation, the Conduct reputation (CR) domain is solely managed by Independent Impact.
 

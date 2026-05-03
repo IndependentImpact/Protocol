@@ -1,4 +1,4 @@
-## Principles
+# Principles
 
 The Independent Impact Standard is anchored by the following principles:
 

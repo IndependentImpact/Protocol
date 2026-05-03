@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 Independent Impact is a platform for reporting and quantifying all conceivable anthropogenic impact on natural and social environments. It enables unparalleled public verifiability of impact claims, as well as unmatched consistency in cross-domain accounting. It intends to usher in a new class of standards, activities and tokenised assets for which there is currently no non-web3 alternative.
 

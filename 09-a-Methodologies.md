@@ -1,14 +1,14 @@
-## Methodologies
+# Methodologies
 
-### Definition
+## Definition
 
 In the context of Independent Impact, a methodology is a formally defined and systematically structured set of rules, procedures, and techniques that govern how specific tasks or processes are to be carried out in order to achieve consistent, reproducible, and verifiable outcomes. An impact accounting methodology in particular specifies how activities, states, or impacts are to be identified, measured, quantified, reported and verified, ensuring that results are comparable and aligned with the objectives and requirements of the relevant standard(s).
 
-### Eligibility to create, propose, or request methodologies
+## Eligibility to create, propose, or request methodologies
 
 The Protocol permits broad participation in the development of methodologies. Any agent possessing a positive, non-zero Conduct Reputation (CR) score may create, propose, or request the creation of a new methodology. No minimum Knowledge and Skill Reputation (KSR) requirements apply to such actions. This approach is intended to encourage the continuous evolution of the methodology ecosystem.
 
-### Requirements for methodology definition
+## Requirements for methodology definition
 
 Any agent creating or proposing a new methodology must provide, at a minimum, the following:
 
@@ -22,7 +22,7 @@ Any agent creating or proposing a new methodology must provide, at a minimum, th
 8. **Limitations and applicability boundaries.** Known limitations, uncertainties, and conditions under which the methodology may or may not be valid.
 9. **Rationale and justification.** An explanation of why the methodology is appropriate for its intended purpose, including any references to existing standards, scientific literature, or best practices.
 
-### Evaluation of methodologies
+## Evaluation of methodologies
 
 The evaluation of methodologies is governed by the standards bodies to which such methodologies are relevant. Each standards body shall define:
 
@@ -31,6 +31,6 @@ The evaluation of methodologies is governed by the standards bodies to which suc
 
 Accordingly, the Protocol does not prescribe a universal evaluation framework for methodologies, but instead delegates this responsibility to standards bodies and standard-specific governance mechanisms.
 
-### Reputation implications
+## Reputation implications
 
-The effects of creating, proposing, or requesting methodologies on an agent’s Conduct Reputation (CR) and Knowledge and Skill Reputation (KSR) scores shall be specified in a future revision of the Protocol.
+The effects of creating, proposing, or requesting methodologies on an agent's Conduct Reputation (CR) and Knowledge and Skill Reputation (KSR) scores shall be specified in a future revision of the Protocol.

@@ -1,6 +1,6 @@
-## Standards
+# Standards
 
-### General
+## General
 
 A standard is a formally defined set of principles, criteria, and rules that establish requirements, methods, or expectations for how a particular activity, process, measurement, or behaviour is to be performed, assessed, or interpreted. Standards are designed to promote consistency, and thereby comparability, across different actors and contexts.
 
@@ -18,7 +18,7 @@ These categories are not mutually exclusive; a single standard may fall within m
 
 Any standards body may operate one or more standards on the platform, provided that it complies with the requirements set out in this chapter.
 
-### Standards of expertise
+## Standards of expertise
 
 A standard of expertise is a formally defined set of criteria used to determine and differentiate levels of knowledge and skill within a particular domain. It establishes the expected capabilities associated with different levels of proficiency, thereby providing a basis for the consistent assessment, validation, and recognition of individuals' capabilities.
 
@@ -28,7 +28,7 @@ A standards body that wishes to operate a standard of expertise on the platform 
 2. Measures for evaluating an individual's knowledge or skill against the standard.
 3. Clear instructions on how an individual can improve their knowledge or skill relative to the standard.
 
-### Impact standards
+## Impact standards
 
 An impact standard is a formal framework that defines the principles, criteria, permissible methods, and constraints for the design and implementation of activities of which the primary objective is to improve the state of some environment (whether natural or social).
 
@@ -45,7 +45,7 @@ A standards body that wishes to operate an impact standard on the platform must 
 
 The Independent Impact Platform does not prescribe any specific impact accounting standard; it does, however, use the Libratum Standard as its default impact and impact accounting standard.
 
-### Impact accounting standards
+## Impact accounting standards
 
 An impact accounting standard is a formally defined set of principles, criteria, and rules that specify how the effects of human activities are to be measured, assessed, and reported. It provides a consistent basis for evaluating impacts, ensuring comparability and credibility across different actors, activities, and contexts.
 
@@ -62,7 +62,7 @@ A standards body that wishes to operate an impact accounting standard on the pla
 
 The Independent Impact Platform does not prescribe any specific impact accounting standard; it does, however, use the Libratum Standard as its default impact and impact accounting standard.
 
-### Conduct standards
+## Conduct standards
 
 A conduct standard is a formally defined set of principles, rules, and behavioural expectations that governs the actions and interactions of agents within a specified context. It establishes clear criteria for distinguishing acceptable from unacceptable conduct, and provides a consistent basis for the assessment, enforcement, and, where applicable, incentivisation or sanctioning of behaviour.
 

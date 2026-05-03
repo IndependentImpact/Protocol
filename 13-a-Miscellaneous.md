@@ -1,12 +1,12 @@
-## Miscellaneous
+# Miscellaneous
 
-### Commenting
+## Commenting
 
 Agents can comment on something (pretty much anything). rdfs:comment.
 
 TODO.
 
-### Reviewing outside of bounties
+## Reviewing outside of bounties
 
 TODO: See ReviewsAndScores.xlsx.
 Every single thing on the platform is in principle reviewable. Reviews can be submitted in several ways/contexts:
