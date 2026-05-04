@@ -8,19 +8,22 @@
 #   - A LaTeX distribution such as TeX Live or MiKTeX  (https://www.latex-project.org/get/)
 
 input-files:
-  - 00-Protocol.md
+  #- 00-Protocol.md
   - 01-a-Introduction.md
-  - 02-a-OverviewOfConceptsAndTerminology.md
-  - 03-a-Principles.md
-  - 04-a-AgentReputationSystem.md
-  - 05-a-ImpactScoringSystem.md
-  - 06-a-OtherScoringSystems.md
-  - 07-a-Bounties.md
-  - 08-a-Voting.md
-  - 09-a-Commenting.md
-  - 10-a-AntiGamingMechanisms.md
-  - 11-a-TechnicalImplementation.md
-  - 12-Bibliography.md
+  - 02-a-Glossary.md
+  - 03-a-OverviewOfConcepts.md
+  - 04-a-Principles.md
+  - 05-a-Standards.md
+  - 06-a-Agents.md
+  - 07-a-Activities.md
+  - 08-a-Indicators.md
+  - 09-a-Methodologies.md
+  - 10-a-Instruments.md
+  - 11-a-Bounties.md
+  - 12-a-AntiGamingMechanisms.md
+  #- 13-a-Miscellaneous.md
+  #- 14-a-TechnicalImplementation.md
+  #- 15-Bibliography.md
 
 standalone: true
 
@@ -31,12 +34,16 @@ toc-depth: 3
 # Numbered sections
 number-sections: true
 
+# Let each chapter start on a new page
+include-in-header:
+  - latex-header.tex
+
 # Title-page metadata
 metadata:
   title: "Independent Impact Protocol"
-  subtitle: "A Decentralised Standard for Environmental and Social Impact Accounting"
-  author: "Independent Impact"
-  date: "2026"
+  subtitle: "The protocol governing the Independent Impact Platform"
+  #author: "Independent Impact"
+  date: "April 2026"
   lang: "en"
 
 # PDF / LaTeX variables
