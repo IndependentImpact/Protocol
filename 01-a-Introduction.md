@@ -6,6 +6,7 @@ The platform empowers companies, project developers, and other stakeholders to l
 
 - voluntary or compliance GHG offsetting
 - CSI reporting
+- CSRD reporting (EU)
 - government services
 - citizen science
 - community-driven impact campaigns
