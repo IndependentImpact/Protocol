@@ -43,8 +43,6 @@ A standards body that wishes to operate an impact standard on the platform must 
 7. Measures for evaluating the acceptability of methdologies, if relevant.
 8. Measure for evaluating the acceptability of instruments, if relevant.
 
-The Independent Impact Platform does not prescribe any specific impact accounting standard; it does, however, use the Libratum Standard as its default impact and impact accounting standard.
-
 ## Impact accounting standards
 
 An impact accounting standard is a formally defined set of principles, criteria, and rules that specify how the effects of human activities are to be measured, assessed, and reported. It provides a consistent basis for evaluating impacts, ensuring comparability and credibility across different actors, activities, and contexts.
@@ -60,7 +58,7 @@ A standards body that wishes to operate an impact accounting standard on the pla
 7. Measures for evaluating the acceptability of methdologies, if relevant.
 8. Measure for evaluating the acceptability of instruments, if relevant.
 
-The Independent Impact Platform does not prescribe any specific impact accounting standard; it does, however, use the Libratum Standard as its default impact and impact accounting standard.
+The Independent Impact Platform does not prescribe any specific impact accounting standard; it does, however, use the [Nova Impact Accounting Standard](https://github.com/IndependentImpact/NovaImpactAccountingStandard) as its default.
 
 ## Conduct standards
 
