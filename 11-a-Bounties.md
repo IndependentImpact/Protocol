@@ -78,13 +78,32 @@ The dates that mark the start and end of each of the phases must be clearly spec
     b. Continue with the bounty, allowing the existing mission team to move into the mission phase of the bounty period. Rewards for unfilled seats will be returned to the creator of the bounty at the end of the bounty period.
     c. Cancel the bounty. In this case, neither the creator of the bounty nor any of the mission team members will lose any CR, and the full bounty will be returned to the account of the creator.
 
-23. If the creator of the bounty has serious concerns about or objections to the work delivered by one or more members of the mission team, they can open a formal dispute that will be adjudicated by a qualified agent.
+23. If the creator of the bounty has serious concerns about or objections to the work delivered by one or more members of the mission team, they can open a formal dispute during the dispute resolution phase. A dispute must identify the seat or deliverable in question, state the grounds for objection, and include any evidence on which the creator intends to rely. The disputed portion of the escrow will remain locked until the dispute is resolved; undisputed seats may be paid out at the end of the dispute resolution phase.
 
-24. An agent who wishes to act as an adjudicator of a certain dispute must have more KSR than both the plaintiff and the defendent in the KSR domains relevant to the bounty task in dispute. The adjudicating agent must also hold some adjudication reputation points (the exact amount is yet to be determined).
+24. An agent who wishes to act as an adjudicator of a certain dispute must have more KSR than both the plaintiff and the defendant in the KSR domains relevant to the bounty task in dispute. The adjudicating agent must also hold some adjudication reputation points (the exact amount is yet to be determined).
 
-25. The bounty will be paid out to the mission team at the end of the dispute resolution phase of the bounty period.
+25. Once appointed, the adjudicator will review the bounty terms, submitted deliverables, discussion topic, and evidence provided by the parties. The adjudicator may request one round of clarifications from the creator and the relevant seat holder. The adjudicator must then publish a decision before the end of the dispute resolution phase, unless the platform extends the phase for cause. A decision may:
+    a. accept the deliverable and release the reserved compensation to the seat holder;
+    b. reject the deliverable and return the reserved compensation to the creator or redistribute it according to the bounty's published terms;
+    c. require a limited correction before payout, if the defect is minor and the bounty terms allow correction; or
+    d. split the reserved compensation where the bounty terms expressly allow partial acceptance.
 
-26. The creator of a bounty will earn CR proportionate to the duration of the bounty and the size of the reward. The exact formula for calculating the bounty creator's CR gain will be provided in a future version of this Protocol.
+26. Losing a dispute may affect reputation. If the adjudicator finds that the creator opened a frivolous or bad-faith dispute, the creator will lose CR. If the adjudicator finds that a seat holder submitted deficient work, the seat holder may lose KSR in the relevant domain, CR, or both, depending on the nature and seriousness of the deficiency.
+
+27. If an agent's CR or KSR drops below a seat's stated reputation requirements after the agent has already claimed that seat, the agent will not automatically lose the seat. The agent may continue holding the seat until the end of the mission phase, provided that:
+    a. the reputation decrease did not result from fraud, collusion, identity abuse, or misconduct directly related to the bounty;
+    b. the agent remains in good standing and is not subject to a platform restriction that prevents further participation; and
+    c. the agent continues to meet any mandatory legal, independence, or conflict-of-interest requirements attached to the seat.
+
+28. If the reputation decrease is connected to fraud, serious misconduct, loss of independence, or another platform restriction, the seat may be frozen and referred to the dispute resolution process. The adjudicator may allow the agent to continue, require a seat transfer, cancel the seat, or apply any other remedy available under the bounty rules.
+
+29. A vote connected to a bounty, including a review panel vote or a vote used in dispute resolution, may be contested by an eligible agent who can show a specific procedural defect, conflict of interest, ineligible voter, duplicate or fraudulent vote, or material error in the information presented to voters. A contest must be filed before the end of the dispute resolution phase, must identify the vote being contested, and must include supporting evidence.
+
+30. When a vote is contested, the challenged result will not be treated as final until the contest is resolved. A qualified adjudicator or governance process will determine whether to uphold the vote, exclude one or more invalid votes and recalculate the result, order a new vote, or refer the matter for anti-gaming enforcement. A rejected or bad-faith contest may cause the contesting agent to lose CR.
+
+31. The bounty will be paid out to the mission team at the end of the dispute resolution phase of the bounty period, except for any seat or deliverable whose dispute or vote contest remains unresolved. Any unresolved portion of escrow will remain locked until a final decision has been published.
+
+32. The creator of a bounty will earn CR proportionate to the duration of the bounty and the size of the reward. The exact formula for calculating the bounty creator's CR gain will be provided in a future version of this Protocol.
 
 **Note** Every bounty will have its own discussion topic to facilitate communication between the creator of the bounty and the mission team, and also between the members of the mission team as they collaborate on the task at hand. Only the creator of the bounty and the mission team will be able to post to the discussion topic, but the topic will be publicly visible.
 
