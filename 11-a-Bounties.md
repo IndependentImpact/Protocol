@@ -17,12 +17,13 @@ Below is the full set of rules that govern the creation of and participation in 
 
 2. The sum of money (typically, but not necessarily, in the form of Hbar) pledged as compensation for successful completion of the tasks will be deducted from the account of the creator of the bounty at the time of creation and will be placed in a smart contract escrow.
 
-3. The bounty period is divided into three subperiods or phases:  
+3. The bounty period is divided into four subperiods or phases:  
    a. the team/panel assembly phase;
-   b. the mission/task phase; and
-   c. the dispute resolution phase.
+   b. the mission/task phase;
+   c. the dispute lodging phase; and
+   d. the dispute resolution phase.
 
-The dates that mark the start and end of each of the phases must be clearly specified by the creator of the bounty upon publication of the bounty. The dispute resolution phase must be at least seven days in length, but not longer than 30 days.
+The dates that mark the start and end of the first three phases of the bounty must be clearly specified by the creator of the bounty upon publication of the bounty. The duration of the dispute resolution phase is indefinite.
 
 4. A bounty can be created for a single task or for multiple tasks.
 
@@ -82,7 +83,10 @@ The dates that mark the start and end of each of the phases must be clearly spec
 
 24. An agent who wishes to act as an adjudicator of a certain dispute must have more KSR than both the plaintiff and the defendent in the KSR domains relevant to the bounty task in dispute. The adjudicating agent must also hold some adjudication reputation points (the exact amount is yet to be determined).
 
-25. The bounty will be paid out to the mission team at the end of the dispute resolution phase of the bounty period.
+25. A bounty terminates per task:
+    a. If no deliverable were submitted for a specific task, the bounty will terminate for the task in question at the end of the mission phase of the bounty - i.e., the bounty money for the task will be returned to the owner of the bounty.
+    b. If deliverables were submitted for a task, and no dispute were opened relative to the task during the dispute lodging phase, the bounty will terminate for the task in question at the end of the dispute lodging phase - i.e., the bounty money will be paid out to the seat holder, and any relevant reputation issuances will be triggered.
+    c. If deliverables were submitted for a task, and a dispute were opened relative to the task during the dispute lodging phase, the bounty will terminate for the task in question only once the dispute has been resolved.
 
 26. The creator of a bounty will earn CR proportionate to the duration of the bounty and the size of the reward. The exact formula for calculating the bounty creator's CR gain will be provided in a future version of this Protocol.
 
@@ -112,7 +116,7 @@ An agent can publish a bounty for the review of some claim, information or artef
 
 9. A seat holder who fails to grade the trainee reviewer's review will lose CR points proportionate to the resource intensity of the task. The exact formula for the calculation of the amount of CR that will be lost will be provided in a future version of this Protocol.
 
-10. Submission of a deliverable (e.g., a review) is final. A seat holder can only submit one deliverable per task - they cannot submit multiple ones during the course of the bounty. Only if their deliverable is disputed and subsequently rejected will they be given the opportunity to submit a new deliverable for the task; they will, however, not be paid for either their original submission or their post-dispute submission. If they choose not to submit a new deliverable post-dispute, they will lose Conduct Reputation in addition to the K&S Reputation that they had already lost by virtue of losing the dispute.
+10. If a seat holder makes multiple submissions for the same task, the most recent submission will be considered the final submission at the end of the mission phase of the bounty.
 
 **Note** It is advisable to restrict the scope of a review bounty as much as possible. A review with a broad scope will necessarily span several knowledge domains (i.e., reputation domains), which may lead to a large number of reviewers having to collaborate on the review. The more reviewers per bounty, the more complicated the coordination among them.
 
