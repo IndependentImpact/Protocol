@@ -40,8 +40,8 @@ A standards body that wishes to operate an impact standard on the platform must 
 4. Measures (typically in the form of structured questions to be answered) to guide reviewers in their evaluation of an activity's adherence to the standard's principles.
 5. The levels of knowledge and skill required by agents who wish to design and/or implement activities, or who wish to formally evaluate activities' adherence to the impact standard. The required levels of knowledge and skill shall be defined with reference to a standard of expertise provided by the standards body, or provided by another standards body and already in operation on the platform.
 6. Measures for evaluating the acceptability of indicators, if relevant.
-7. Measures for evaluating the acceptability of methdologies, if relevant.
-8. Measure for evaluating the acceptability of instruments, if relevant.
+7. Measures for evaluating the acceptability of methodologies, if relevant.
+8. Measures for evaluating the acceptability of instruments, if relevant.
 
 ## Impact accounting standards
 
@@ -55,13 +55,13 @@ A standards body that wishes to operate an impact accounting standard on the pla
 4. Measures (typically in the form of structured questions to be answered) to guide reviewers in their evaluation of an account's adherence to the standard's principles.
 5. The levels of knowledge and skill required by agents who wish to formally evaluate the adherence of impact accounts to the impact accounting standard. The required levels of knowledge and skill shall be defined with reference to a standard of expertise provided by the standards body, or provided by another standards body and already in operation on the platform.
 6. Measures for evaluating the acceptability of indicators, if relevant.
-7. Measures for evaluating the acceptability of methdologies, if relevant.
-8. Measure for evaluating the acceptability of instruments, if relevant.
+7. Measures for evaluating the acceptability of methodologies, if relevant.
+8. Measures for evaluating the acceptability of instruments, if relevant.
 
 The Independent Impact Platform does not prescribe any specific impact accounting standard; it does, however, use the [Nova Impact Accounting Standard](https://github.com/IndependentImpact/NovaImpactAccountingStandard) as its default.
 
 ## Conduct standards
 
-A conduct standard is a formally defined set of principles, rules, and behavioural expectations that governs the actions and interactions of agents within a specified context. It establishes clear criteria for distinguishing acceptable from unacceptable conduct, and provides a consistent basis for the assessment, enforcement, and, where applicable, incentivisation or sanctioning of behaviour.
+A conduct standard is a formally defined set of principles, rules, and behavioural expectations that governs the actions and interactions of agents within a specified context. It establishes clear criteria for distinguishing acceptable conduct from unacceptable conduct, and provides a consistent basis for the assessment, enforcement, and, where applicable, incentivisation or sanctioning of behaviour.
 
 The only conduct standard in operation on the platform is Independent Impact's own reputation-based conduct standard. No other conduct standards are accommodated. For more information on the II conduct standard, please refer to the chapter on "Agents."
