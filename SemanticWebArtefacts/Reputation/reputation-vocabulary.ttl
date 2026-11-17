@@ -1,0 +1,189 @@
+@prefix rep:     <https://independentimpact.org/ns/reputation#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+# Concept schemes
+rep:ReputationDomainTypeScheme a skos:ConceptScheme ;
+  dcterms:title "Reputation domain types"@en .
+
+rep:ReputationDomainScheme a skos:ConceptScheme ;
+  dcterms:title "Reputation domains"@en .
+
+rep:ReputationEventTypeScheme a skos:ConceptScheme ;
+  dcterms:title "Reputation event types"@en .
+
+rep:AgentRoleScheme a skos:ConceptScheme ;
+  dcterms:title "Agent roles for reputation weighting"@en .
+
+rep:ReputationConsequenceScheme a skos:ConceptScheme ;
+  dcterms:title "Reputation consequences"@en .
+
+# Domain types
+rep:domain-type/KNOWLEDGE_SKILLS a rep:ReputationDomainType , skos:Concept ;
+  skos:prefLabel "Knowledge & Skills"@en ;
+  skos:inScheme rep:ReputationDomainTypeScheme .
+
+rep:domain-type/CONDUCT a rep:ReputationDomainType , skos:Concept ;
+  skos:prefLabel "Conduct"@en ;
+  skos:inScheme rep:ReputationDomainTypeScheme .
+
+# Domains
+rep:domain/KNOWLEDGE_SKILLS a rep:ReputationDomain , skos:Concept ;
+  skos:prefLabel "Knowledge & Skills"@en ;
+  skos:inScheme rep:ReputationDomainScheme ;
+  rep:hasDomainType rep:domain-type/KNOWLEDGE_SKILLS ;
+  rep:hasScorePolicy rep:policy/ksr-score-policy ;
+  rep:hasDecayPolicy rep:policy/ksr-decay-policy .
+
+rep:domain/CONDUCT a rep:ReputationDomain , skos:Concept ;
+  skos:prefLabel "Conduct"@en ;
+  skos:inScheme rep:ReputationDomainScheme ;
+  rep:hasDomainType rep:domain-type/CONDUCT ;
+  rep:hasScorePolicy rep:policy/cr-score-policy ;
+  rep:hasDecayPolicy rep:policy/cr-decay-policy ;
+  rep:hasThresholdPolicy rep:policy/cr-threshold-policy .
+
+rep:domain/MARINE_CONSERVATION a rep:ReputationDomain , skos:Concept ;
+  skos:prefLabel "Marine Conservation"@en ;
+  skos:inScheme rep:ReputationDomainScheme ;
+  skos:broader rep:domain/KNOWLEDGE_SKILLS ;
+  rep:hasDomainType rep:domain-type/KNOWLEDGE_SKILLS ;
+  rep:hasScorePolicy rep:policy/ksr-score-policy ;
+  rep:hasDecayPolicy rep:policy/ksr-decay-policy .
+
+rep:domain/AIR_QUALITY_OFFSETS a rep:ReputationDomain , skos:Concept ;
+  skos:prefLabel "Air Quality Offsets"@en ;
+  skos:inScheme rep:ReputationDomainScheme ;
+  skos:broader rep:domain/KNOWLEDGE_SKILLS ;
+  rep:hasDomainType rep:domain-type/KNOWLEDGE_SKILLS ;
+  rep:hasScorePolicy rep:policy/ksr-score-policy ;
+  rep:hasDecayPolicy rep:policy/ksr-decay-policy .
+
+rep:domain/CARBON_OFFSETS a rep:ReputationDomain , skos:Concept ;
+  skos:prefLabel "Carbon Offsets"@en ;
+  skos:inScheme rep:ReputationDomainScheme ;
+  skos:broader rep:domain/KNOWLEDGE_SKILLS ;
+  rep:hasDomainType rep:domain-type/KNOWLEDGE_SKILLS ;
+  rep:hasScorePolicy rep:policy/ksr-score-policy ;
+  rep:hasDecayPolicy rep:policy/ksr-decay-policy .
+
+rep:domain/EARLY_CHILDHOOD_DEVELOPMENT a rep:ReputationDomain , skos:Concept ;
+  skos:prefLabel "Early Childhood Development"@en ;
+  skos:inScheme rep:ReputationDomainScheme ;
+  skos:broader rep:domain/KNOWLEDGE_SKILLS ;
+  rep:hasDomainType rep:domain-type/KNOWLEDGE_SKILLS ;
+  rep:hasScorePolicy rep:policy/ksr-score-policy ;
+  rep:hasDecayPolicy rep:policy/ksr-decay-policy .
+
+# Event types
+rep:event/CREDENTIAL_VERIFIED a rep:ReputationEventType , skos:Concept ;
+  skos:prefLabel "Credential verified"@en ;
+  skos:inScheme rep:ReputationEventTypeScheme .
+
+rep:event/FORUM_RESPONSE_UPVOTED a rep:ReputationEventType , skos:Concept ;
+  skos:prefLabel "Help forum response upvoted"@en ;
+  skos:inScheme rep:ReputationEventTypeScheme .
+
+rep:event/FORUM_RESPONSE_DOWNVOTED a rep:ReputationEventType , skos:Concept ;
+  skos:prefLabel "Help forum response downvoted"@en ;
+  skos:inScheme rep:ReputationEventTypeScheme .
+
+rep:event/METHODOLOGY_CONTRIBUTION a rep:ReputationEventType , skos:Concept ;
+  skos:prefLabel "Methodology contribution"@en ;
+  skos:inScheme rep:ReputationEventTypeScheme .
+
+rep:event/FORMAL_DISPUTE_LOST a rep:ReputationEventType , skos:Concept ;
+  skos:prefLabel "Formal dispute lost"@en ;
+  skos:inScheme rep:ReputationEventTypeScheme .
+
+rep:event/METHODOLOGY_RELIABILITY_VOTE a rep:ReputationEventType , skos:Concept ;
+  skos:prefLabel "Methodology reliability vote"@en ;
+  skos:inScheme rep:ReputationEventTypeScheme .
+
+rep:event/REVIEW_REQUEST_CREATED_BY_ACTIVITY_OWNER a rep:ReputationEventType , skos:Concept ;
+  skos:prefLabel "Review request created by activity owner"@en ;
+  skos:inScheme rep:ReputationEventTypeScheme .
+
+rep:event/HELP_FORUM_QUESTION_UPVOTED_AS_IMPORTANT a rep:ReputationEventType , skos:Concept ;
+  skos:prefLabel "Help forum question upvoted as important"@en ;
+  skos:inScheme rep:ReputationEventTypeScheme .
+
+rep:event/RUDE_OR_MISLEADING_RESPONSE_DOWNVOTED a rep:ReputationEventType , skos:Concept ;
+  skos:prefLabel "Rude, irrelevant, or misleading response downvoted"@en ;
+  skos:inScheme rep:ReputationEventTypeScheme .
+
+rep:event/REVIEW_PANEL_SEAT_CANCELLED a rep:ReputationEventType , skos:Concept ;
+  skos:prefLabel "Review panel seat cancelled"@en ;
+  skos:inScheme rep:ReputationEventTypeScheme .
+
+rep:event/REVIEW_REQUEST_CANCELLED a rep:ReputationEventType , skos:Concept ;
+  skos:prefLabel "Review request cancelled"@en ;
+  skos:inScheme rep:ReputationEventTypeScheme .
+
+rep:event/TIME_BASED_DECAY a rep:ReputationEventType , skos:Concept ;
+  skos:prefLabel "Time-based decay"@en ;
+  skos:inScheme rep:ReputationEventTypeScheme .
+
+# Agent roles (extend as needed)
+rep:role/ACTIVITY_OWNER a rep:AgentRole , skos:Concept ;
+  skos:prefLabel "Activity owner"@en ;
+  skos:inScheme rep:AgentRoleScheme .
+
+rep:role/REVIEWER a rep:AgentRole , skos:Concept ;
+  skos:prefLabel "Reviewer"@en ;
+  skos:inScheme rep:AgentRoleScheme .
+
+# Consequences
+rep:consequence/RESTRICT_ACTIONS a rep:ActionRestriction , rep:ReputationConsequence , skos:Concept ;
+  skos:prefLabel "Restricted actions"@en ;
+  skos:inScheme rep:ReputationConsequenceScheme .
+
+rep:consequence/FULL_SUSPENSION a rep:SuspensionState , rep:ReputationConsequence , skos:Concept ;
+  skos:prefLabel "Full suspension"@en ;
+  skos:inScheme rep:ReputationConsequenceScheme .
+
+# Policies
+rep:policy/ksr-score-policy a rep:ScorePolicy ;
+  rdfs:label "Knowledge & Skills score policy"@en ;
+  rep:appliesToDomainType rep:domain-type/KNOWLEDGE_SKILLS ;
+  rep:minimumScore "0"^^xsd:decimal ;
+  rep:allowsNegativeScores "false"^^xsd:boolean .
+
+rep:policy/cr-score-policy a rep:ScorePolicy ;
+  rdfs:label "Conduct score policy"@en ;
+  rep:appliesToDomainType rep:domain-type/CONDUCT ;
+  rep:allowsNegativeScores "true"^^xsd:boolean .
+
+rep:policy/ksr-decay-policy a rep:DecayPolicy ;
+  rdfs:label "Knowledge & Skills decay policy"@en ;
+  rdfs:comment "Decay parameters (X points every Y months) are defined in the policy document and must be supplied."@en ;
+  rep:appliesToDomainType rep:domain-type/KNOWLEDGE_SKILLS ;
+  rep:decayTowardZero "true"^^xsd:boolean ;
+  rep:decayStopValue "0"^^xsd:decimal .
+
+rep:policy/cr-decay-policy a rep:DecayPolicy ;
+  rdfs:label "Conduct decay policy"@en ;
+  rdfs:comment "Decay parameters (D points every M months) are defined in the policy document and must be supplied."@en ;
+  rep:appliesToDomainType rep:domain-type/CONDUCT ;
+  rep:decayTowardZero "true"^^xsd:boolean ;
+  rep:decayStopValue "0"^^xsd:decimal .
+
+rep:policy/cr-threshold-policy a rep:ThresholdPolicy ;
+  rdfs:label "Conduct threshold policy"@en ;
+  rdfs:comment "Threshold values and suspended actions are defined in the policy document and must be supplied."@en ;
+  rep:appliesToDomainType rep:domain-type/CONDUCT ;
+  rep:definesThreshold rep:threshold/CR_BELOW_ZERO , rep:threshold/CR_CRITICAL_NEGATIVE .
+
+rep:threshold/CR_BELOW_ZERO a rep:ReputationThreshold ;
+  rdfs:label "Conduct below zero threshold"@en ;
+  rep:thresholdComparator "lt" ;
+  rep:thresholdValue "0"^^xsd:decimal ;
+  rep:triggersConsequence rep:consequence/RESTRICT_ACTIONS .
+
+rep:threshold/CR_CRITICAL_NEGATIVE a rep:ReputationThreshold ;
+  rdfs:label "Conduct critical negative threshold"@en ;
+  rdfs:comment "Critical negative threshold value is unspecified in the policy document."@en ;
+  rep:thresholdComparator "lt" ;
+  rep:triggersConsequence rep:consequence/FULL_SUSPENSION .

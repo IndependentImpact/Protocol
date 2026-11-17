@@ -6,17 +6,17 @@ In the context of Independent Impact, the term "agent" is used in accordance wit
 
 ## Agents v. users
 
-Users of the Independent Impact platform are classified as "agents" when they contribute information, artefacts, or reviews, or when they are otherwise associated through recorded information with an impact activity on the platform.
+Users of the Independent Impact Platform are classified as "agents" when they contribute information, artefacts, or reviews, or when they are otherwise associated through recorded information with an impact activity on the platform.
 
 Users who only read or view information, and for whom no such association exists, are not classified as agents, as their impact is not known to the platform.
 
 ## Agent reputation system
 
-The actions and behaviour of agents on the platform are governed by an elaborate reputation system. There are two primary domains in which an agent can have reputation, namely Knowledge & Skills and Conduct. All reputation is primarily gained and lost through actions and consequent events.
+The actions and behaviour of agents on the platform are governed by an elaborate reputation system. There are two primary domains in which an agent can have reputation, namely *Knowledge & Skills* and *Conduct*. All reputation is primarily gained and lost through actions and consequent events.
 
 ### Knowledge & skills reputation
 
-Each standards body operating on the platform is responsible for drafting or identifying the standard of expertise according to which they will manage agents' Knowledge & Skills reputation (KSR). Such a ruleset includes the subdomains into which they divide the Knowledge & Skills domain (if any), the actions through which agents can gain and lose KSR, and the amount of KSR required for certain tasks.
+Each standards body operating on the platform is responsible for drafting or identifying the standard of expertise according to which they will manage agents' Knowledge & Skills reputation <!-- Should we capitalise R? -->(KSR). Such a ruleset includes the subdomains into which they divide the Knowledge & Skills domain (if any), the actions through which agents can gain and lose KSR, and the amount of KSR required for certain tasks.
 
 Subdomains of the Knowledge & Skills reputation domain, where they exist, represent different areas of expertise, such as "Marine Conservation," "Air Quality Offsets," "Project Design Validation" or "Statistical Sampling."
 

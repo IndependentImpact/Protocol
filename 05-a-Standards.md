@@ -24,7 +24,7 @@ A standard of expertise is a formally defined set of criteria used to determine 
 
 A standards body that wishes to operate a standard of expertise on the platform must provide the platform with the following artefacts for the standard:
 
-1. A glossary or formally defined concept scheme, including a clear definition of each of the domains of knowledge or skill with which the standard is concerned.
+1. A glossary expressed as a formally defined concept scheme, including a clear definition of each of the domains of knowledge or skill with which the standard is concerned.
 2. Measures for evaluating an individual's knowledge or skill against the standard.
 3. Clear instructions on how an individual can improve their knowledge or skill relative to the standard.
 
@@ -35,7 +35,7 @@ An impact standard is a formal framework that defines the principles, criteria, 
 A standards body that wishes to operate an impact standard on the platform must provide the platform with the following artefacts for the standard:
 
 1. A set of principles.
-2. A glossary or formally defined concept scheme, including a clear identification of the type of activities (e.g., wetland restoration or child immunisation) with which the standard is concerned.
+2. A glossary, expressed as a formally defined concept scheme, including a clear identification of the type of activities (e.g., wetland restoration or child immunisation) with which the standard is concerned.
 3. Measures (typically in the form of structured questions to be answered) to guide activity owners towards adherence to their principles.
 4. Measures (typically in the form of structured questions to be answered) to guide reviewers in their evaluation of an activity's adherence to the standard's principles.
 5. The levels of knowledge and skill required by agents who wish to design and/or implement activities, or who wish to formally evaluate activities' adherence to the impact standard. The required levels of knowledge and skill shall be defined with reference to a standard of expertise provided by the standards body, or provided by another standards body and already in operation on the platform.
@@ -50,7 +50,7 @@ An impact accounting standard is a formally defined set of principles, criteria,
 A standards body that wishes to operate an impact accounting standard on the platform must provide the platform with the following artefacts for the standard:
 
 1. A set of principles.
-2. A glossary or formally defined concept scheme.
+2. A glossary expressed as a formally defined concept scheme.
 3. Measures (typically in the form of structured questions to be answered) to guide activity owners towards adherence to their principles.
 4. Measures (typically in the form of structured questions to be answered) to guide reviewers in their evaluation of an account's adherence to the standard's principles.
 5. The levels of knowledge and skill required by agents who wish to formally evaluate the adherence of impact accounts to the impact accounting standard. The required levels of knowledge and skill shall be defined with reference to a standard of expertise provided by the standards body, or provided by another standards body and already in operation on the platform.
@@ -58,7 +58,7 @@ A standards body that wishes to operate an impact accounting standard on the pla
 7. Measures for evaluating the acceptability of methodologies, if relevant.
 8. Measures for evaluating the acceptability of instruments, if relevant.
 
-The Independent Impact Platform does not prescribe any specific impact accounting standard; it does, however, use the [Nova Impact Accounting Standard](https://github.com/IndependentImpact/NovaImpactAccountingStandard) as its default.
+The Independent Impact Platform does not prescribe any specific impact accounting standard; it does, however, use the [Nova Impact Accounting Standard](https://github.com/IndependentImpact/NovaImpactAccountingStandard) as its default. <!-- We must think about this -->
 
 ## Conduct standards
 

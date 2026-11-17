@@ -12,7 +12,7 @@
 
 **Anthropogenic impact** An effect on a natural or social environment that results from human activity.
 
-**Artefact** A piece of information, documentation, evidence, data, methodology, instrument, review, or other submitted material that is created, uploaded, referenced, or evaluated on the platform.
+**Artefact** A piece of information, documentation, evidence, data, methodology, instrument, review, or other submitted material that is created, uploaded, referenced, or evaluated on the platform. <!-- What about an artefact as a material thing, like a spade? -->
 
 **Bounty** A task-based opportunity published on the platform in which compensation is placed in escrow and made available to one or more eligible agents who complete specified tasks within defined time periods.
 
@@ -44,7 +44,7 @@
 
 **Impact claim** As defined in the [Anthropogenic Impact Accounting Ontology](http://w3id.org/aiao#ImpactClaim). A claim concerning the effect of an activity on the state of an environment.
 
-**Impact standard** A formal framework that defines principles, criteria, permissible methods, and constraints for the design and implementation of activities of which the primary objective is to improve the state of a natural or social environment.
+**Impact standard** A formal framework that defines principles, criteria, permissible methods, and constraints for the design and implementation of activities of which the primary objective is to improve the state of a natural or social environment. <!-- see Impact accounting standard, explicitly explain how they differ! -->
 
 **Indicator** As defined in the [Impact Ontology](http://w3id.org/impactont#Indicator). A convention used to describe, express, compare, or evaluate the state of a thing or environment.
 
@@ -54,7 +54,7 @@
 
 **KSR domain** A defined area of knowledge or skill in which agents may gain or lose Knowledge and Skill Reputation, such as marine conservation, air quality offsets, statistical sampling, project design validation, or adjudication.
 
-**Methodology** A formally defined and systematically structured set of rules, procedures, and techniques that governs how specific tasks or processes are to be carried out in order to achieve consistent, reproducible, and verifiable outcomes.
+**Methodology** A formally defined and systematically structured set of rules, procedures, and techniques that governs how specific tasks or processes are to be carried out in order to achieve consistent, reproducible, and verifiable outcomes. <!-- Eventually refer to the methodology ontology -->
 
 **Mission phase** The phase of a bounty period during which members of the mission team perform the tasks they have undertaken to complete and submit the required deliverables.
 
@@ -78,22 +78,22 @@
 
 **Spot** An alternative term for a seat on a bounty's mission team.
 
-**Standard** A formally defined set of principles, criteria, and rules that establishes requirements, methods, or expectations for how a particular activity, process, measurement, behaviour, artefact, or outcome is to be performed, assessed, or interpreted.
+**Standard** A formally defined set of principles, criteria, and rules that establishes requirements, methods, or expectations for how a particular activity, process, measurement, behaviour, artefact, or outcome is to be performed, assessed, or interpreted. <!-- look at Impact Standard and Impact Accounting Standaard -->
 
 **Standard of expertise** A formally defined set of criteria used to determine and differentiate levels of knowledge and skill within a particular domain.
 
-**Standards body** An organisation, institution, governance body, or other recognised entity responsible for defining, maintaining, operating, or administering one or more standards on the platform.
+**Standards body** An organisation, institution, governance body, or other recognised entity responsible for defining, maintaining, operating, or administering one or more standards on the platform. <!-- Think of 'standard setter' as alternative -->
 
 **State** As defined in the [Impact Ontology](http://w3id.org/impactont#State). The condition of an environment, thing, or system at a specific point in time.
 
-**Task** A defined piece of work to be performed by an agent, including work specified as part of a bounty, review, methodology, activity, or other platform process.
+**Task** A defined piece of work to be performed by an agent, including work specified as part of a bounty, review, methodology, activity, or other platform process.<!-- subclass of activity. is it worth placing in AIA? -->
 
 **Team assembly phase** The phase of a bounty period during which eligible agents may claim seats on the bounty's mission team.
 
 **Trainee review** A review submitted by an otherwise ineligible or insufficiently reputed agent for training purposes, to be assessed by an eligible reviewer as part of the platform's knowledge-sharing and reputation-building mechanisms.
 
-**User** A person who accesses the Independent Impact Platform. A user becomes an agent when they contribute information, artefacts, reviews, or otherwise become associated through recorded information with an impact activity on the platform.
+**User** A person who accesses the Independent Impact Platform. A user becomes an identifiable agent when they contribute information, artefacts, reviews, or otherwise become associated through recorded information with an impact activity on the platform.
 
 **Voluntary market** A non-compliance market in which actors voluntarily create, purchase, use, retire, or otherwise participate in impact-related credits, claims, offsets, or instruments outside of a legally mandated scheme.
 
-**Web3** A class of distributed digital technologies, including blockchains, distributed ledgers, smart contracts, semantic frameworks, and decentralised data systems, used to support verifiability, transparency, auditability, and tamper resistance.
+**Web3** A class of distributed digital technologies, including blockchains, distributed ledgers, smart contracts, semantic frameworks, and decentralised data systems, used to support verifiability, transparency, auditability, and tamper resistance. <!-- This combines the two traditions both using web3: semantic web and DL -->
