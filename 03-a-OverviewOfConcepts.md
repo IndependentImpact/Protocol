@@ -1,6 +1,6 @@
 # Overview of concepts
 
-Independent Impact shares the worldview of the Anthropogenic Impact Accounting Ontology Suite (AIA OS). In simple language this means that the world, from the perspective of the <!-- Impact Accounting Platform-->, consists primarily of agents, activities, instruments, environments, states, indicators, impacts, methodologies, standards, and claims:
+Independent Impact shares the worldview of the Anthropogenic Impact Accounting Ontology Suite (AIA OS). In simple language this means that the world, from the perspective of the ontology, consists primarily of agents, activities, instruments, environments, states, indicators, impacts, methodologies, standards, and claims:
 
 a. Agents are people who do things.
 b. Activities are the things that those people do.
