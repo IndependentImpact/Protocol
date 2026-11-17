@@ -1,0 +1,126 @@
+@prefix rep:    <https://independentimpact.org/ns/reputation#> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix aiao:   <http://w3id.org/aiao#> .
+@prefix indimp: <https://independentimpact.org/ns/> .
+
+# Shapes for reputation data
+
+rep:ReputationScoreShape a sh:NodeShape ;
+  sh:targetClass rep:ReputationScore ;
+  sh:property [ sh:path rep:forAgent ; sh:class aiao:Agent ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:domain ; sh:class rep:ReputationDomain ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:scoreValue ; sh:datatype xsd:decimal ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+rep:ReputationEventShape a sh:NodeShape ;
+  sh:targetClass rep:ReputationEvent ;
+  sh:property [ sh:path rep:forAgent ; sh:class aiao:Agent ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:domain ; sh:class rep:ReputationDomain ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:eventType ; sh:class rep:ReputationEventType ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:delta ; sh:datatype xsd:integer ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:occurredAt ; sh:datatype xsd:dateTime ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:trigger ; sh:datatype xsd:string ; sh:minCount 0 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:appliedWeight ; sh:class rep:ReputationWeight ; sh:minCount 0 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:workflowContext ; sh:class indimp:Workflow ; sh:minCount 0 ; sh:maxCount 1 ] .
+
+rep:ReputationWeightShape a sh:NodeShape ;
+  sh:targetClass rep:ReputationWeight ;
+  sh:property [ sh:path rep:eventType ; sh:class rep:ReputationEventType ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:agentRole ; sh:class rep:AgentRole ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:domain ; sh:class rep:ReputationDomain ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:weightValue ; sh:datatype xsd:integer ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:capPerDay ; sh:datatype xsd:integer ; sh:minCount 0 ; sh:maxCount 1 ] .
+
+# Concept shapes
+rep:ReputationDomainTypeShape a sh:NodeShape ;
+  sh:targetClass rep:ReputationDomainType ;
+  sh:property [ sh:path skos:prefLabel ; sh:datatype xsd:string ; sh:minCount 1 ] ;
+  sh:property [ sh:path skos:inScheme ; sh:hasValue rep:ReputationDomainTypeScheme ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+rep:ReputationDomainShape a sh:NodeShape ;
+  sh:targetClass rep:ReputationDomain ;
+  sh:property [ sh:path skos:prefLabel ; sh:datatype xsd:string ; sh:minCount 1 ] ;
+  sh:property [ sh:path skos:inScheme ; sh:hasValue rep:ReputationDomainScheme ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:hasDomainType ; sh:class rep:ReputationDomainType ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:hasScorePolicy ; sh:class rep:ScorePolicy ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:hasDecayPolicy ; sh:class rep:DecayPolicy ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+rep:ReputationEventTypeShape a sh:NodeShape ;
+  sh:targetClass rep:ReputationEventType ;
+  sh:property [ sh:path skos:prefLabel ; sh:datatype xsd:string ; sh:minCount 1 ] ;
+  sh:property [ sh:path skos:inScheme ; sh:hasValue rep:ReputationEventTypeScheme ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+rep:AgentRoleShape a sh:NodeShape ;
+  sh:targetClass rep:AgentRole ;
+  sh:property [ sh:path skos:prefLabel ; sh:datatype xsd:string ; sh:minCount 1 ] ;
+  sh:property [ sh:path skos:inScheme ; sh:hasValue rep:AgentRoleScheme ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+rep:ReputationConsequenceShape a sh:NodeShape ;
+  sh:targetClass rep:ReputationConsequence ;
+  sh:property [ sh:path skos:prefLabel ; sh:datatype xsd:string ; sh:minCount 1 ] ;
+  sh:property [ sh:path skos:inScheme ; sh:hasValue rep:ReputationConsequenceScheme ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+# Policy shapes
+rep:ScorePolicyShape a sh:NodeShape ;
+  sh:targetClass rep:ScorePolicy ;
+  sh:property [ sh:path rep:minimumScore ; sh:datatype xsd:decimal ; sh:minCount 0 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:maximumScore ; sh:datatype xsd:decimal ; sh:minCount 0 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:allowsNegativeScores ; sh:datatype xsd:boolean ; sh:minCount 0 ; sh:maxCount 1 ] .
+
+rep:DecayPolicyShape a sh:NodeShape ;
+  sh:targetClass rep:DecayPolicy ;
+  sh:property [ sh:path rep:decayAmount ; sh:datatype xsd:decimal ; sh:minCount 0 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:decayInterval ; sh:datatype xsd:duration ; sh:minCount 0 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:decayTowardZero ; sh:datatype xsd:boolean ; sh:minCount 0 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:decayClipsAtMinimum ; sh:datatype xsd:boolean ; sh:minCount 0 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:decayStopValue ; sh:datatype xsd:decimal ; sh:minCount 0 ; sh:maxCount 1 ] .
+
+rep:ThresholdPolicyShape a sh:NodeShape ;
+  sh:targetClass rep:ThresholdPolicy ;
+  sh:property [ sh:path rep:definesThreshold ; sh:class rep:ReputationThreshold ; sh:minCount 1 ] .
+
+rep:ReputationThresholdShape a sh:NodeShape ;
+  sh:targetClass rep:ReputationThreshold ;
+  sh:property [ sh:path rep:thresholdValue ; sh:datatype xsd:decimal ; sh:minCount 0 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:thresholdComparator ; sh:datatype xsd:string ; sh:minCount 0 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rep:triggersConsequence ; sh:class rep:ReputationConsequence ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+# Implementation-specific constraints
+rep:ConductDomainNoSubdomainsShape a sh:NodeShape ;
+  sh:targetClass rep:ReputationDomain ;
+  sh:sparql [
+    sh:message "Conduct domains must not have skos:narrower subdomains." ;
+    sh:select """
+      SELECT $this WHERE {
+        $this rep:hasDomainType rep:domain-type/CONDUCT .
+        $this skos:narrower ?child .
+      }
+    """ ;
+  ] .
+
+rep:ConductDomainThresholdPolicyShape a sh:NodeShape ;
+  sh:targetClass rep:ReputationDomain ;
+  sh:sparql [
+    sh:message "Conduct domains must declare a threshold policy." ;
+    sh:select """
+      SELECT $this WHERE {
+        $this rep:hasDomainType rep:domain-type/CONDUCT .
+        FILTER NOT EXISTS { $this rep:hasThresholdPolicy ?policy . }
+      }
+    """ ;
+  ] .
+
+rep:KSRScoreNonNegativeShape a sh:NodeShape ;
+  sh:targetClass rep:ReputationScore ;
+  sh:sparql [
+    sh:message "Knowledge & Skills scores must be non-negative." ;
+    sh:select """
+      SELECT $this WHERE {
+        $this rep:domain ?domain ;
+              rep:scoreValue ?value .
+        ?domain rep:hasDomainType rep:domain-type/KNOWLEDGE_SKILLS .
+        FILTER (?value < 0)
+      }
+    """ ;
+  ] .

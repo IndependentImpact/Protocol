@@ -1,0 +1,269 @@
+@prefix rep:    <https://independentimpact.org/ns/reputation#> .
+@prefix indimp: <https://independentimpact.org/ns/> .
+@prefix aiao:   <http://w3id.org/aiao#> .
+@prefix impact: <https://w3id.org/impactont#> .
+@prefix claim:  <https://w3id.org/claimont#> .
+@prefix info:   <http://w3id.org/infocomm#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix dcterms:<http://purl.org/dc/terms/> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+
+# Reputation ontology aligned with Independent Impact + AIAO/ImpactOnt; unique IRIs to avoid overlap.
+rep: a owl:Ontology ;
+  dcterms:title "Independent Impact Reputation Ontology"@en ;
+  dcterms:creator "Generated from Postgres reputation tables and Plumber logic"@en ;
+  dcterms:source "tbl_agent_reputation, tbl_agent_reputation_event_log, tbl_agent_reputation_event_weights"@en .
+
+# Classes
+rep:ReputationScore a owl:Class , prov:Entity ;
+  rdfs:label "Reputation score"@en ;
+  rdfs:comment "Aggregate score for an agent within a reputation domain."@en .
+
+rep:ReputationEvent a owl:Class , prov:Activity ;
+  rdfs:label "Reputation event"@en ;
+  rdfs:comment "Logged event that adjusts an agent's reputation score."@en .
+
+rep:ReputationWeight a owl:Class , prov:Entity ;
+  rdfs:label "Reputation weight"@en ;
+  rdfs:comment "Configuration for weighting reputation events by type, agent role, and domain."@en .
+
+rep:ReputationDomain a owl:Class , skos:Concept ;
+  rdfs:label "Reputation domain"@en ;
+  rdfs:comment "Domain or facet in which agent reputation is measured."@en .
+
+rep:ReputationDomainType a owl:Class , skos:Concept ;
+  rdfs:label "Reputation domain type"@en ;
+  rdfs:comment "Category of reputation domains, used to group domains that share policy characteristics."@en .
+
+rep:ReputationEventType a owl:Class , skos:Concept ;
+  rdfs:label "Reputation event type"@en ;
+  rdfs:comment "Categorisation of events that affect reputation."@en .
+
+rep:AgentRole a owl:Class , skos:Concept ;
+  rdfs:label "Agent role"@en ;
+  rdfs:comment "Role of agent for weighting purposes."@en .
+
+rep:ReputationPolicy a owl:Class ;
+  rdfs:label "Reputation policy"@en ;
+  rdfs:comment "Abstract policy describing how reputation is calculated, bounded, or interpreted."@en .
+
+rep:ScorePolicy a owl:Class ;
+  rdfs:subClassOf rep:ReputationPolicy ;
+  rdfs:label "Score policy"@en ;
+  rdfs:comment "Policy defining score bounds and allowable ranges for a reputation domain."@en .
+
+rep:DecayPolicy a owl:Class ;
+  rdfs:subClassOf rep:ReputationPolicy ;
+  rdfs:label "Decay policy"@en ;
+  rdfs:comment "Policy defining time-based decay behavior for reputation scores."@en .
+
+rep:ThresholdPolicy a owl:Class ;
+  rdfs:subClassOf rep:ReputationPolicy ;
+  rdfs:label "Threshold policy"@en ;
+  rdfs:comment "Policy defining thresholds and consequences triggered by score levels."@en .
+
+rep:ReputationThreshold a owl:Class ;
+  rdfs:label "Reputation threshold"@en ;
+  rdfs:comment "Threshold rule used to trigger a reputation consequence."@en .
+
+rep:ReputationConsequence a owl:Class ;
+  rdfs:label "Reputation consequence"@en ;
+  rdfs:comment "Outcome triggered when a threshold condition is met."@en .
+
+rep:ActionRestriction a owl:Class ;
+  rdfs:subClassOf rep:ReputationConsequence ;
+  rdfs:label "Action restriction"@en ;
+  rdfs:comment "Consequence that restricts one or more actions or capabilities."@en .
+
+rep:SuspensionState a owl:Class ;
+  rdfs:subClassOf rep:ReputationConsequence ;
+  rdfs:label "Suspension state"@en ;
+  rdfs:comment "Consequence indicating account suspension status."@en .
+
+# Object properties
+rep:forAgent a owl:ObjectProperty ;
+  rdfs:domain [ owl:unionOf ( rep:ReputationScore rep:ReputationEvent ) ] ;
+  rdfs:range aiao:Agent ;
+  rdfs:label "for agent"@en .
+
+rep:domain a owl:ObjectProperty ;
+  rdfs:domain [ owl:unionOf ( rep:ReputationScore rep:ReputationEvent rep:ReputationWeight ) ] ;
+  rdfs:range rep:ReputationDomain ;
+  rdfs:label "reputation domain"@en .
+
+rep:hasDomainType a owl:ObjectProperty ;
+  rdfs:domain rep:ReputationDomain ;
+  rdfs:range rep:ReputationDomainType ;
+  rdfs:label "has domain type"@en ;
+  rdfs:comment "Associates a reputation domain with a domain type used for policy grouping."@en .
+
+rep:eventType a owl:ObjectProperty ;
+  rdfs:domain [ owl:unionOf ( rep:ReputationEvent rep:ReputationWeight ) ] ;
+  rdfs:range rep:ReputationEventType ;
+  rdfs:label "event type"@en .
+
+rep:agentRole a owl:ObjectProperty ;
+  rdfs:domain rep:ReputationWeight ;
+  rdfs:range rep:AgentRole ;
+  rdfs:label "agent role"@en .
+
+rep:appliedWeight a owl:ObjectProperty ;
+  rdfs:domain rep:ReputationEvent ;
+  rdfs:range rep:ReputationWeight ;
+  rdfs:label "applied weight config"@en .
+
+rep:affectsScore a owl:ObjectProperty ;
+  rdfs:domain rep:ReputationEvent ;
+  rdfs:range rep:ReputationScore ;
+  rdfs:label "affects score"@en .
+
+rep:hasScorePolicy a owl:ObjectProperty ;
+  rdfs:domain rep:ReputationDomain ;
+  rdfs:range rep:ScorePolicy ;
+  rdfs:label "has score policy"@en ;
+  rdfs:comment "Links a reputation domain to its score-bound policy."@en .
+
+rep:hasDecayPolicy a owl:ObjectProperty ;
+  rdfs:domain rep:ReputationDomain ;
+  rdfs:range rep:DecayPolicy ;
+  rdfs:label "has decay policy"@en ;
+  rdfs:comment "Links a reputation domain to its decay policy."@en .
+
+rep:hasThresholdPolicy a owl:ObjectProperty ;
+  rdfs:domain rep:ReputationDomain ;
+  rdfs:range rep:ThresholdPolicy ;
+  rdfs:label "has threshold policy"@en ;
+  rdfs:comment "Links a reputation domain to its threshold policy."@en .
+
+rep:appliesToDomainType a owl:ObjectProperty ;
+  rdfs:domain rep:ReputationPolicy ;
+  rdfs:range rep:ReputationDomainType ;
+  rdfs:label "applies to domain type"@en ;
+  rdfs:comment "Associates a policy with the domain type it governs."@en .
+
+rep:appliesToDomain a owl:ObjectProperty ;
+  rdfs:domain rep:ReputationPolicy ;
+  rdfs:range rep:ReputationDomain ;
+  rdfs:label "applies to domain"@en ;
+  rdfs:comment "Associates a policy with a specific domain."@en .
+
+rep:definesThreshold a owl:ObjectProperty ;
+  rdfs:domain rep:ThresholdPolicy ;
+  rdfs:range rep:ReputationThreshold ;
+  rdfs:label "defines threshold"@en ;
+  rdfs:comment "Links a threshold policy to one of its thresholds."@en .
+
+rep:triggersConsequence a owl:ObjectProperty ;
+  rdfs:domain rep:ReputationThreshold ;
+  rdfs:range rep:ReputationConsequence ;
+  rdfs:label "triggers consequence"@en ;
+  rdfs:comment "Links a threshold rule to the consequence it triggers."@en .
+
+# Data properties
+rep:scoreValue a owl:DatatypeProperty ;
+  rdfs:domain rep:ReputationScore ;
+  rdfs:range xsd:decimal ;
+  rdfs:label "score value"@en .
+
+rep:occurredAt a owl:DatatypeProperty ;
+  rdfs:domain rep:ReputationEvent ;
+  rdfs:range xsd:dateTime ;
+  rdfs:label "occurred at"@en .
+
+rep:trigger a owl:DatatypeProperty ;
+  rdfs:domain rep:ReputationEvent ;
+  rdfs:range xsd:string ;
+  rdfs:label "trigger"@en .
+
+rep:delta a owl:DatatypeProperty ;
+  rdfs:domain rep:ReputationEvent ;
+  rdfs:range xsd:integer ;
+  rdfs:label "reputation delta"@en .
+
+rep:weightValue a owl:DatatypeProperty ;
+  rdfs:domain rep:ReputationWeight ;
+  rdfs:range xsd:integer ;
+  rdfs:label "weight"@en .
+
+rep:capPerDay a owl:DatatypeProperty ;
+  rdfs:domain rep:ReputationWeight ;
+  rdfs:range xsd:integer ;
+  rdfs:label "cap per day"@en .
+
+rep:appliedOnDate a owl:DatatypeProperty ;
+  rdfs:domain rep:ReputationEvent ;
+  rdfs:range xsd:date ;
+  rdfs:label "applied on date"@en ;
+  rdfs:comment "Date used for daily cap enforcement."@en .
+
+rep:minimumScore a owl:DatatypeProperty ;
+  rdfs:domain rep:ScorePolicy ;
+  rdfs:range xsd:decimal ;
+  rdfs:label "minimum score"@en ;
+  rdfs:comment "Minimum score allowed under a score policy."@en .
+
+rep:maximumScore a owl:DatatypeProperty ;
+  rdfs:domain rep:ScorePolicy ;
+  rdfs:range xsd:decimal ;
+  rdfs:label "maximum score"@en ;
+  rdfs:comment "Maximum score allowed under a score policy."@en .
+
+rep:allowsNegativeScores a owl:DatatypeProperty ;
+  rdfs:domain rep:ScorePolicy ;
+  rdfs:range xsd:boolean ;
+  rdfs:label "allows negative scores"@en ;
+  rdfs:comment "Whether the score policy permits negative values."@en .
+
+rep:decayAmount a owl:DatatypeProperty ;
+  rdfs:domain rep:DecayPolicy ;
+  rdfs:range xsd:decimal ;
+  rdfs:label "decay amount"@en ;
+  rdfs:comment "Magnitude of score change applied per decay interval."@en .
+
+rep:decayInterval a owl:DatatypeProperty ;
+  rdfs:domain rep:DecayPolicy ;
+  rdfs:range xsd:duration ;
+  rdfs:label "decay interval"@en ;
+  rdfs:comment "Time interval between decay applications."@en .
+
+rep:decayTowardZero a owl:DatatypeProperty ;
+  rdfs:domain rep:DecayPolicy ;
+  rdfs:range xsd:boolean ;
+  rdfs:label "decay toward zero"@en ;
+  rdfs:comment "Whether decay moves scores toward zero regardless of sign."@en .
+
+rep:decayClipsAtMinimum a owl:DatatypeProperty ;
+  rdfs:domain rep:DecayPolicy ;
+  rdfs:range xsd:boolean ;
+  rdfs:label "decay clips at minimum"@en ;
+  rdfs:comment "Whether decay is clipped at the minimum score bound."@en .
+
+rep:decayStopValue a owl:DatatypeProperty ;
+  rdfs:domain rep:DecayPolicy ;
+  rdfs:range xsd:decimal ;
+  rdfs:label "decay stop value"@en ;
+  rdfs:comment "Score value at which decay stops applying."@en .
+
+rep:thresholdValue a owl:DatatypeProperty ;
+  rdfs:domain rep:ReputationThreshold ;
+  rdfs:range xsd:decimal ;
+  rdfs:label "threshold value"@en ;
+  rdfs:comment "Score value used in a threshold rule."@en .
+
+rep:thresholdComparator a owl:DatatypeProperty ;
+  rdfs:domain rep:ReputationThreshold ;
+  rdfs:range xsd:string ;
+  rdfs:label "threshold comparator"@en ;
+  rdfs:comment "Comparator used in threshold evaluation (for example, less-than or greater-than)."@en .
+
+# Linkage to existing vocabularies (no duplication)
+rep:forAgent rdfs:range aiao:Agent .
+rep:workflowContext a owl:ObjectProperty ;
+  rdfs:domain rep:ReputationEvent ;
+  rdfs:range indimp:Workflow ;
+  rdfs:label "workflow context"@en ;
+  rdfs:comment "Optional link to a workflow in which the event occurred."@en .
