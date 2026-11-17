@@ -1,6 +1,6 @@
 # Overview of concepts
 
-Independent Impact shares the worldview of the Anthropogenic Impact Accounting Ontology Suite (AIA OS). In simple language this means that the world, from the perspective of the Impact Accounting Platform, consists primarily of agents, activities, instruments, environments, states, indicators, impacts, methodologies, standards, and claims:
+Independent Impact shares the worldview of the Anthropogenic Impact Accounting Ontology Suite (AIA OS). In simple language this means that the world, from the perspective of the <!-- Impact Accounting Platform-->, consists primarily of agents, activities, instruments, environments, states, indicators, impacts, methodologies, standards, and claims:
 
 a. Agents are people who do things.
 b. Activities are the things that those people do.
@@ -25,7 +25,7 @@ The above statements serve as a mere introduction to the fundamental concepts an
 
 Some additional remarks on terminology:
 
-(a) In this document the term "action" refers to a thing that a user can do on the digital Independent Impact platform, e.g., clicking a button, or publishing an artefact. The term "activity" should be understood as defined in AIA, i.e., an activity undertaken by an agent in some real-world environment to effect some specific, beneficial impact in that environment (a reforestation activity, for example).
+(a) In this document the term "action" refers to a thing that a user can do on the digital Independent Impact Platform<!-- Do we always use the capital P? -->, e.g., clicking a button, or publishing an artefact. The term "activity" should be understood as defined in [AIAO](http://w3id.org/aiao), i.e., an activity undertaken by an agent in some real-world environment to effect some specific, beneficial impact in that environment (a reforestation activity, for example).
 
 (b) In this document the term "activity" also implies "project" and vice versa, unless explicitly stated otherwise. This is purely for conciseness. A project is, as per AIAO, really a collection of activities that are executed to collectively achieve some specific goal.
 
